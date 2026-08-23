@@ -121,13 +121,20 @@ describe("normalising", () => {
 
   it("reports an unresolved area rather than dropping it", () => {
     const { ctx, unresolved } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
-    const abuHail = dldAreawiseSales.normalize(rows[0]!, ctx) as AreaTransactionSummary;
-    // Abu Hail is not in the seed registry, so it must surface as a gap while
-    // still being stored with its raw name and official id intact.
-    expect(abuHail.communitySlug).toBeNull();
-    expect(abuHail.rawLocation).toBe("Abu Hail");
-    expect(unresolved).toContain("Abu Hail");
+    // A name the registry cannot know. Using a real Dubai area here would make
+    // the test fail the moment the registry legitimately learns about it,
+    // which is the opposite of what this asserts.
+    const record = dldAreawiseSales.normalize(
+      { areaId: 99999, area: { englishName: "Nonexistent Placeholder Area" }, worth: 1000, count: 1 } as never,
+      ctx,
+    ) as AreaTransactionSummary;
+
+    // The row is still stored, with its raw name and official id intact — the
+    // gap is reported, not silently dropped.
+    expect(record.communitySlug).toBeNull();
+    expect(record.rawLocation).toBe("Nonexistent Placeholder Area");
+    expect(record.areaId).toBe(99999);
+    expect(unresolved).toContain("Nonexistent Placeholder Area");
   });
 
   it("flattens project breakdowns", () => {

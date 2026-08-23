@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import { getResolver, loadCommunities } from "../src/geo/communities.js";
 import { CommunityResolver } from "../src/geo/resolver.js";
 
@@ -17,9 +18,39 @@ describe("registry", () => {
   });
 
   it("never asserts an official identifier it cannot source", () => {
-    // communityNumber must come from a real Dubai Pulse ingest, not this repo.
+    // The rule is about provenance, not absence. communityNumber is either
+    // unset, or DLD's own areaId read from its public register by
+    // scripts/sync-areas.mjs — never a value invented here. Any registry
+    // carrying ids must therefore record when it was reconciled.
+    const communities = loadCommunities();
+    const withIds = communities.filter((c) => c.communityNumber !== null);
+
+    for (const community of communities) {
+      expect(
+        community.communityNumber === null ||
+          (Number.isInteger(community.communityNumber) && community.communityNumber! > 0),
+      ).toBe(true);
+    }
+
+    if (withIds.length > 0) {
+      const raw = JSON.parse(
+        readFileSync(new URL("../data/communities.json", import.meta.url), "utf8"),
+      ) as { areasSyncedAt?: string };
+      expect(raw.areasSyncedAt, "registry has official ids but no record of where they came from")
+        .toBeTruthy();
+    }
+  });
+
+  it("gives every official id to at most one community", () => {
+    // Two communities sharing a DLD areaId means the registry is conflating
+    // distinct places, and every join for both would be wrong.
+    const seen = new Map<number, string>();
     for (const community of loadCommunities()) {
-      expect(community.communityNumber).toBeNull();
+      if (community.communityNumber === null) continue;
+      const existing = seen.get(community.communityNumber);
+      expect(existing, `areaId ${community.communityNumber} claimed by ${existing} and ${community.slug}`)
+        .toBeUndefined();
+      seen.set(community.communityNumber, community.slug);
     }
   });
 });
@@ -65,6 +96,44 @@ describe("market name resolution — the actual point of the layer", () => {
     for (const community of loadCommunities()) {
       expect(slugOf(community.slug.replace(/-/g, " "))).toBe(community.slug);
     }
+  });
+});
+
+describe("DLD's own spelling drift", () => {
+  // Every pair below was found by reconciling against DLD's live area
+  // register. Before these were handled, each produced either a fuzzy match
+  // needing human review or a duplicate community in the registry.
+  it("matches DLD's areawise spellings to the canonical community", () => {
+    expect(slugOf("Al Goze First")).toBe("al-quoz-first");
+    expect(slugOf("Al Goze Industrial First")).toBe("al-quoz-industrial-first");
+    expect(slugOf("Trade Center First")).toBe("trade-centre-first");
+    expect(slugOf("Trade Center Second")).toBe("trade-centre-second");
+    expect(slugOf("Um Suqaim Third")).toBe("umm-suqeim-third");
+    expect(slugOf("Al Saffa First")).toBe("al-safa-first");
+    expect(slugOf("Al Jadaf")).toBe("al-jaddaf");
+    expect(slugOf("Nad Al Shiba Third")).toBe("nad-al-sheba-third");
+    expect(slugOf("Al Thanayah Fourth")).toBe("al-thanyah-fourth");
+    expect(slugOf("Muhaisanah Fourth")).toBe("muhaisnah-fourth");
+    expect(slugOf("Al Barshaa South Third")).toBe("al-barsha-south-third");
+    expect(slugOf("Al Rega")).toBe("al-rigga");
+  });
+
+  it("keeps Palm Deira apart from Palm Jumeirah", () => {
+    // Different islands. Fuzzy matching scored them 0.727 against each other,
+    // above the 0.72 threshold — which is why an official id is never assigned
+    // on a fuzzy match.
+    expect(slugOf("Palm Deira")).toBe("palm-deira");
+    expect(slugOf("Palm Jumeirah")).toBe("nakhlat-jumeirah");
+  });
+
+  it("keeps areas DLD registers separately from being conflated", () => {
+    // Each of these was previously a market-name alias of the other entry,
+    // which made two distinct DLD areas resolve to one community.
+    expect(slugOf("Hor Al Anz")).toBe("hor-al-anz");
+    expect(slugOf("Hor Al Anz East")).toBe("hor-al-anz-east");
+    expect(slugOf("Umm Hurair Second")).toBe("umm-hurair-second");
+    expect(slugOf("Oud Metha")).toBe("oud-metha");
+    expect(slugOf("Rega Al Buteen")).toBe("rega-al-buteen");
   });
 });
 

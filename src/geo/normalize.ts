@@ -90,6 +90,21 @@ const TRANSLITERATION_VARIANTS: Readonly<Record<string, string>> = {
   marsa: "marsa",
   nakhlat: "nakhlat", nakhlah: "nakhlat",
   qouz: "quoz",
+  // Spellings DLD itself uses in its areawise register, which differ from the
+  // forms used elsewhere in its own publications. Discovered by reconciling
+  // against the live register: without these, "Al Goze First" and "Al Quoz
+  // First" are two different places and the registry grows duplicates.
+  goze: "quoz",
+  muhaisanah: "muhaisnah", muhaisnah: "muhaisnah",
+  shiba: "sheba", sheba: "sheba",
+  saffa: "safa", safa: "safa",
+  jadaf: "jaddaf", jaddaf: "jaddaf",
+  thanayah: "thanyah",
+  suqaim: "suqeim", suqeim: "suqeim",
+  barshaa: "barsha", barsha: "barsha",
+  // American vs British spelling; DLD uses both across its systems.
+  center: "centre", centre: "centre",
+  rega: "rigga", rigga: "rigga",
   murqabat: "muraqqabat", muraqabat: "muraqqabat",
   warsan: "warsan", wersan: "warsan",
   sufouh: "sufouh", safouh: "sufouh",
