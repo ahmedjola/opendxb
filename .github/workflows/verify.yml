@@ -1,0 +1,28 @@
+# Verify DLD's areawise transaction API works from a plain fetch.
+#
+# Capture showed the endpoints answering 200 inside a browser session. Two
+# things remain unproven: whether they work without the browser's headers and
+# referer, and what the records actually contain. The field names are the one
+# thing the adapters could never guess.
+name: Verify DLD API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: node scripts/verify-dld-api.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verify
+          path: verify
+          if-no-files-found: ignore
