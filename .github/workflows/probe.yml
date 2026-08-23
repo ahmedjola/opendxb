@@ -5,6 +5,9 @@
 # runners can reach dubaipulse.gov.ae, so this workflow does the looking and
 # reports back the real URLs, content types and CSV headers.
 #
+# No credentials needed: it probes anonymously and reports what is publicly
+# reachable. Credentials, if set as secrets, are used but are not required.
+#
 # Run it from the Actions tab -> "Probe Dubai Pulse" -> "Run workflow".
 name: Probe Dubai Pulse
 

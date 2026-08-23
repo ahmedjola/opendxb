@@ -27,28 +27,58 @@ const CLIENT_SECRET = process.env.DUBAI_PULSE_CLIENT_SECRET ?? "";
  */
 const CANDIDATES = {
   "dld.transactions": [
-    "https://www.dubaipulse.gov.ae/dataset/dld_transactions-open/resource/transactions.csv",
-    "https://www.dubaipulse.gov.ae/dataset/dld-transactions/resource/dld_transactions-open.csv",
-    "https://gateway.dubailand.gov.ae/open-data/transactions",
+    "https://www.dubaipulse.gov.ae/data/dld-transactions/dld_transactions-open",
+    "https://www.dubaipulse.gov.ae/dataset/dld-transactions/dld_transactions-open",
+    "https://dubailand.gov.ae/en/open-data/real-estate-data/",
   ],
   "dld.rents": [
-    "https://www.dubaipulse.gov.ae/dataset/dld_rent_contracts-open/resource/rent_contracts.csv",
-    "https://www.dubaipulse.gov.ae/dataset/dld-rent-contracts/resource/dld_rent_contracts-open.csv",
-    "https://gateway.dubailand.gov.ae/open-data/rent-contracts",
+    "https://www.dubaipulse.gov.ae/data/dld-rent-contracts/dld_rent_contracts-open",
+    "https://www.dubaipulse.gov.ae/data/dld-registration/dld_rent_contracts-open",
+    "https://dubailand.gov.ae/en/open-data/real-estate-data/",
+  ],
+  "dld.units": [
+    "https://www.dubaipulse.gov.ae/data/dld-registration/dld_units-open",
+  ],
+  "dld.developers": [
+    "https://www.dubaipulse.gov.ae/data/dld-registration/dld_developers-open",
   ],
   "khda.schools": [
-    "https://www.dubaipulse.gov.ae/dataset/khda-private-schools/resource/schools.csv",
-    "https://www.dubaipulse.gov.ae/dataset/khda_private_schools-open/resource/schools.csv",
+    "https://www.dubaipulse.gov.ae/data/khda-private-schools/khda_private_schools-open",
+    "https://www.dubaipulse.gov.ae/data/khda/khda_schools-open",
   ],
   "dha.facilities": [
-    "https://www.dubaipulse.gov.ae/dataset/dha-health-facilities/resource/facilities.csv",
-    "https://www.dubaipulse.gov.ae/dataset/dha_facilities-open/resource/facilities.csv",
+    "https://www.dubaipulse.gov.ae/data/dha-health-facilities/dha_health_facilities-open",
+    "https://www.dubaipulse.gov.ae/data/dha/dha_facilities-open",
   ],
   "rta.stations": [
-    "https://www.dubaipulse.gov.ae/dataset/rta-transport-stations/resource/stations.csv",
-    "https://www.dubaipulse.gov.ae/dataset/rta_stations-open/resource/stations.csv",
+    "https://www.dubaipulse.gov.ae/data/rta-public-transport/rta_stations-open",
+    "https://www.dubaipulse.gov.ae/data/rta/rta_stations-open",
   ],
 };
+
+/**
+ * Pull candidate data-file links out of an HTML page.
+ *
+ * Dubai Pulse dataset pages are HTML with the actual downloads linked from
+ * them, and the download URLs carry opaque UUIDs that cannot be guessed. So
+ * when a probe lands on HTML, the useful move is not to give up but to read
+ * the links off the page — that is precisely the information we are missing.
+ */
+function extractDataLinks(html, baseUrl) {
+  const links = new Set();
+  const hrefPattern = /(?:href|content|data-url)\s*=\s*["']([^"']+)["']/gi;
+  let match;
+  while ((match = hrefPattern.exec(html)) !== null) {
+    const href = match[1];
+    if (!/\.(csv|json|xlsx?|kml|zip)(\?|$)|datafiles|\/download/i.test(href)) continue;
+    try {
+      links.add(new URL(href, baseUrl).toString());
+    } catch {
+      // Malformed href on the page; nothing we can do with it.
+    }
+  }
+  return [...links].slice(0, 25);
+}
 
 /** Token endpoints Pulse has been documented as using. */
 const TOKEN_URLS = [
@@ -102,7 +132,7 @@ async function getToken() {
  * by aborting the stream once enough bytes have arrived.
  */
 async function peek(url, token) {
-  const headers = { accept: "text/csv,*/*", range: "bytes=0-16383" };
+  const headers = { accept: "text/csv,text/html,*/*", range: "bytes=0-262143" };
   if (token) headers.authorization = `Bearer ${token}`;
 
   const response = await fetch(url, { headers, redirect: "follow", signal: AbortSignal.timeout(60_000) });
@@ -117,7 +147,7 @@ async function peek(url, token) {
   const reader = response.body.getReader();
   const chunks = [];
   let received = 0;
-  while (received < 16384) {
+  while (received < 262144) {
     const { done, value } = await reader.read();
     if (done) break;
     chunks.push(value);
@@ -136,6 +166,7 @@ async function peek(url, token) {
     contentLength,
     header: lines[0] ?? "",
     sample: lines[1] ?? "",
+    raw: text,
   };
 }
 
@@ -158,16 +189,28 @@ for (const [sourceId, urls] of Object.entries(CANDIDATES)) {
       if (result.body) log(`     ${result.body.replace(/\s+/g, " ").slice(0, 160)}`);
       continue;
     }
-    // An HTML body means the portal served a login or landing page, not data.
+    // HTML is not a dead end: Dubai Pulse dataset pages are HTML, and the
+    // real download URLs — which carry unguessable UUIDs — are linked from
+    // them. Reading those links off the page is the whole point of probing.
     if (result.contentType.includes("html")) {
-      log(`  ⚠️  HTML (login or landing page, not data)  ${url}`);
+      const links = extractDataLinks(result.raw ?? "", url);
+      if (links.length > 0) {
+        log(`  📄 HTML page  ${url}`);
+        log(`     Found ${links.length} candidate data link(s):`);
+        for (const link of links) log(`       ${link}`);
+        report.push({ sourceId, pageUrl: url, ok: false, dataLinks: links });
+        found = true;
+        break;
+      }
+      log(`  ⚠️  HTML with no data links  ${url}`);
       continue;
     }
     log(`  ✅ WORKS  ${url}`);
     log(`     type: ${result.contentType}  size: ${result.contentLength}`);
     log(`\n     COLUMNS:\n     ${result.header}`);
     log(`\n     FIRST ROW:\n     ${result.sample}\n`);
-    report.push({ sourceId, url, ...result });
+    const { raw, ...withoutBody } = result;
+    report.push({ sourceId, url, ...withoutBody });
     found = true;
     break;
   }
