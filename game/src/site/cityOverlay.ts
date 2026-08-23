@@ -88,15 +88,19 @@ async function bootCity(): Promise<unknown> {
   const [
     { default: Phaser },
     { BootScene },
-    { DistrictScene },
+    { BackdropScene },
+    { CityScene },
     { HudScene },
+    { MapScene },
     { OfficeScene },
     { initTouchControls },
   ] = await Promise.all([
     import('phaser'),
     import('../scenes/BootScene'),
-    import('../scenes/DistrictScene'),
+    import('../scenes/BackdropScene'),
+    import('../scenes/CityScene'),
     import('../scenes/hud'),
+    import('../scenes/MapScene'),
     import('../scenes/OfficeScene'),
     import('../ui/touchControls'),
   ]);
@@ -112,7 +116,7 @@ async function bootCity(): Promise<unknown> {
     backgroundColor: '#0d0c0a',
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     physics: { default: 'arcade', arcade: { gravity: { x: 0, y: 0 }, debug: false } },
-    scene: [BootScene, DistrictScene, HudScene, OfficeScene],
+    scene: [BootScene, BackdropScene, CityScene, HudScene, MapScene, OfficeScene],
   });
 }
 

@@ -335,6 +335,6 @@ export class OfficeScene extends Phaser.Scene {
   private closeOffice(): void {
     virtualInput.releaseAll();
     this.scene.stop();
-    this.scene.resume('DistrictScene');
+    this.scene.resume('CityScene');
   }
 }

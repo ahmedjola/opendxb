@@ -10,6 +10,7 @@
  */
 import Phaser from 'phaser';
 import { readObjective, type Objective } from '../site/objective';
+import type { District } from '../world/districts';
 
 const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
 
@@ -219,6 +220,51 @@ export class HudScene extends Phaser.Scene {
   hidePrompt(): void {
     this.prompt?.setVisible(false);
     this.promptBox?.clear().setVisible(false);
+  }
+
+  /**
+   * Name the area the player has just walked into.
+   *
+   * A banner rather than a permanent label: on a city-length strip you need to
+   * know you have crossed a boundary, but a name pinned to the screen forever
+   * is just clutter once you have read it.
+   */
+  announceDistrict(district: District): void {
+    const { width } = this.scale;
+    const box = this.add.graphics().setDepth(110);
+    const name = this.add
+      .text(width / 2, 190, district.nameEn, {
+        fontFamily: MONO,
+        fontSize: '18px',
+        color: '#efe3d6',
+        fontStyle: 'bold',
+      })
+      .setOrigin(0.5, 0.5)
+      .setResolution(2)
+      .setDepth(111);
+    const arabic = this.add
+      .text(width / 2, 214, district.nameAr, {
+        fontFamily: MONO,
+        fontSize: '13px',
+        color: '#c9a876',
+      })
+      .setOrigin(0.5, 0.5)
+      .setResolution(2)
+      .setDepth(111);
+
+    const w = Math.max(name.width, arabic.width) + 48;
+    box.fillStyle(INK, 0.9).fillRect(width / 2 - w / 2, 172, w, 58);
+    box.fillStyle(ACCENT, 1).fillRect(width / 2 - w / 2, 172, w, 3);
+    box.fillStyle(ACCENT, 1).fillRect(width / 2 - w / 2, 227, w, 3);
+
+    const parts = [box, name, arabic];
+    this.tweens.add({
+      targets: parts,
+      alpha: 0,
+      delay: 1600,
+      duration: 600,
+      onComplete: () => parts.forEach((part) => part.destroy()),
+    });
   }
 
   /** Answer ids on the current step, so the district can flag the right door. */
