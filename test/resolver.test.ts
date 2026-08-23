@@ -41,6 +41,20 @@ describe("registry", () => {
     }
   });
 
+  it("states both identifier keys explicitly, so unsourced is visible", () => {
+    // An absent key and an explicit null behave identically through the
+    // loader, which is exactly why the file itself must be unambiguous:
+    // reading it should show which areas we could not source, not hide them.
+    const raw = JSON.parse(
+      readFileSync(new URL("../data/communities.json", import.meta.url), "utf8"),
+    ) as { communities: Array<Record<string, unknown>> };
+
+    for (const community of raw.communities) {
+      expect(community, `${community["slug"]} is missing communityNumber`).toHaveProperty("communityNumber");
+      expect(community, `${community["slug"]} is missing sectorNumber`).toHaveProperty("sectorNumber");
+    }
+  });
+
   it("gives every official id to at most one community", () => {
     // Two communities sharing a DLD areaId means the registry is conflating
     // distinct places, and every join for both would be wrong.

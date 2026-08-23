@@ -162,6 +162,17 @@ for (const area of [...areas.values()].sort((a, b) => a.areaId - b.areaId)) {
   added.push(entry);
 }
 
+// Normalise shape before writing: every entry carries both identifier keys
+// explicitly, null when unsourced. An absent key and an explicit null are the
+// same to the loader, but only the explicit form makes "we could not source
+// this" visible to someone reading the file.
+for (const community of registry.communities) {
+  if (typeof community.communityNumber !== "number") community.communityNumber = null;
+  if (typeof community.sectorNumber !== "number") community.sectorNumber = null;
+  community.marketNames ??= [];
+  community.marketNamesAr ??= [];
+}
+
 registry.communities.sort((a, b) => a.slug.localeCompare(b.slug));
 registry.version = "0.2.0";
 registry.about =
@@ -180,6 +191,7 @@ console.log(`Official ids assigned:     ${assigned.length}`);
 console.log(`New communities added:     ${added.length}`);
 console.log(`Registry total:            ${registry.communities.length}`);
 console.log(`Fuzzy — needs review:      ${needsReview.length}`);
+console.log(`Left unsourced:            ${registry.communities.filter((c) => c.communityNumber === null).length}`);
 console.log(`Conflicts:                 ${conflicts.length}`);
 
 if (added.length) {
