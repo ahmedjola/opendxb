@@ -110,7 +110,7 @@ describe("ingest", () => {
 
   it("rejects an unknown source id with the list of known ids", async () => {
     await expect(new OpenDXB({ store: new MemoryStore() }).ingest("nope.nope"))
-      .rejects.toThrow(/Known sources: dld\.transactions/);
+      .rejects.toThrow(/Known sources:.*dld\.transactions/);
   });
 });
 

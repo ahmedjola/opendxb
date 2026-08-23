@@ -24,7 +24,7 @@ export interface FetchContext {
  * authority is a matter of describing its columns rather than re-solving the
  * plumbing.
  */
-export interface Source<T extends DubaiRecord> {
+export interface Source<T extends DubaiRecord, TRow = Record<string, string>> {
   /** Stable dotted identifier, e.g. "dld.transactions". */
   readonly id: string;
   readonly authority: Authority;
@@ -41,10 +41,16 @@ export interface Source<T extends DubaiRecord> {
 
   /** Retrieve raw payload text from the authority. */
   fetchRaw(context: FetchContext): Promise<string>;
-  /** Split raw payload into untyped rows. */
-  parse(raw: string): Array<Record<string, string>>;
+  /**
+   * Split the raw payload into rows.
+   *
+   * Row shape is a source-level concern: CSV adapters yield string maps, JSON
+   * adapters yield their own parsed objects. The layer only cares that
+   * `normalize` understands whatever `parse` produced.
+   */
+  parse(raw: string): TRow[];
   /** Convert one raw row to a typed record, or null to skip it. */
-  normalize(row: Record<string, string>, context: NormalizeContext): T | null;
+  normalize(row: TRow, context: NormalizeContext): T | null;
 }
 
 /** Outcome of ingesting one source. */

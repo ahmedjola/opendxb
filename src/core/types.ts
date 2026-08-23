@@ -94,3 +94,50 @@ export interface TransitStation extends DubaiRecord {
 /** Union of everything the layer stores. */
 export type AnyRecord =
   | PropertyTransaction | RentalContract | School | HealthFacility | TransitStation;
+
+/**
+ * Per-area transaction totals for a period, from DLD's areawise API.
+ *
+ * This is aggregate rather than row-level: DLD's public gateway reports totals
+ * per area per period, not individual registrations. Less granular than the
+ * full transaction register, but obtainable without credentials and without a
+ * UAE IP, which the register is not — see docs/ACCESS-FINDINGS.md.
+ *
+ * It also carries something the register's CSV exports do not: DLD's own
+ * `areaId` alongside both name forms. That is the authoritative identifier
+ * this project otherwise refuses to assert.
+ */
+export interface AreaTransactionSummary extends DubaiRecord {
+  readonly id: string;
+  readonly kind: "sale" | "mortgage";
+  /** ISO date, inclusive. */
+  readonly periodFrom: string;
+  /** ISO date, inclusive. */
+  readonly periodTo: string;
+  /** DLD's official area identifier. */
+  readonly areaId: number;
+  readonly areaNameEn: string;
+  readonly areaNameAr: string;
+  /** Total registered value across the period, in AED. */
+  readonly totalWorthAed: number;
+  /** Number of transactions. */
+  readonly transactionCount: number;
+  /** Number of distinct properties involved. */
+  readonly propertyCount: number;
+  /** Transactions that were first sales (off-plan / developer sales). */
+  readonly firstSaleCount: number;
+  /** Mean value per transaction; null when the count is zero. */
+  readonly meanWorthAed: number | null;
+  readonly projects: readonly AreaProjectSummary[];
+}
+
+/** A project's contribution within an area summary. */
+export interface AreaProjectSummary {
+  readonly projectId: number;
+  readonly nameEn: string;
+  readonly nameAr: string;
+  readonly worthAed: number;
+  readonly transactionCount: number;
+  readonly propertyCount: number;
+  readonly firstSaleCount: number;
+}

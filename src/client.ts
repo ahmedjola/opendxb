@@ -12,6 +12,7 @@ import { NotIngestedError } from "./core/errors.js";
 import { describe, countBy, median, type Distribution } from "./core/stats.js";
 import type {
   DubaiRecord, PropertyTransaction, RentalContract, School, HealthFacility, TransitStation,
+  AreaTransactionSummary,
 } from "./core/types.js";
 
 export interface OpenDXBOptions {
@@ -225,6 +226,22 @@ export class OpenDXB {
     const all = await this.#require<HealthFacility>("dha.facilities");
     const slug = options.community ? this.#slug(options.community) : null;
     return slug ? all.filter((row) => row.communitySlug === slug) : all;
+  }
+
+  /**
+   * Area-level transaction totals from DLD's public gateway.
+   *
+   * The only property data obtainable without credentials or a UAE IP, so this
+   * is the query most installations can actually answer.
+   */
+  async areaTransactions(
+    options: { community?: string; kind?: "sale" | "mortgage" } = {},
+  ): Promise<AreaTransactionSummary[]> {
+    const sourceId = options.kind === "mortgage" ? "dld.areawise-mortgage" : "dld.areawise-sales";
+    const all = await this.#require<AreaTransactionSummary>(sourceId);
+    const slug = options.community ? this.#slug(options.community) : null;
+    const rows = slug ? all.filter((row) => row.communitySlug === slug) : all;
+    return [...rows].sort((a, b) => b.totalWorthAed - a.totalWorthAed);
   }
 
   /** RTA transit stations. */

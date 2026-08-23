@@ -1,5 +1,10 @@
 # Keep Dubai data fresh, automatically.
 #
+# The dld.areawise-* sources need no credentials and no UAE IP, so they run
+# everywhere. The rest depend on Dubai Pulse, which is geo-fenced to the UAE
+# and will fail from GitHub's runners — see docs/ACCESS-FINDINGS.md. Their
+# failure is expected and does not stop the ones that work.
+#
 # Runs nightly, downloads each source from Dubai Pulse, normalises it, joins
 # it to the canonical community registry, and publishes small per-community
 # aggregates back into the repo. The raw ingest is kept as a build artifact
@@ -44,7 +49,7 @@ jobs:
           # A source that fails must not stop the others: partial freshness
           # beats none, and the summary below reports what did not land.
           failed=0
-          for source in khda.schools dha.facilities rta.stations dld.transactions dld.rents; do
+          for source in dld.areawise-sales dld.areawise-mortgage khda.schools dha.facilities rta.stations dld.transactions dld.rents; do
             echo "::group::$source"
             if node dist/cli/index.js ingest "$source"; then
               echo "$source: ok"

@@ -43,4 +43,5 @@ export type { Distribution } from "./core/stats.js";
 export type {
   Authority, DubaiRecord, PropertyTransaction, RentalContract, School,
   HealthFacility, TransitStation, PropertyType, TransactionKind, KhdaRating,
+  AreaTransactionSummary, AreaProjectSummary,
 } from "./core/types.js";
