@@ -1,0 +1,36 @@
+# Discover what Dubai Pulse actually serves.
+#
+# The adapters in this repo were written without network access to Dubai
+# Pulse, so their dataset URLs and column names are assumptions. GitHub's
+# runners can reach dubaipulse.gov.ae, so this workflow does the looking and
+# reports back the real URLs, content types and CSV headers.
+#
+# Run it from the Actions tab -> "Probe Dubai Pulse" -> "Run workflow".
+name: Probe Dubai Pulse
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Probe endpoints and print real column names
+        env:
+          DUBAI_PULSE_CLIENT_ID: ${{ secrets.DUBAI_PULSE_CLIENT_ID }}
+          DUBAI_PULSE_CLIENT_SECRET: ${{ secrets.DUBAI_PULSE_CLIENT_SECRET }}
+        run: node scripts/probe.mjs
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-report
+          path: probe-report.json
+          if-no-files-found: ignore

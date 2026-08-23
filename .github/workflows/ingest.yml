@@ -1,0 +1,89 @@
+# Keep Dubai data fresh, automatically.
+#
+# Runs nightly, downloads each source from Dubai Pulse, normalises it, joins
+# it to the canonical community registry, and publishes small per-community
+# aggregates back into the repo. The raw ingest is kept as a build artifact
+# rather than committed, because DLD's full history is far too large for git.
+#
+# Nothing here needs a human once the two repository secrets are set.
+name: Ingest Dubai open data
+
+on:
+  schedule:
+    # 03:00 Dubai time (UTC+4) — outside Pulse's busiest hours.
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+# Only one ingest at a time; a second would fight the first over the commit.
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Ingest each source
+        env:
+          DUBAI_PULSE_CLIENT_ID: ${{ secrets.DUBAI_PULSE_CLIENT_ID }}
+          DUBAI_PULSE_CLIENT_SECRET: ${{ secrets.DUBAI_PULSE_CLIENT_SECRET }}
+          OPENDXB_DATA_DIR: ${{ github.workspace }}/.ingest
+        run: |
+          # A source that fails must not stop the others: partial freshness
+          # beats none, and the summary below reports what did not land.
+          failed=0
+          for source in khda.schools dha.facilities rta.stations dld.transactions dld.rents; do
+            echo "::group::$source"
+            if node dist/cli/index.js ingest "$source"; then
+              echo "$source: ok"
+            else
+              echo "$source: FAILED"
+              failed=$((failed+1))
+            fi
+            echo "::endgroup::"
+          done
+          echo "sources_failed=$failed" >> "$GITHUB_ENV"
+
+      - name: Build per-community aggregates
+        env:
+          OPENDXB_DATA_DIR: ${{ github.workspace }}/.ingest
+        run: node scripts/build-profiles.mjs
+
+      - name: Commit refreshed aggregates
+        run: |
+          git config user.name  "opendxb-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/profiles
+          if git diff --cached --quiet; then
+            echo "No change in aggregates; nothing to commit."
+          else
+            git commit -m "data: refresh community aggregates ($(date -u +%Y-%m-%d))"
+            git push
+          fi
+
+      - name: Keep the raw ingest as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-ingest
+          path: .ingest
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Fail the run if any source did not land
+        if: env.sources_failed != '0'
+        run: |
+          echo "::error::${{ env.sources_failed }} source(s) failed to ingest."
+          exit 1
