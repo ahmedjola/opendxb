@@ -1,5 +1,5 @@
 /**
- * Content types for opendxb.
+ * Content types for Landing in Dubai.
  *
  * IMPORTANT: answers are DATA. They are authored in `answers.json`, validated at
  * load time, and rendered verbatim. Nothing here generates, paraphrases or

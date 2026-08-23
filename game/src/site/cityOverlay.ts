@@ -10,6 +10,7 @@
  * site ships, and someone who only wants to read their visa steps should never
  * pay to download a game engine.
  */
+import { t } from './i18n';
 
 /** The element Phaser mounts its canvas into. */
 export const MOUNT_ID = 'city-mount';
@@ -27,12 +28,12 @@ export const TOUCHPAD_ID = 'city-touchpad';
 export function overlayMarkup(): string {
   return `
     <div class="city-bar">
-      <span class="mono city-bar-title">Walk the city</span>
-      <span class="city-bar-hint">
+      <span class="mono city-bar-title" data-i18n="overlay.title">Walk the city</span>
+      <span class="city-bar-hint" data-i18n="overlay.hint">
         Arrows or WASD to walk &middot; <kbd>E</kbd> at a door &middot; <kbd>Esc</kbd> to step back
-        &middot; <kbd>Tab</kbd> then <kbd>Enter</kbd> to leave
       </span>
-      <button type="button" class="btn city-close" id="city-close" data-variant="primary">
+      <button type="button" class="btn city-close" id="city-close" data-variant="primary"
+              data-i18n="overlay.close">
         Close
       </button>
     </div>
@@ -42,10 +43,13 @@ export function overlayMarkup(): string {
     </div>
 
     <p class="city-note">
-      <strong>Unofficial guide — every office in here is fictional.</strong>
-      Each answer still carries the official source it came from.
-      Prefer to read? <a href="#journey" data-city-dismiss>Your path</a> and the
-      <a href="./guide.html">plain guide</a> hold exactly the same content.
+      <strong data-i18n="overlay.note">Unofficial guide — every office in here is fictional.</strong>
+      <span data-i18n="overlay.noteMore">Each answer still carries the official source it came from.</span>
+      <span data-i18n="overlay.readInstead">Prefer to read?</span>
+      <a href="#journey" data-city-dismiss data-i18n="overlay.yourPath">Your path</a>
+      <span data-i18n="overlay.and">and the</span>
+      <a href="./guide.html" data-i18n="overlay.plainGuide">plain guide</a>
+      <span data-i18n="overlay.sameContent">hold exactly the same content.</span>
     </p>
 
     <div class="touchpad" id="${TOUCHPAD_ID}" data-visible="false">
@@ -73,15 +77,32 @@ export function overlayMarkup(): string {
 export function bootFailureMarkup(): string {
   return `
     <p class="city-error">
-      The city could not start in this browser. Nothing is lost — every answer it
-      contains is also written out on <a href="#journey" data-city-dismiss>your path</a>
-      and in the <a href="./guide.html">plain guide</a>.
+      ${t('overlay.failed')}
+      <a href="#journey" data-city-dismiss>${t('overlay.yourPath')}</a>
+      <a href="./guide.html">${t('overlay.plainGuide')}</a>
     </p>
   `;
 }
 
 /** Resolved once and reused. Booting Phaser twice would leak a second canvas. */
 let gamePromise: Promise<unknown> | null = null;
+
+/** The running game, so the overlay can ask what the player is looking at. */
+let game: { scene: { isActive(key: string): boolean } } | null = null;
+
+/**
+ * True when a scene above the street has the screen.
+ *
+ * Escape belongs to that scene — it steps back out of an office or closes the
+ * map — and must not also close the whole city out from under it.
+ */
+function cityIsBusy(): boolean {
+  try {
+    return Boolean(game?.scene.isActive('OfficeScene') || game?.scene.isActive('MapScene'));
+  } catch {
+    return false;
+  }
+}
 
 /** Import and boot Phaser. Deliberately not at module scope — see the header. */
 async function bootCity(): Promise<unknown> {
@@ -94,6 +115,7 @@ async function bootCity(): Promise<unknown> {
     { MapScene },
     { OfficeScene },
     { initTouchControls },
+    { awaitFonts },
   ] = await Promise.all([
     import('phaser'),
     import('../scenes/BootScene'),
@@ -103,11 +125,15 @@ async function bootCity(): Promise<unknown> {
     import('../scenes/MapScene'),
     import('../scenes/OfficeScene'),
     import('../ui/touchControls'),
+    import('../scenes/fonts'),
   ]);
 
   initTouchControls(document.getElementById(TOUCHPAD_ID));
+  // Canvas text bakes whatever font is resolved at draw time and never
+  // repaints, so the Arabic face has to be here before the first frame.
+  await awaitFonts();
 
-  return new Phaser.Game({
+  const instance = new Phaser.Game({
     type: Phaser.AUTO,
     parent: MOUNT_ID,
     width: 640,
@@ -118,6 +144,8 @@ async function bootCity(): Promise<unknown> {
     physics: { default: 'arcade', arcade: { gravity: { x: 0, y: 0 }, debug: false } },
     scene: [BootScene, BackdropScene, CityScene, HudScene, MapScene, OfficeScene],
   });
+  game = instance as unknown as { scene: { isActive(key: string): boolean } };
+  return instance;
 }
 
 /**
@@ -180,10 +208,12 @@ export function initCityOverlay(): void {
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || overlay.hidden) return;
-    // Escape belongs to the game: inside an office it means "step back out".
-    // It closes the overlay only from the Close button, which is the first stop
-    // in the overlay's tab order and is named in the bar.
-    if (document.activeElement === closeButton) close();
+    // Escape means "back one level". Inside an office or the map that is the
+    // game's job, so it is left alone; standing on the street there is nothing
+    // further back than the city itself, so it closes the overlay. Telling the
+    // player to press Tab and then Enter to leave was backwards.
+    if (cityIsBusy()) return;
+    close();
   });
 
   // Any control anywhere on the page can open it.

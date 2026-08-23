@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
 import {
-  DISCLAIMER,
   getAnswersForOffice,
   getOffice,
   hasRealSource,
@@ -14,8 +13,10 @@ import {
   UP_CODES,
 } from '../ui/keyLatch';
 import { virtualInput } from '../ui/touchControls';
+import { ARABIC, MONO, arabicSize } from './fonts';
+import { getLang, t as tr } from '../site/i18n';
 
-const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
+
 const PANEL_X = 20;
 // The interior needs real room: at 116 the wall, windows, desk, title and
 // blurb were all fighting over 92 pixels and overlapping each other.
@@ -68,8 +69,8 @@ export class OfficeScene extends Phaser.Scene {
       .setStrokeStyle(2, 0x4a463c);
 
     this.add
-      .text(width / 2, height - 18, DISCLAIMER, {
-        fontFamily: MONO,
+      .text(width / 2, height - 18, tr('notice.title'), {
+        fontFamily: getLang() === 'ar' ? ARABIC : MONO,
         fontSize: '11px',
         color: '#ffe9a8',
       })
@@ -125,17 +126,17 @@ export class OfficeScene extends Phaser.Scene {
     this.add.image(cx + 150, 132, 'planter').setOrigin(0.5, 1);
 
     this.add
-      .text(cx, 46, `${this.office.nameEn}  ·  fictional office`, {
-        fontFamily: MONO,
-        fontSize: '14px',
+      .text(cx, 46, `${officeName(this.office)}  ·  ${tr('office.fictional')}`, {
+        fontFamily: getLang() === 'ar' ? ARABIC : MONO,
+        fontSize: getLang() === 'ar' ? arabicSize(14) : '14px',
         color: '#ffffff',
       })
       .setOrigin(0.5, 0.5)
       .setResolution(2);
     this.add
-      .text(cx, 64, this.office.blurbEn, {
-        fontFamily: MONO,
-        fontSize: '11px',
+      .text(cx, 64, officeBlurb(this.office), {
+        fontFamily: getLang() === 'ar' ? ARABIC : MONO,
+        fontSize: getLang() === 'ar' ? arabicSize(11) : '11px',
         color: '#b3ac9e',
       })
       .setOrigin(0.5, 0.5)
@@ -154,9 +155,10 @@ export class OfficeScene extends Phaser.Scene {
     colour: string,
     wrapWidth?: number,
   ): Phaser.GameObjects.Text {
+    const arabic = getLang() === 'ar';
     const style: Phaser.Types.GameObjects.Text.TextStyle = {
-      fontFamily: MONO,
-      fontSize: `${size}px`,
+      fontFamily: arabic ? ARABIC : MONO,
+      fontSize: arabic ? arabicSize(size) : `${size}px`,
       color: colour,
     };
     if (wrapWidth) style.wordWrap = { width: wrapWidth, useAdvancedWrap: true };
@@ -198,7 +200,7 @@ export class OfficeScene extends Phaser.Scene {
       const label = this.text(
         PANEL_X + 22,
         y,
-        `${isSelected ? '>' : ' '} ${answer.questionEn}`,
+        `${isSelected ? '>' : ' '} ${question(answer)}`,
         12,
         isSelected ? '#ffffff' : '#cfc8ba',
         wrap,
@@ -251,7 +253,7 @@ export class OfficeScene extends Phaser.Scene {
     const wrap = width - PANEL_X * 2 - 40;
     let y = PANEL_TOP + 12;
 
-    y += this.text(PANEL_X + 16, y, answer.questionEn, 13, '#ffffff', wrap).height + 8;
+    y += this.text(PANEL_X + 16, y, question(answer), 13, '#ffffff', wrap).height + 8;
 
     if (!hasRealSource(answer)) {
       const flag = this.add
@@ -263,13 +265,13 @@ export class OfficeScene extends Phaser.Scene {
       y += 26;
     }
 
-    y += this.text(PANEL_X + 16, y, answer.answerEn, 12, '#e6e0d4', wrap).height + 12;
+    y += this.text(PANEL_X + 16, y, body(answer), 12, '#e6e0d4', wrap).height + 12;
 
     const sourceLine = hasRealSource(answer)
-      ? `Source: ${answer.sourceEntity}\n${answer.sourceUrl}`
-      : `Source: ${answer.sourceUrl} — no source link attached yet (${answer.sourceEntity})`;
+      ? `${tr('answer.source')}${answer.sourceEntity}\n${answer.sourceUrl}`
+      : `${tr('answer.noSource')} (${answer.sourceEntity})`;
     y += this.text(PANEL_X + 16, y, sourceLine, 11, '#8fd0e8', wrap).height + 4;
-    this.text(PANEL_X + 16, y, `Checked on: ${answer.checkedOn}`, 11, '#b3ac9e', wrap);
+    this.text(PANEL_X + 16, y, tr('answer.checked', { date: answer.checkedOn }), 11, '#b3ac9e', wrap);
 
     this.text(
       PANEL_X + 16,
@@ -285,7 +287,7 @@ export class OfficeScene extends Phaser.Scene {
     this.text(
       PANEL_X + 16,
       height - 54,
-      'Up/Down — choose   ·   Enter / A — read   ·   Esc / B — leave   ·   G — plain text version',
+      tr('office.keys'),
       10,
       '#8d8677',
     );
@@ -337,4 +339,28 @@ export class OfficeScene extends Phaser.Scene {
     this.scene.stop();
     this.scene.resume('CityScene');
   }
+}
+
+/** The office's name in whichever language the reader picked. */
+function officeName(office: Office): string {
+  return getLang() === 'ar' ? office.nameAr : office.nameEn;
+}
+
+/**
+ * The office's one-line description.
+ *
+ * There is no `blurbAr` in the content yet, so Arabic readers get the English
+ * line rather than a blank. It is marked, not hidden — see `office.blurbEn`
+ * in the string table.
+ */
+function officeBlurb(office: Office): string {
+  return office.blurbEn;
+}
+
+function question(answer: Answer): string {
+  return getLang() === 'ar' ? answer.questionAr : answer.questionEn;
+}
+
+function body(answer: Answer): string {
+  return getLang() === 'ar' ? answer.answerAr : answer.answerEn;
 }

@@ -1,5 +1,5 @@
 /**
- * opendxb — game entry point.
+ * Landing in Dubai — game entry point.
  *
  * An independent, unofficial guide. Every office in the district is fictional
  * and every answer shown is read verbatim from `src/content/answers.json`

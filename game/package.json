@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "opendxb — an independent, unofficial retro top-down guide to settling in Dubai.",
+  "description": "Landing in Dubai — an independent, unofficial guide to arriving and settling in Dubai.",
   "license": "MIT",
   "scripts": {
     "dev": "vite",

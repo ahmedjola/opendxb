@@ -106,6 +106,30 @@ function announce(message: string): void {
   live.textContent = message;
 }
 
+/**
+ * A checked date, written the way a person writes one.
+ *
+ * The raw ISO value reads like a debug field, and worse: inside an Arabic
+ * sentence the bidi algorithm reorders `2026-08-23` into `23-08-2026`, which is
+ * a different and wrong date. A formatted month name has nothing for it to
+ * reorder.
+ */
+function formatDate(iso: string): string {
+  const date = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return iso;
+  try {
+    return new Intl.DateTimeFormat(getLang() === 'ar' ? 'ar-AE' : 'en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+      numberingSystem: 'latn',
+    }).format(date);
+  } catch {
+    return iso;
+  }
+}
+
 /* ── content in the reader's language ───────────────────────────────────── */
 
 /**
@@ -162,12 +186,25 @@ function renderAnswer(answer: Answer): HTMLElement {
   } else {
     source.append(el('span', { class: 'source-missing' }, t('answer.noSource')));
   }
-  source.append(
-    el('span', { class: 'mono checked', dir: 'ltr' }, t('answer.checked', { date: answer.checkedOn })),
-  );
+  source.append(el('span', { class: 'mono checked' }, t('answer.checked', { date: formatDate(answer.checkedOn) })));
   article.append(source);
   return article;
 }
+
+/**
+ * The step marks, drawn rather than typed.
+ *
+ * `✓` and `🔒` were emoji: full-colour, vendor-specific, and completely out of
+ * place in a hand-built pixel design. These are square-edged, take their colour
+ * from the surrounding text, and look the same on every machine.
+ */
+const TICK_SVG =
+  '<svg viewBox="0 0 12 12" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+  '<path d="M1 6h2v2H1zM3 8h2v2H3zM5 6h2v2H5zM7 4h2v2H7zM9 2h2v2H9z"/></svg>';
+
+const LOCK_SVG =
+  '<svg viewBox="0 0 12 12" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+  '<path d="M4 2h4v2H4zM3 4h1v2H3zM8 4h1v2H8zM2 6h8v5H2z"/></svg>';
 
 /* ── journey ───────────────────────────────────────────────────────────── */
 
@@ -191,10 +228,10 @@ function stepNote(
       : t('journey.note.blocksRange', { from: blocked.from, to: blocked.to });
   }
   if (state === 'locked') {
-    const current = stepStates(path, completed).indexOf('current');
-    const needed = path.steps[current];
-    if (!needed) return t('journey.badge.locked');
-    return t('journey.note.locked', { n: current + 1, title: stepTitle(needed) });
+    // Deliberately silent. The blocking step already says what it blocks, and
+    // repeating the same sentence under all seven locked rows read as a loop
+    // nobody had looked at.
+    return null;
   }
   if (state === 'complete' && index === 0 && path.seedComplete.includes(path.steps[0]?.id ?? '')) {
     return t('journey.note.plane');
@@ -215,13 +252,11 @@ function renderStep(
 
   const item = el('li', { class: 'step', 'data-state': state, 'data-step': step.id });
 
-  item.append(
-    el(
-      'span',
-      { class: 'step-marker', 'aria-hidden': 'true' },
-      state === 'complete' ? '✓' : state === 'locked' ? '🔒' : String(number),
-    ),
-  );
+  const marker = el('span', { class: 'step-marker', 'data-state': state, 'aria-hidden': 'true' });
+  if (state === 'complete') marker.innerHTML = TICK_SVG;
+  else if (state === 'locked') marker.innerHTML = LOCK_SVG;
+  else marker.textContent = String(number);
+  item.append(marker);
 
   const head = el('div', { class: 'step-head' });
   head.append(
@@ -255,6 +290,7 @@ function renderStep(
       'data-action': 'expand',
       'data-step': step.id,
       'data-focus': `expand-${step.id}`,
+      'data-variant': state === 'locked' ? 'quiet' : undefined,
       'aria-expanded': isOpen ? 'true' : 'false',
       'aria-controls': panelId,
     },

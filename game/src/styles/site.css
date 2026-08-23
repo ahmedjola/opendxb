@@ -506,7 +506,8 @@ a:hover {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.85rem 1rem 0.85rem 3.5rem;
+  padding-block: 0.85rem;
+  padding-inline: 3.5rem 1rem;
 }
 @media (max-width: 34rem) {
   .step {
@@ -696,10 +697,10 @@ a:hover {
   display: inline-block;
 }
 .answer .source .checked {
-  font-family: var(--mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.05em;
-  color: var(--dim);
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
 }
 .answer .source-missing {
   color: var(--accent-light);
@@ -1120,4 +1121,91 @@ body.city-open {
 :root[dir="rtl"] .city-stage,
 :root[dir="rtl"] #city-mount {
   direction: ltr;
+}
+
+/* The scrim darkens the side the copy sits on. Under RTL the copy moves to the
+   other side, so a fixed 90deg gradient put the Arabic headline over the
+   brightest part of the sunset — the one thing the rule above exists to
+   prevent. Mirror it. */
+:root[dir="rtl"] .hero-scene::after {
+  background:
+    linear-gradient(
+      270deg,
+      rgb(18 14 22 / 0.92) 0%,
+      rgb(18 14 22 / 0.78) 30%,
+      rgb(18 14 22 / 0.3) 62%,
+      rgb(18 14 22 / 0) 88%
+    ),
+    linear-gradient(180deg, rgb(18 14 22 / 0.55) 0%, rgb(18 14 22 / 0) 30%);
+}
+
+/* Uppercasing does nothing to Arabic — the script has no case — so the rule
+   only advertises that it was never looked at. */
+:root[lang="ar"] .mono,
+:root[lang="ar"] .section-label,
+:root[lang="ar"] .step-badge {
+  text-transform: none;
+}
+
+/* The language switch is a primary control for half the audience. It was
+   below the project's own 44px tap target. */
+.lang-toggle {
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding-inline: 0.9rem;
+}
+
+/* Locked steps are a queue, not seven separate announcements: no note, no
+   button row, and quieter than the step you are actually on. */
+.step[data-state="locked"] {
+  padding-block: 0.6rem;
+  opacity: 0.72;
+}
+.step[data-state="locked"] .step-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* The current step is the entire reason for the page and was getting the same
+   box as everything else. */
+.step[data-state="current"] {
+  border-color: var(--accent);
+  background: linear-gradient(100deg, var(--raised), var(--panel));
+  box-shadow: 0 0 0 1px var(--accent-deep) inset;
+  padding-block: 1.15rem;
+}
+.step[data-state="current"] .step-title {
+  font-size: 1.1875rem;
+}
+
+.step-marker svg {
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Locked rows carry one quiet text control instead of a full button, so seven
+   of them in a row stop reading as seven separate calls to action. */
+.step[data-state="locked"] .step-actions {
+  margin-top: 0.25rem;
+}
+.step[data-state="locked"] .btn {
+  min-height: 1.85rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8125rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.step[data-state="locked"] .btn:hover {
+  color: var(--text);
+  border-color: transparent;
+}
+
+/* The provenance line reads left-to-right for the URL and the entity name, but
+   the sentence around it is in the reader's language — isolate only the parts
+   that are genuinely Latin. */
+.answer .source a {
+  unicode-bidi: isolate;
 }

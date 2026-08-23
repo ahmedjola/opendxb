@@ -13,11 +13,20 @@ import { CONFIRM_CODES, KeyLatch } from '../ui/keyLatch';
 import { virtualInput } from '../ui/touchControls';
 import { DISTRICTS, WORLD_TILES, type District } from '../world/districts';
 import { readObjective } from '../site/objective';
+import { ARABIC, MONO, arabicSize } from './fonts';
+import { getLang, t as tr } from '../site/i18n';
 
-const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
+
 const INK = 0x1b1420;
 const EDGE = 0x3a2c3f;
 const ACCENT = 0xf2a25c;
+
+/** Face and size for a string that could be in either language. See fonts.ts. */
+function ui(latinPx: number): { fontFamily: string; fontSize: string } {
+  return getLang() === 'ar'
+    ? { fontFamily: ARABIC, fontSize: arabicSize(latinPx) }
+    : { fontFamily: MONO, fontSize: `${latinPx}px` };
+}
 
 export class MapScene extends Phaser.Scene {
   private index = 0;
@@ -39,20 +48,11 @@ export class MapScene extends Phaser.Scene {
     this.add.rectangle(0, 0, width, height, 0x120e16, 0.96).setOrigin(0, 0);
 
     this.add
-      .text(width / 2, 26, 'DUBAI', {
-        fontFamily: MONO,
-        fontSize: '20px',
-        color: '#ffd9a0',
-        fontStyle: 'bold',
-      })
+      .text(width / 2, 26, tr('map.title'), { ...ui(20), color: '#ffd9a0', fontStyle: 'bold' })
       .setOrigin(0.5, 0.5)
       .setResolution(2);
     this.add
-      .text(width / 2, 48, 'a stylised strip, not a survey map · north-east to south-west', {
-        fontFamily: MONO,
-        fontSize: '10px',
-        color: '#8a7a8f',
-      })
+      .text(width / 2, 48, tr('map.subtitle'), { ...ui(10), color: '#8a7a8f' })
       .setOrigin(0.5, 0.5)
       .setResolution(2);
 
@@ -106,7 +106,8 @@ export class MapScene extends Phaser.Scene {
 
       const cell = this.add.graphics();
       cell.fillStyle(district.tint, selected ? 0.95 : 0.5).fillRect(x, stripY, w - 2, stripH);
-      cell.lineStyle(selected ? 3 : 1, selected ? ACCENT : EDGE, 1);
+      const stroke = selected ? ACCENT : isObjective ? 0xffd9a0 : EDGE;
+      cell.lineStyle(selected ? 3 : isObjective ? 2 : 1, stroke, 1);
       cell.strokeRect(x + 1, stripY + 1, w - 4, stripH - 2);
       this.layer.add(cell);
 
@@ -122,12 +123,11 @@ export class MapScene extends Phaser.Scene {
 
       // The name, not just an index: a numbered strip tells you nothing about
       // where you are choosing to go.
-      const short = district.nameEn.split(' ')[0] ?? district.nameEn;
+      const short = getLang() === 'ar' ? district.shortAr : district.shortEn;
       this.layer.add(
         this.add
           .text(x + w / 2, stripY + stripH / 2 - 7, short, {
-            fontFamily: MONO,
-            fontSize: '11px',
+            ...ui(11),
             color: selected ? '#120e16' : '#efe3d6',
             fontStyle: 'bold',
           })
@@ -139,7 +139,8 @@ export class MapScene extends Phaser.Scene {
           .text(x + w / 2, stripY + stripH / 2 + 10, String(index + 1), {
             fontFamily: MONO,
             fontSize: '10px',
-            color: selected ? '#3a2c3f' : '#8a7a8f',
+            // Was #8a7a8f on a half-alpha tint: 2.62:1, below the 3:1 floor.
+            color: selected ? '#241a2a' : '#efe3d6',
           })
           .setOrigin(0.5, 0.5)
           .setResolution(2),
@@ -158,9 +159,8 @@ export class MapScene extends Phaser.Scene {
 
     this.layer.add(
       this.add
-        .text(58, panelY + 16, district.nameEn, {
-          fontFamily: MONO,
-          fontSize: '17px',
+        .text(58, panelY + 16, getLang() === 'ar' ? district.nameAr : district.nameEn, {
+          ...ui(17),
           color: '#efe3d6',
           fontStyle: 'bold',
         })
@@ -168,9 +168,12 @@ export class MapScene extends Phaser.Scene {
     );
     this.layer.add(
       this.add
-        .text(58, panelY + 40, district.nameAr, {
-          fontFamily: MONO,
-          fontSize: '13px',
+        // The other language, as a subtitle — the one place a second script
+        // earns its space, because a place name is how you recognise it on a
+        // sign you are standing in front of.
+        .text(58, panelY + 40, getLang() === 'ar' ? district.nameEn : district.nameAr, {
+          fontFamily: getLang() === 'ar' ? MONO : ARABIC,
+          fontSize: getLang() === 'ar' ? '13px' : arabicSize(13),
           color: '#c9a876',
         })
         .setResolution(2),
@@ -198,15 +201,17 @@ export class MapScene extends Phaser.Scene {
 
     // What is actually here.
     const officeNames = district.offices
-      .map((id) => getOffice(id)?.nameEn)
+      .map((id) => (getLang() === 'ar' ? getOffice(id)?.nameAr : getOffice(id)?.nameEn))
       .filter((name): name is string => Boolean(name));
     this.layer.add(
       this.add
         .text(
           58,
           panelY + 96,
-          officeNames.length > 0 ? `Here: ${officeNames.join(' · ')}` : 'No desk in this area yet.',
-          { fontFamily: MONO, fontSize: '11px', color: '#4fb8ae' },
+          officeNames.length > 0
+            ? tr('map.here', { offices: officeNames.join(' · ') })
+            : tr('map.nothing'),
+          { ...ui(11), color: '#4fb8ae' },
         )
         .setResolution(2),
     );
@@ -214,11 +219,7 @@ export class MapScene extends Phaser.Scene {
     if (this.objectiveDistricts.has(district.id)) {
       this.layer.add(
         this.add
-          .text(58, panelY + 116, '★ your next step is here', {
-            fontFamily: MONO,
-            fontSize: '11px',
-            color: '#ffd9a0',
-          })
+          .text(58, panelY + 116, tr('map.objective'), { ...ui(11), color: '#ffd9a0' })
           .setResolution(2),
       );
     }
@@ -228,8 +229,8 @@ export class MapScene extends Phaser.Scene {
         .text(
           width / 2,
           height - 30,
-          'Left/Right — choose   ·   Enter / A — travel here   ·   Esc / B — back',
-          { fontFamily: MONO, fontSize: '11px', color: '#8a7a8f' },
+          tr('map.keys'),
+          { ...ui(11), color: '#8a7a8f' },
         )
         .setOrigin(0.5, 0.5)
         .setResolution(2),

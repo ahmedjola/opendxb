@@ -15,6 +15,14 @@ export interface District {
   id: string;
   nameEn: string;
   nameAr: string;
+  /**
+   * A short label for the map strip.
+   *
+   * Explicit rather than derived: taking the first word of the full name gave
+   * "Bur" for "Bur Dubai & Al Fahidi" and "Business" for "Business Bay & DIFC".
+   */
+  shortEn: string;
+  shortAr: string;
   /** Left edge, in tiles. */
   x: number;
   /** Width, in tiles. */
@@ -40,6 +48,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'deira',
     nameEn: 'Deira & the Creek',
     nameAr: 'ديرة والخور',
+    shortEn: 'Deira',
+    shortAr: 'ديرة',
     x: 0,
     width: 34,
     blurbEn: 'The old city. Souks, the abra crossing, and the oldest addresses in Dubai.',
@@ -51,6 +61,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'bur-dubai',
     nameEn: 'Bur Dubai & Al Fahidi',
     nameAr: 'بر دبي والفهيدي',
+    shortEn: 'Bur Dubai',
+    shortAr: 'بر دبي',
     x: 34,
     width: 30,
     blurbEn: 'Wind towers, the historical quarter, and the other bank of the Creek.',
@@ -62,6 +74,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'downtown',
     nameEn: 'Downtown',
     nameAr: 'وسط المدينة',
+    shortEn: 'Downtown',
+    shortAr: 'وسط المدينة',
     x: 64,
     width: 34,
     blurbEn: 'The Burj Khalifa, the fountain, and the address everyone recognises.',
@@ -73,6 +87,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'business-bay',
     nameEn: 'Business Bay & DIFC',
     nameAr: 'الخليج التجاري ومركز دبي المالي',
+    shortEn: 'Business Bay',
+    shortAr: 'الخليج التجاري',
     x: 98,
     width: 30,
     blurbEn: 'Offices, banks and the financial district. Where the paperwork gets signed.',
@@ -84,6 +100,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'jumeirah',
     nameEn: 'Jumeirah & the coast',
     nameAr: 'جميرا والساحل',
+    shortEn: 'Jumeirah',
+    shortAr: 'جميرا',
     x: 128,
     width: 32,
     blurbEn: 'The beach road, low villas, and the Burj Al Arab standing off it.',
@@ -95,6 +113,8 @@ export const DISTRICTS: readonly District[] = [
     id: 'marina',
     nameEn: 'Marina & JBR',
     nameAr: 'المارينا وجي بي آر',
+    shortEn: 'Marina',
+    shortAr: 'المارينا',
     x: 160,
     width: 34,
     blurbEn: 'Towers packed along the water. Where most new arrivals end up renting.',

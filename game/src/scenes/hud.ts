@@ -13,8 +13,20 @@ import { readObjective, type Objective } from '../site/objective';
 import { browserStorage } from '../site/progress';
 import { getLang, readLang, setLang, t } from '../site/i18n';
 import type { District } from '../world/districts';
+import { ARABIC, MONO, arabicSize } from './fonts';
 
-const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
+
+/**
+ * The face and size for a string that could be in either language.
+ *
+ * Arabic never gets MONO — see `fonts.ts` — and needs more vertical room at the
+ * same nominal size, so the two travel together rather than being tuned apart.
+ */
+function ui(latinPx: number): { fontFamily: string; fontSize: string } {
+  return getLang() === 'ar'
+    ? { fontFamily: ARABIC, fontSize: arabicSize(latinPx) }
+    : { fontFamily: MONO, fontSize: `${latinPx}px` };
+}
 
 /** Panel colours, matched to the site's palette so the two read as one thing. */
 const INK = 0x1b1420;
@@ -78,21 +90,14 @@ export class HudScene extends Phaser.Scene {
       .setCrop(0, 0, 16, 12); // head and shoulders only
 
     this.add
-      .text(64, 16, t('hud.player'), {
-        fontFamily: MONO,
-        fontSize: '11px',
-        color: '#ffd9a0',
-        fontStyle: 'bold',
-      })
+      .text(64, 16, t('hud.player'), { ...ui(11), color: '#ffd9a0', fontStyle: 'bold' })
       .setResolution(2)
       .setDepth(101);
 
     this.add
-      .text(64, 30, this.objective.label.toUpperCase(), {
-        fontFamily: MONO,
-        fontSize: '9px',
-        color: '#8a7a8f',
-      })
+      // Not uppercased: Arabic has no case, so the transform is a no-op there
+      // and only ever advertised that the rule was not thought about.
+      .text(64, 30, this.objective.label, { ...ui(9), color: '#8a7a8f' })
       .setResolution(2)
       .setDepth(101);
 
@@ -113,21 +118,19 @@ export class HudScene extends Phaser.Scene {
       .setDepth(101);
 
     /* ── the objective card, under it ────────────────────────────────────── */
-    panel(g, 8, 82, 202, 58);
-    g.fillStyle(ACCENT, 1).fillRect(8, 82, 4, 58); // accent spine
+    // Tall enough for a title that wraps to two lines: several step titles do,
+    // and at 58px they ran straight out through the bottom of the panel.
+    const CARD_H = 74;
+    panel(g, 8, 82, 202, CARD_H);
+    g.fillStyle(ACCENT, 1).fillRect(8, 82, 4, CARD_H); // accent spine
 
     this.add
-      .text(18, 88, t('hud.nextStep'), { fontFamily: MONO, fontSize: '9px', color: '#f2a25c' })
+      .text(18, 88, t('hud.nextStep'), { ...ui(9), color: '#f2a25c' })
       .setResolution(2)
       .setDepth(101);
 
     this.taskTitle = this.add
-      .text(18, 102, '', {
-        fontFamily: MONO,
-        fontSize: '11px',
-        color: '#efe3d6',
-        wordWrap: { width: 184 },
-      })
+      .text(18, 102, '', { ...ui(11), color: '#efe3d6', wordWrap: { width: 184 } })
       .setResolution(2)
       .setDepth(101);
 
@@ -136,19 +139,14 @@ export class HudScene extends Phaser.Scene {
     panel(g, width - 214, 8, 206, 34);
     this.add
       .text(width - 204, 14, t('hud.unofficial'), {
-        fontFamily: MONO,
-        fontSize: '10px',
+        ...ui(10),
         color: '#ffe9a8',
         fontStyle: 'bold',
       })
       .setResolution(2)
       .setDepth(101);
     this.add
-      .text(width - 204, 27, t('hud.fictional'), {
-        fontFamily: MONO,
-        fontSize: '9px',
-        color: '#8a7a8f',
-      })
+      .text(width - 204, 27, t('hud.fictional'), { ...ui(9), color: '#8a7a8f' })
       .setResolution(2)
       .setDepth(101);
 
@@ -179,12 +177,7 @@ export class HudScene extends Phaser.Scene {
     const { width, height } = this.scale;
     this.promptBox = this.add.graphics().setDepth(100).setVisible(false);
     this.prompt = this.add
-      .text(width / 2, height - 40, '', {
-        fontFamily: MONO,
-        fontSize: '12px',
-        color: '#efe3d6',
-        align: 'center',
-      })
+      .text(width / 2, height - 40, '', { ...ui(12), color: '#efe3d6', align: 'center' })
       .setOrigin(0.5, 0.5)
       .setResolution(2)
       .setDepth(101)
@@ -228,8 +221,8 @@ export class HudScene extends Phaser.Scene {
     const box = this.add.graphics().setDepth(110);
     const name = this.add
       .text(width / 2, 190, getLang() === 'ar' ? district.nameAr : district.nameEn, {
-        fontFamily: MONO,
-        fontSize: '18px',
+        fontFamily: getLang() === 'ar' ? ARABIC : MONO,
+        fontSize: getLang() === 'ar' ? arabicSize(18) : '18px',
         color: '#efe3d6',
         fontStyle: 'bold',
       })
@@ -238,8 +231,8 @@ export class HudScene extends Phaser.Scene {
       .setDepth(111);
     const arabic = this.add
       .text(width / 2, 214, getLang() === 'ar' ? district.nameEn : district.nameAr, {
-        fontFamily: MONO,
-        fontSize: '13px',
+        fontFamily: getLang() === 'ar' ? MONO : ARABIC,
+        fontSize: getLang() === 'ar' ? '13px' : arabicSize(13),
         color: '#c9a876',
       })
       .setOrigin(0.5, 0.5)
