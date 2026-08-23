@@ -55,6 +55,31 @@ Dubai Pulse's own documentation.
   yielded only navigation links when crawled, so the actual downloads are
   rendered client-side or sit behind a form — worth a headless-browser pass.
 
+## The other authorities: nothing found
+
+The DLD gateway was found by driving a browser and watching what the authority's own
+pages fetch. The same method was run against every other reachable authority — KHDA
+(home, education directory, ratings, open data), Dubai Municipality (open data, Makani,
+GeoHub), RTA open data and dubai.ae — including typing into search inputs and clicking
+through tabs, because a directory page fetches nothing until a search actually runs.
+
+**Result: four network calls across nine pages, none of them government data.** One was
+a third-party search widget (`api.addsearch.com`), one a vendor licence check
+(`mindrockets.co`). Dubai Municipality's GeoHub timed out at 60s. RTA and dubai.ae made
+no data calls at all.
+
+So DLD's gateway appears to be unusual rather than typical. The other authorities either
+render server-side, sit behind Dubai Pulse, or publish nothing programmatically reachable.
+
+**What this means for a second dataset.** Live ingestion is not available for KHDA the way
+it is for DLD. But KHDA school ratings change roughly once a year, so a live feed was never
+the right shape: a dated snapshot, committed and versioned, is both achievable and honest.
+That is the recommended path, and it needs someone inside the UAE to fetch the file once.
+
+The investigation scripts that established all of the above have been removed now that
+their findings are recorded here. They were one-off tools, and keeping them would imply
+they are maintained.
+
 ## Recommended order
 
 1. Read Dubai Pulse's API documentation from inside the UAE and capture the
