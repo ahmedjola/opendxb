@@ -48,7 +48,11 @@ export function overlayMarkup(): string {
       <span data-i18n="overlay.readInstead">Prefer to read?</span>
       <a href="#journey" data-city-dismiss data-i18n="overlay.yourPath">Your path</a>
       <span data-i18n="overlay.and">and the</span>
-      <a href="./guide.html" data-i18n="overlay.plainGuide">plain guide</a>
+      ${
+        __SINGLE_FILE__
+          ? ''
+          : `<a href="./guide.html" data-i18n="overlay.plainGuide">plain guide</a>`
+      }
       <span data-i18n="overlay.sameContent">hold exactly the same content.</span>
     </p>
 
@@ -79,7 +83,7 @@ export function bootFailureMarkup(): string {
     <p class="city-error">
       ${t('overlay.failed')}
       <a href="#journey" data-city-dismiss>${t('overlay.yourPath')}</a>
-      <a href="./guide.html">${t('overlay.plainGuide')}</a>
+      ${__SINGLE_FILE__ ? '' : `<a href="./guide.html">${t('overlay.plainGuide')}</a>`}
     </p>
   `;
 }
@@ -87,8 +91,79 @@ export function bootFailureMarkup(): string {
 /** Resolved once and reused. Booting Phaser twice would leak a second canvas. */
 let gamePromise: Promise<unknown> | null = null;
 
-/** The running game, so the overlay can ask what the player is looking at. */
-let game: { scene: { isActive(key: string): boolean } } | null = null;
+/**
+ * The running game, so the overlay can suspend it and ask what has the screen.
+ *
+ * Typed structurally rather than as `Phaser.Game` so this module still costs
+ * nothing to import — pulling the Phaser types in here would drag the engine
+ * into the site's main bundle.
+ */
+interface RunningGame {
+  scene: {
+    isActive(key: string): boolean;
+    pause(key: string): unknown;
+    resume(key: string): unknown;
+    sleep(key: string): unknown;
+    wake(key: string): unknown;
+  };
+  input: {
+    keyboard: {
+      enabled: boolean;
+      clearCaptures(): unknown;
+      addCapture(keys: string[]): unknown;
+    } | null;
+  };
+}
+
+let game: RunningGame | null = null;
+
+/** The keys Phaser swallows so the page does not scroll under the city. */
+const CAPTURED = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'SPACE'];
+
+/** Every scene that has to stop when the city is put away. */
+const SCENES = ['CityScene', 'HudScene', 'MapScene', 'OfficeScene', 'BackdropScene'];
+
+/**
+ * Hand the keyboard back to the page, and stop the world.
+ *
+ * Hiding the overlay is not enough on either count. Phaser's key capture is
+ * registered on the game, not the canvas, so it outlived the overlay: after the
+ * city had been opened once, Space stopped activating any button on the page
+ * and the arrow keys stopped scrolling it — for the rest of the session. And
+ * with the scenes still running, those swallowed keys were driving the hidden
+ * game, so re-opening could drop the player inside an office they never walked
+ * into.
+ */
+function suspendGame(): void {
+  if (!game) return;
+  try {
+    const keyboard = game.input.keyboard;
+    if (keyboard) {
+      keyboard.clearCaptures();
+      keyboard.enabled = false;
+    }
+    for (const key of SCENES) {
+      if (game.scene.isActive(key)) game.scene.pause(key);
+    }
+  } catch {
+    // A half-booted game is not worth throwing over; the overlay still closes.
+  }
+}
+
+/** Give it back. Also the moment to re-read progress the page may have changed. */
+function resumeGame(): void {
+  if (!game) return;
+  try {
+    const keyboard = game.input.keyboard;
+    if (keyboard) {
+      keyboard.enabled = true;
+      keyboard.addCapture(CAPTURED);
+    }
+    for (const key of SCENES) game.scene.resume(key);
+  } catch {
+    // Same as above.
+  }
+}
 
 /**
  * True when a scene above the street has the screen.
@@ -144,7 +219,7 @@ async function bootCity(): Promise<unknown> {
     physics: { default: 'arcade', arcade: { gravity: { x: 0, y: 0 }, debug: false } },
     scene: [BootScene, BackdropScene, CityScene, HudScene, MapScene, OfficeScene],
   });
-  game = instance as unknown as { scene: { isActive(key: string): boolean } };
+  game = instance as unknown as RunningGame;
   return instance;
 }
 
@@ -178,8 +253,10 @@ export function initCityOverlay(): void {
     if (overlay.hidden) return;
     overlay.hidden = true;
     document.body.classList.remove('city-open');
-    // The game keeps running behind the overlay on purpose: re-booting Phaser on
-    // every open is slow, and it would forget where the player was standing.
+    // Paused, not destroyed: re-booting Phaser on every open is slow and would
+    // forget where the player was standing. But it must stop consuming keys.
+    suspendGame();
+    setPageInert(false);
     opener?.focus();
   }
 
@@ -187,7 +264,11 @@ export function initCityOverlay(): void {
     opener = trigger;
     overlay.hidden = false;
     document.body.classList.add('city-open');
+    setPageInert(true);
     overlay.focus();
+    resumeGame();
+    // Progress may have moved on the page while the city was put away.
+    refreshHud();
 
     gamePromise ??= bootCity().catch((error: unknown) => {
       const mount = document.getElementById(MOUNT_ID);
@@ -198,6 +279,34 @@ export function initCityOverlay(): void {
       console.error('The city failed to boot:', error);
       return null;
     });
+  }
+
+  /**
+   * Everything except the overlay is unreachable while it is open.
+   *
+   * The overlay declares `role="dialog" aria-modal="true"`, which is a promise
+   * that the rest of the page is not there. Without this, Tab walked straight
+   * out of it onto controls the overlay completely covers, with no visible
+   * focus anywhere on screen.
+   */
+  function setPageInert(on: boolean): void {
+    for (const node of Array.from(document.body.children)) {
+      if (node === overlay) continue;
+      if (on) node.setAttribute('inert', '');
+      else node.removeAttribute('inert');
+    }
+  }
+
+  /** Ask the HUD to re-read the page's progress, if it is up and running. */
+  function refreshHud(): void {
+    try {
+      const hud = (game as unknown as { scene?: { getScene?(k: string): unknown } } | null)?.scene;
+      const scene = hud?.getScene?.('HudScene') as { refresh?(): void } | undefined;
+      scene?.refresh?.();
+    } catch {
+      // The HUD may not exist yet on the very first open; it reads progress in
+      // its own create() anyway.
+    }
   }
 
   closeButton?.addEventListener('click', close);

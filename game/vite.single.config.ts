@@ -19,6 +19,9 @@ const here = (path: string) => fileURLToPath(new URL(path, import.meta.url));
  * stays as-is for GitHub Pages, where separate assets are correct.
  */
 export default defineConfig({
+  // The single-file targets ship one page, so links to sibling pages are dead
+  // there. Code reads this rather than guessing from the URL.
+  define: { __SINGLE_FILE__: true },
   base: './',
   plugins: [viteSingleFile({ removeViteModuleLoader: true })],
   build: {

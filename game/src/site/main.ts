@@ -611,11 +611,32 @@ langToggle?.addEventListener('click', () => {
   langToggle.focus();
 });
 
+/**
+ * Take down links to pages this build does not contain.
+ *
+ * The one-file target is a single HTML document: `guide.html` is not beside it,
+ * so every link to it 404s — including the one advertised as this project's
+ * accessibility guarantee. Rather than ship a dead link, the cards are removed
+ * and the guide's own content stays reachable through the answers already on
+ * this page.
+ */
+function pruneMissingPages(): void {
+  if (!__SINGLE_FILE__) return;
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href$="guide.html"]')) {
+    // Whole cards go; an inline mention loses only its link.
+    const card = link.closest('.elsewhere-card');
+    if (card) card.remove();
+    else link.replaceWith(...link.childNodes);
+  }
+  for (const note of document.querySelectorAll('noscript')) note.remove();
+}
+
 /* ── boot ──────────────────────────────────────────────────────────────── */
 
 if (heroScene) heroScene.innerHTML = heroSvg();
 // Mounts hidden and loads nothing until someone asks for it.
 initCityOverlay();
+pruneMissingPages();
 if (!storage) storageNote?.removeAttribute('hidden');
 applyLang(readLang(storage as Pick<Storage, 'getItem'> | null), false);
 if (progress.status) selectStatus(progress.status, false);

@@ -13,7 +13,7 @@ import {
   UP_CODES,
 } from '../ui/keyLatch';
 import { virtualInput } from '../ui/touchControls';
-import { ARABIC, MONO, arabicSize } from './fonts';
+import { ARABIC, MONO, arabicSize, openPlainGuide } from './fonts';
 import { getLang, t as tr } from '../site/i18n';
 
 
@@ -309,7 +309,7 @@ export class OfficeScene extends Phaser.Scene {
     const cancel = this.latch.pressed(...CANCEL_CODES) || virtualInput.consumeCancel();
     this.latch.clear();
 
-    if (openGuide) window.open('./guide.html', '_blank', 'noopener');
+    if (openGuide) openPlainGuide();
 
     if (this.mode === 'list') {
       if (this.answers.length > 0 && up) {

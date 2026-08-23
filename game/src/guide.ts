@@ -93,16 +93,27 @@ function renderOffice(office: Office, answers: Answer[]): HTMLElement {
 }
 
 export function renderGuide(root: HTMLElement, nav: HTMLElement): void {
+  // Replace, do not append: this runs again on every language switch, and
+  // appending left the previous language's articles stacked above the new ones
+  // — 18 answers became 36, the first half of them in the wrong language.
+  root.replaceChildren();
+  nav.replaceChildren();
+
   const index = officeIndex();
 
   const list = el('ol');
   for (const { office, answers } of index) {
-    const count = answers.length === 1 ? '1 question' : `${answers.length} questions`;
+    const count =
+      answers.length === 1 ? t('city.oneQuestion') : t('city.questions', { n: answers.length });
     list.append(
       el(
         'li',
         {},
-        el('a', { href: `#office-${office.id}` }, office.nameEn),
+        el(
+          'a',
+          { href: `#office-${office.id}` },
+          getLang() === 'ar' ? office.nameAr : office.nameEn,
+        ),
         ` — ${count}`,
       ),
     );

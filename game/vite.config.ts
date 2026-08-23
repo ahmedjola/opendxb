@@ -4,6 +4,9 @@ import { fileURLToPath } from 'node:url';
 const here = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 export default defineConfig({
+  // The single-file targets ship one page, so links to sibling pages are dead
+  // there. Code reads this rather than guessing from the URL.
+  define: { __SINGLE_FILE__: false },
   base: './',
   build: {
     target: 'es2022',

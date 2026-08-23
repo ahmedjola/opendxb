@@ -31,6 +31,7 @@ import {
 import { getLang, t as tr } from '../site/i18n';
 import { TILE } from './pixels';
 import type { HudScene } from './hud';
+import { openPlainGuide } from './fonts';
 
 const WORLD_W = WORLD_TILES * TILE;
 
@@ -365,7 +366,7 @@ export class CityScene extends Phaser.Scene {
       this.hud.hidePrompt();
     }
 
-    if (this.latch.pressed('KeyG')) window.open('./guide.html', '_blank', 'noopener');
+    if (this.latch.pressed('KeyG')) openPlainGuide();
     if (this.latch.pressed('KeyM')) {
       this.latch.clear();
       this.openMap();

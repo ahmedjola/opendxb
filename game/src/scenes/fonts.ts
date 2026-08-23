@@ -50,3 +50,15 @@ export async function awaitFonts(): Promise<void> {
     // Nothing to do about it, and it must not stop the game booting.
   }
 }
+
+/**
+ * Open the plain-text guide, if this build has one.
+ *
+ * The one-file target ships a single HTML document, so `./guide.html` is not
+ * beside it and `window.open` produced a broken browser tab — from a key the
+ * game advertises on screen in every office.
+ */
+export function openPlainGuide(): void {
+  if (__SINGLE_FILE__) return;
+  window.open('./guide.html', '_blank', 'noopener');
+}

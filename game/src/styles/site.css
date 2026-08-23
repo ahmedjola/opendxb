@@ -897,7 +897,6 @@ body.city-open {
 #city-mount {
   width: 100%;
   max-width: min(100%, 60rem);
-  height: 100%;
   max-height: 100%;
   aspect-ratio: 4 / 3;
   background: #0d0c0a;
@@ -908,8 +907,9 @@ body.city-open {
 
 #city-mount canvas {
   display: block;
-  width: 100% !important;
-  height: 100% !important;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
   image-rendering: pixelated;
 }
 
@@ -1208,4 +1208,14 @@ body.city-open {
    that are genuinely Latin. */
 .answer .source a {
   unicode-bidi: isolate;
+}
+
+/* On a phone the touch pad is fixed to the bottom of the viewport and was
+   sitting on top of the overlay's own disclaimer — covering the "plain guide"
+   escape link so it could not be tapped at all, and partly hiding a notice this
+   project's rules say must never be hidden. Reserve the pad's height. */
+@media (pointer: coarse) {
+  .city-overlay {
+    padding-bottom: calc(9rem + env(safe-area-inset-bottom));
+  }
 }
