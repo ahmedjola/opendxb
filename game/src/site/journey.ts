@@ -41,6 +41,7 @@ export interface JourneyPath {
   labelAr: string;
   /** One line of framing. Says nothing a source would need to back. */
   introEn: string;
+  introAr: string;
   /**
    * Sequential paths lock later steps behind earlier ones. Only "moving here"
    * is sequential — a visitor's questions and a resident's questions are not
@@ -59,6 +60,8 @@ const MOVING: JourneyPath = {
   labelAr: 'أنتقل للعيش هنا',
   introEn:
     'Nine steps, in the order the departments actually need them. Later steps stay locked until the step they depend on is done.',
+  introAr:
+    'تسع خطوات بالترتيب الذي تحتاجه الدوائر فعليًا. تبقى الخطوات اللاحقة مقفلة حتى تُنجَز الخطوة التي تعتمد عليها.',
   sequential: true,
   seedComplete: ['arrival'],
   steps: [
@@ -125,6 +128,8 @@ const VISITING: JourneyPath = {
   labelAr: 'زائر',
   introEn:
     'A short list. Nothing here is locked — a visitor’s questions are not prerequisites for each other.',
+  introAr:
+    'قائمة قصيرة. لا شيء هنا مقفل — فأسئلة الزائر ليست شرطًا لبعضها البعض.',
   sequential: false,
   seedComplete: ['v-entry'],
   steps: [
@@ -161,6 +166,8 @@ const RESIDENT: JourneyPath = {
   labelAr: 'مقيم',
   introEn:
     'The things that come back around once you are settled. Open in any order — tick off what you have dealt with.',
+  introAr:
+    'الأمور التي تتكرر بعد أن تستقر. افتحها بأي ترتيب، وضع علامة على ما أنجزته.',
   sequential: false,
   seedComplete: [],
   steps: [

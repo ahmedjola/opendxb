@@ -11,6 +11,7 @@
 import { ANSWERS, hasRealSource } from '../content/loader';
 import type { Answer } from '../content/types';
 import { initCityOverlay } from './cityOverlay';
+import { dirFor, getLang, readLang, setLang, t, writeLang, type Lang } from './i18n';
 import { heroSvg } from './hero';
 import {
   answersForStep,
@@ -105,6 +106,26 @@ function announce(message: string): void {
   live.textContent = message;
 }
 
+/* ── content in the reader's language ───────────────────────────────────── */
+
+/**
+ * Content carries both languages per entry, so picking one is a lookup.
+ *
+ * Kept as three tiny helpers rather than inlined ternaries because every one of
+ * them is a place where the wrong language could silently leak through.
+ */
+function stepTitle(step: JourneyStep): string {
+  return getLang() === 'ar' ? step.titleAr : step.titleEn;
+}
+
+function pathLabel(path: JourneyPath): string {
+  return getLang() === 'ar' ? path.labelAr : path.labelEn;
+}
+
+function pathIntro(path: JourneyPath): string {
+  return getLang() === 'ar' ? path.introAr : path.introEn;
+}
+
 /* ── answers ───────────────────────────────────────────────────────────── */
 
 /**
@@ -113,38 +134,47 @@ function announce(message: string): void {
  * this project makes with the reader.
  */
 function renderAnswer(answer: Answer): HTMLElement {
+  const lang = getLang();
   const article = el('article', { class: 'answer', id: `a-${answer.id}` });
-  article.append(el('h4', {}, answer.questionEn));
-  article.append(el('p', { class: 'q-ar', lang: 'ar', dir: 'rtl' }, answer.questionAr));
-  article.append(el('p', { class: 'a-en' }, answer.answerEn));
-  article.append(el('p', { class: 'a-ar', lang: 'ar', dir: 'rtl' }, answer.answerAr));
+
+  // One language, not both stacked. Printing every answer twice doubled the
+  // page and halved the reading speed in each language.
+  article.append(el('h4', {}, lang === 'ar' ? answer.questionAr : answer.questionEn));
+  article.append(el('p', { class: 'a-body' }, lang === 'ar' ? answer.answerAr : answer.answerEn));
 
   const source = el('p', { class: 'source' });
   if (hasRealSource(answer)) {
+    // The publisher's name and the link stay exactly as published, in both
+    // directions: they are a citation, not copy to be translated.
     source.append(
-      el('span', {}, 'Source: '),
+      el('span', {}, t('answer.source')),
       el(
         'a',
-        { href: answer.sourceUrl, rel: 'noopener noreferrer', target: '_blank' },
+        {
+          href: answer.sourceUrl,
+          rel: 'noopener noreferrer',
+          target: '_blank',
+          dir: 'ltr',
+        },
         `${answer.sourceEntity} ↗`,
       ),
     );
   } else {
-    source.append(
-      el('span', { class: 'source-missing' }, 'No source link attached yet — do not rely on this'),
-    );
+    source.append(el('span', { class: 'source-missing' }, t('answer.noSource')));
   }
-  source.append(el('span', { class: 'mono checked' }, `Checked ${answer.checkedOn}`));
+  source.append(
+    el('span', { class: 'mono checked', dir: 'ltr' }, t('answer.checked', { date: answer.checkedOn })),
+  );
   article.append(source);
   return article;
 }
 
 /* ── journey ───────────────────────────────────────────────────────────── */
 
-const BADGE: Partial<Record<StepState, { text: string; kind: string }>> = {
-  current: { text: 'You are here', kind: 'current' },
-  complete: { text: 'Done', kind: 'complete' },
-  locked: { text: 'Locked', kind: 'locked' },
+const BADGE_KEY: Partial<Record<StepState, { key: string; kind: string }>> = {
+  current: { key: 'journey.badge.current', kind: 'current' },
+  complete: { key: 'journey.badge.complete', kind: 'complete' },
+  locked: { key: 'journey.badge.locked', kind: 'locked' },
 };
 
 function stepNote(
@@ -155,19 +185,19 @@ function stepNote(
 ): string | null {
   if (state === 'current') {
     const blocked = blockedRange(path, completed);
-    if (!blocked) return 'This is the next thing to deal with.';
+    if (!blocked) return t('journey.note.next');
     return blocked.from === blocked.to
-      ? `Blocks step ${blocked.from}.`
-      : `Blocks steps ${blocked.from}–${blocked.to}.`;
+      ? t('journey.note.blocksOne', { from: blocked.from })
+      : t('journey.note.blocksRange', { from: blocked.from, to: blocked.to });
   }
   if (state === 'locked') {
     const current = stepStates(path, completed).indexOf('current');
     const needed = path.steps[current];
-    if (!needed) return 'Locked.';
-    return `Locked — you cannot start this until step ${current + 1}, ${needed.titleEn}, is done.`;
+    if (!needed) return t('journey.badge.locked');
+    return t('journey.note.locked', { n: current + 1, title: stepTitle(needed) });
   }
   if (state === 'complete' && index === 0 && path.seedComplete.includes(path.steps[0]?.id ?? '')) {
-    return 'You did this one by getting on the plane.';
+    return t('journey.note.plane');
   }
   return null;
 }
@@ -198,14 +228,17 @@ function renderStep(
     el(
       'h3',
       { class: 'step-title' },
-      el('span', { class: 'visually-hidden' }, `Step ${number} of ${path.steps.length}: `),
-      step.titleEn,
+      el(
+        'span',
+        { class: 'visually-hidden' },
+        t('journey.stepOf', { n: number, total: path.steps.length }),
+      ),
+      stepTitle(step),
     ),
   );
-  head.append(el('span', { class: 'step-ar', lang: 'ar', dir: 'rtl' }, step.titleAr));
-  const badge = BADGE[state];
+  const badge = BADGE_KEY[state];
   if (badge) {
-    head.append(el('span', { class: 'mono step-badge', 'data-kind': badge.kind }, badge.text));
+    head.append(el('span', { class: 'mono step-badge', 'data-kind': badge.kind }, t(badge.key)));
   }
   item.append(head);
 
@@ -225,7 +258,11 @@ function renderStep(
       'aria-expanded': isOpen ? 'true' : 'false',
       'aria-controls': panelId,
     },
-    isOpen ? 'Hide' : state === 'locked' ? 'Read ahead anyway' : 'What this involves',
+    isOpen
+      ? t('journey.collapse')
+      : state === 'locked'
+        ? t('journey.expandLocked')
+        : t('journey.expand'),
   );
   actions.append(toggle);
 
@@ -242,7 +279,7 @@ function renderStep(
           'data-step': step.id,
           'data-focus': `complete-${step.id}`,
         },
-        done ? 'Mark not done' : 'Mark complete',
+        done ? t('journey.markIncomplete') : t('journey.markComplete'),
       ),
     );
   }
@@ -253,11 +290,7 @@ function renderStep(
   const stepAnswers = answersForStep(step);
   if (stepAnswers.length === 0) {
     panel.append(
-      el(
-        'p',
-        { class: 'empty-note' },
-        'No sourced answer has been written for this step yet. Rather than guess, this page says nothing.',
-      ),
+      el('p', { class: 'empty-note' }, t('journey.empty')),
     );
   } else {
     for (const answer of stepAnswers) panel.append(renderAnswer(answer));
@@ -286,17 +319,17 @@ function renderJourney(): void {
 
   const head = el('div', { class: 'journey-head' });
   const headMain = el('div', {});
-  headMain.append(el('p', { class: 'mono section-label' }, `Your path · ${path.labelEn}`));
+  headMain.append(
+    el('p', { class: 'mono section-label' }, `${t('journey.path')} · ${pathLabel(path)}`),
+  );
   headMain.append(
     el(
       'h2',
       { id: 'journey-heading' },
-      path.sequential ? 'The ' : 'Your ',
-      el('b', {}, path.sequential ? 'nine steps' : 'short list'),
-      path.sequential ? ', in order' : '',
+      t(path.sequential ? 'journey.heading.sequential' : 'journey.heading.list'),
     ),
   );
-  headMain.append(el('p', { class: 'section-intro' }, path.introEn));
+  headMain.append(el('p', { class: 'section-intro' }, pathIntro(path)));
 
   const meter = el('span', {
     class: 'progress-meter',
@@ -312,7 +345,10 @@ function renderJourney(): void {
     el(
       'p',
       { class: 'mono', style: 'color: var(--muted)' },
-      `${normalizeCompleted(path, completed).length} of ${path.steps.length} done`,
+      t('journey.done', {
+        done: normalizeCompleted(path, completed).length,
+        total: path.steps.length,
+      }),
     ),
   );
   head.append(headMain);
@@ -322,7 +358,7 @@ function renderJourney(): void {
     el(
       'button',
       { type: 'button', class: 'btn', 'data-action': 'change-status', 'data-focus': 'change' },
-      'Change who I am',
+      t('journey.changeStatus'),
     ),
   );
   headActions.append(
@@ -335,7 +371,7 @@ function renderJourney(): void {
         'data-action': 'reset-path',
         'data-focus': 'reset',
       },
-      'Start this path over',
+      t('journey.resetPath'),
     ),
   );
   head.append(headActions);
@@ -397,7 +433,7 @@ function selectStatus(status: StatusId, focusJourney: boolean): void {
 
   renderFork();
   renderJourney();
-  announce(`Showing the ${path.labelEn} path: ${path.steps.length} steps.`);
+  announce(`${pathLabel(path)} · ${path.steps.length}`);
 
   if (focusJourney) {
     const heading = document.getElementById('journey-heading');
@@ -500,11 +536,50 @@ resetButton?.addEventListener('click', () => {
     ?.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
 });
 
+/* ── language ──────────────────────────────────────────────────────────── */
+
+/**
+ * Apply a language to the whole document.
+ *
+ * `lang` and `dir` on <html> are what actually do the work: the browser mirrors
+ * the layout, picks the right shaping for Arabic, and tells assistive tech
+ * which language it is reading. Everything else here is copy replacement.
+ */
+function applyLang(lang: Lang, save: boolean): void {
+  setLang(lang);
+  const root = document.documentElement;
+  root.setAttribute('lang', lang);
+  root.setAttribute('dir', dirFor(lang));
+  document.title = t('doc.title');
+
+  for (const node of document.querySelectorAll<HTMLElement>('[data-i18n]')) {
+    const key = node.dataset['i18n'];
+    if (key) node.textContent = t(key);
+    const labelKey = node.dataset['i18nLabel'];
+    if (labelKey) node.setAttribute('aria-label', t(labelKey));
+  }
+
+  langToggle?.setAttribute('lang', lang === 'ar' ? 'en' : 'ar');
+  if (save) writeLang(storage as Pick<Storage, 'setItem'> | null, lang);
+
+  renderFork();
+  renderJourney();
+}
+
+const langToggle = document.getElementById('lang-toggle');
+langToggle?.addEventListener('click', () => {
+  const next: Lang = getLang() === 'ar' ? 'en' : 'ar';
+  applyLang(next, true);
+  // Keep focus on the control that was just used, so a keyboard user is not
+  // thrown back to the top of a page that has just changed direction.
+  langToggle.focus();
+});
+
 /* ── boot ──────────────────────────────────────────────────────────────── */
 
 if (heroScene) heroScene.innerHTML = heroSvg();
 // Mounts hidden and loads nothing until someone asks for it.
 initCityOverlay();
 if (!storage) storageNote?.removeAttribute('hidden');
-renderFork();
+applyLang(readLang(storage as Pick<Storage, 'getItem'> | null), false);
 if (progress.status) selectStatus(progress.status, false);

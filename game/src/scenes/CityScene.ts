@@ -28,6 +28,7 @@ import {
   districtForOffice,
   type District,
 } from '../world/districts';
+import { getLang, t as tr } from '../site/i18n';
 import { TILE } from './pixels';
 import type { HudScene } from './hud';
 
@@ -246,7 +247,7 @@ export class CityScene extends Phaser.Scene {
     body.setVisible(false);
 
     const label = this.add
-      .text(doorX, y + 9, office.nameEn, {
+      .text(doorX, y + 9, officeName(office), {
         fontFamily: 'ui-monospace, "DejaVu Sans Mono", monospace',
         fontSize: '9px',
         color: '#ffffff',
@@ -261,7 +262,9 @@ export class CityScene extends Phaser.Scene {
       .text(
         doorX,
         y + 20,
-        count === 0 ? 'no entries yet' : `${count} question${count === 1 ? '' : 's'}`,
+        count === 0
+          ? tr('city.noEntries')
+          : tr(count === 1 ? 'city.oneQuestion' : 'city.questions', { n: count }),
         {
           fontFamily: 'ui-monospace, "DejaVu Sans Mono", monospace',
           fontSize: '7px',
@@ -287,7 +290,7 @@ export class CityScene extends Phaser.Scene {
       place('palm', tx, ROAD_TOP + 0.05, 3);
       place('ghaf', tx + 3, ROAD_BOTTOM + 0.85);
       if (tx % 12 === 2) place('planter', tx + 4, ROAD_BOTTOM + 0.8, 6);
-      if (tx % 30 === 20) place('wind-tower', tx + 1, ROAD_TOP + 0.05, 2);
+      if (tx % 31 === 26) place('wind-tower', tx + 1, ROAD_TOP + 0.05, 2);
       if (tx % 24 === 14) place('abra', tx, HORIZON + 0.5, 1);
     }
 
@@ -357,7 +360,7 @@ export class CityScene extends Phaser.Scene {
 
     this.nearest = this.findNearestDoor();
     if (this.nearest) {
-      this.hud.showPrompt(`${this.nearest.office.nameEn}\nE / Enter to go in`);
+      this.hud.showPrompt(`${officeName(this.nearest.office)}\n${tr('city.enterPrompt')}`);
     } else {
       this.hud.hidePrompt();
     }
@@ -422,6 +425,11 @@ export class CityScene extends Phaser.Scene {
     this.cameras.main.centerOn(this.player.x, this.player.y);
     this.currentDistrict = null; // force the banner to fire on arrival
   }
+}
+
+/** The office's name in whichever language the reader picked. */
+function officeName(office: Office): string {
+  return getLang() === 'ar' ? office.nameAr : office.nameEn;
 }
 
 /** Move a colour towards white. Used for the lit face of a building. */

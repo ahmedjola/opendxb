@@ -10,6 +10,8 @@
  */
 import Phaser from 'phaser';
 import { readObjective, type Objective } from '../site/objective';
+import { browserStorage } from '../site/progress';
+import { getLang, readLang, setLang, t } from '../site/i18n';
 import type { District } from '../world/districts';
 
 const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
@@ -42,7 +44,6 @@ export class HudScene extends Phaser.Scene {
   private barFill!: Phaser.GameObjects.Rectangle;
   private countText!: Phaser.GameObjects.Text;
   private taskTitle!: Phaser.GameObjects.Text;
-  private taskAr!: Phaser.GameObjects.Text;
   private prompt!: Phaser.GameObjects.Text;
   private promptBox!: Phaser.GameObjects.Graphics;
 
@@ -51,6 +52,9 @@ export class HudScene extends Phaser.Scene {
   }
 
   create(): void {
+    // The game reads the language the site is set to, so walking into the city
+    // does not silently switch you back to English.
+    setLang(readLang(browserStorage()));
     this.objective = readObjective();
     this.build();
     this.buildPrompt();
@@ -74,7 +78,7 @@ export class HudScene extends Phaser.Scene {
       .setCrop(0, 0, 16, 12); // head and shoulders only
 
     this.add
-      .text(64, 16, 'NEW ARRIVAL', {
+      .text(64, 16, t('hud.player'), {
         fontFamily: MONO,
         fontSize: '11px',
         color: '#ffd9a0',
@@ -113,7 +117,7 @@ export class HudScene extends Phaser.Scene {
     g.fillStyle(ACCENT, 1).fillRect(8, 82, 4, 58); // accent spine
 
     this.add
-      .text(18, 88, 'NEXT STEP', { fontFamily: MONO, fontSize: '9px', color: '#f2a25c' })
+      .text(18, 88, t('hud.nextStep'), { fontFamily: MONO, fontSize: '9px', color: '#f2a25c' })
       .setResolution(2)
       .setDepth(101);
 
@@ -127,16 +131,11 @@ export class HudScene extends Phaser.Scene {
       .setResolution(2)
       .setDepth(101);
 
-    this.taskAr = this.add
-      .text(18, 124, '', { fontFamily: MONO, fontSize: '10px', color: '#8a7a8f' })
-      .setResolution(2)
-      .setDepth(101);
-
     /* ── the standing disclaimer, top right ──────────────────────────────── */
     // Never removed, never collapsed. It is the deal this project makes.
     panel(g, width - 214, 8, 206, 34);
     this.add
-      .text(width - 204, 14, 'UNOFFICIAL GUIDE', {
+      .text(width - 204, 14, t('hud.unofficial'), {
         fontFamily: MONO,
         fontSize: '10px',
         color: '#ffe9a8',
@@ -145,7 +144,7 @@ export class HudScene extends Phaser.Scene {
       .setResolution(2)
       .setDepth(101);
     this.add
-      .text(width - 204, 27, 'every office here is fictional', {
+      .text(width - 204, 27, t('hud.fictional'), {
         fontFamily: MONO,
         fontSize: '9px',
         color: '#8a7a8f',
@@ -166,14 +165,9 @@ export class HudScene extends Phaser.Scene {
     this.countText.setText(total > 0 ? `${done}/${total}` : '—');
 
     if (step) {
-      this.taskTitle.setText(step.titleEn);
-      this.taskAr.setText(step.titleAr);
-    } else if (total > 0) {
-      this.taskTitle.setText('All done — that is the whole path.');
-      this.taskAr.setText('');
+      this.taskTitle.setText(getLang() === 'ar' ? step.titleAr : step.titleEn);
     } else {
-      this.taskTitle.setText('Pick who you are on the page first.');
-      this.taskAr.setText('');
+      this.taskTitle.setText(t(total > 0 ? 'hud.allDone' : 'hud.pickPath'));
     }
   }
 
@@ -233,7 +227,7 @@ export class HudScene extends Phaser.Scene {
     const { width } = this.scale;
     const box = this.add.graphics().setDepth(110);
     const name = this.add
-      .text(width / 2, 190, district.nameEn, {
+      .text(width / 2, 190, getLang() === 'ar' ? district.nameAr : district.nameEn, {
         fontFamily: MONO,
         fontSize: '18px',
         color: '#efe3d6',
@@ -243,7 +237,7 @@ export class HudScene extends Phaser.Scene {
       .setResolution(2)
       .setDepth(111);
     const arabic = this.add
-      .text(width / 2, 214, district.nameAr, {
+      .text(width / 2, 214, getLang() === 'ar' ? district.nameEn : district.nameAr, {
         fontFamily: MONO,
         fontSize: '13px',
         color: '#c9a876',

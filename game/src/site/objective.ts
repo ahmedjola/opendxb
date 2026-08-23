@@ -5,6 +5,7 @@
  * journey, not about rendering — and keeping it out of the scene module means
  * it can be tested without booting a game engine.
  */
+import { getLang } from './i18n';
 import { getPath, normalizeCompleted, stepStates, type JourneyStep } from './journey';
 import { browserStorage, readProgress } from './progress';
 
@@ -29,6 +30,7 @@ export function readObjective(): Objective {
   const progress = readProgress(browserStorage());
   if (!progress.status) return { step: null, done: 0, total: 0, label: 'no path yet' };
 
+
   const path = getPath(progress.status);
   const completed = normalizeCompleted(path, progress.completed[progress.status] ?? []);
   const index = stepStates(path, completed).indexOf('current');
@@ -36,6 +38,6 @@ export function readObjective(): Objective {
     step: index >= 0 ? (path.steps[index] ?? null) : null,
     done: completed.length,
     total: path.steps.length,
-    label: path.labelEn,
+    label: getLang() === 'ar' ? path.labelAr : path.labelEn,
   };
 }

@@ -18,15 +18,16 @@
     <link rel="stylesheet" href="/src/styles/site.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
     <!-- Permanent, always-visible. Do not remove, do not collapse, do not
          hide behind a dismiss button. -->
     <div class="notice-bar" role="note">
-      <strong>Unofficial guide — always confirm with the official source.</strong>
-      <span>
+      <strong data-i18n="notice.title">Unofficial guide — always confirm with the official source.</strong>
+      <span data-i18n="notice.body">
         An independent community project, not affiliated with any Dubai government body.
       </span>
+      <button type="button" class="lang-toggle" id="lang-toggle" data-i18n="lang.switch" data-i18n-label="lang.switchLabel">العربية</button>
     </div>
 
     <header class="hero">
@@ -34,15 +35,15 @@
 
       <div class="hero-copy">
         <p class="mono hero-label">DXB · 17:42 · 34°C</p>
-        <h1>You&rsquo;ve just <b>landed</b>.</h1>
-        <p class="hero-ar" lang="ar" dir="rtl">أهلاً بك في دبي</p>
-        <p class="hero-body">
+        <h1><span data-i18n="hero.title.pre">You&rsquo;ve just </span><b data-i18n="hero.title.strong">landed</b><span data-i18n="hero.title.post">.</span></h1>
+        <p class="hero-greeting" data-i18n="hero.greeting">Welcome to Dubai</p>
+        <p class="hero-body" data-i18n="hero.body">
           Now come the forms, the queues and the eight government departments nobody warned you
           about. Let&rsquo;s get you through them.
         </p>
         <p class="hero-actions">
-          <a class="btn" data-variant="primary" href="#start">Sort my paperwork</a>
-          <button type="button" class="btn" data-open-city>Walk the city instead</button>
+          <a class="btn" data-variant="primary" href="#start" data-i18n="hero.cta.paperwork">Sort my paperwork</a>
+          <button type="button" class="btn" data-open-city data-i18n="hero.cta.city">Walk the city instead</button>
         </p>
       </div>
 
@@ -51,9 +52,9 @@
     <main id="main">
       <section class="section" id="start" aria-labelledby="fork-heading">
         <div class="wrap">
-          <p class="mono section-label">Step one</p>
-          <h2 id="fork-heading">Which one are <b>you</b>?</h2>
-          <p class="section-intro">
+          <p class="mono section-label" data-i18n="fork.label">Step one</p>
+          <h2 id="fork-heading"><span data-i18n="fork.heading.pre">Which one are </span><b data-i18n="fork.heading.strong">you</b><span data-i18n="fork.heading.post">?</span></h2>
+          <p class="section-intro" data-i18n="fork.intro">
             The paperwork is completely different depending on why you are here. Pick the one that
             fits and the rest of this page rearranges itself around it.
           </p>
@@ -73,14 +74,13 @@
               data-status="visiting"
               aria-pressed="false"
             >
-              <h3>Just visiting</h3>
-              <p class="fork-ar" lang="ar" dir="rtl">زائر</p>
+              <h3 data-i18n="fork.visiting.title">Just visiting</h3>
               <ul>
-                <li>Getting in</li>
-                <li>Driving while you are here</li>
-                <li>Health cover</li>
+                <li data-i18n="fork.visiting.a">Getting in</li>
+                <li data-i18n="fork.visiting.b">Driving while you are here</li>
+                <li data-i18n="fork.visiting.c">Health cover</li>
               </ul>
-              <span class="fork-go" aria-hidden="true">Show my list →</span>
+              <span class="fork-go" aria-hidden="true" data-i18n="fork.visiting.go">Show my list →</span>
             </button>
 
             <button
@@ -90,15 +90,14 @@
               data-primary="true"
               aria-pressed="false"
             >
-              <span class="fork-tag" aria-hidden="true">Most people</span>
-              <h3>Moving here</h3>
-              <p class="fork-ar" lang="ar" dir="rtl">أنتقل للعيش هنا</p>
+              <span class="fork-tag" aria-hidden="true" data-i18n="fork.moving.tag">Most people</span>
+              <h3 data-i18n="fork.moving.title">Moving here</h3>
               <ul>
-                <li>Medical test and residence visa</li>
-                <li>Emirates ID</li>
-                <li>Ejari, DEWA, bank, licence</li>
+                <li data-i18n="fork.moving.a">Medical test and residence visa</li>
+                <li data-i18n="fork.moving.b">Emirates ID</li>
+                <li data-i18n="fork.moving.c">Ejari, DEWA, bank, licence</li>
               </ul>
-              <span class="fork-go" aria-hidden="true">Show my 9 steps →</span>
+              <span class="fork-go" aria-hidden="true" data-i18n="fork.moving.go">Show my 9 steps →</span>
             </button>
 
             <button
@@ -107,32 +106,31 @@
               data-status="resident"
               aria-pressed="false"
             >
-              <h3>Already living here</h3>
-              <p class="fork-ar" lang="ar" dir="rtl">مقيم</p>
+              <h3 data-i18n="fork.resident.title">Already living here</h3>
               <ul>
-                <li>Emirates ID and proof of residency</li>
-                <li>Ejari, DEWA and insurance</li>
-                <li>Schools and KHDA</li>
+                <li data-i18n="fork.resident.a">Emirates ID and proof of residency</li>
+                <li data-i18n="fork.resident.b">Ejari, DEWA and insurance</li>
+                <li data-i18n="fork.resident.c">Schools and KHDA</li>
               </ul>
-              <span class="fork-go" aria-hidden="true">Show my list →</span>
+              <span class="fork-go" aria-hidden="true" data-i18n="fork.resident.go">Show my list →</span>
             </button>
           </div>
 
           <div class="city-invite">
             <div class="city-invite-copy">
-              <span class="mono section-label">Or don’t read at all</span>
-              <h3>Walk into the offices yourself</h3>
-              <p>
+              <span class="mono section-label" data-i18n="city.label">Or don’t read at all</span>
+              <h3 data-i18n="city.title">Walk into the offices yourself</h3>
+              <p data-i18n="city.body">
                 A small top-down pixel city, right here on this page. Knock on a door, ask your
                 question, get the same answer with the same source and the same checked date.
               </p>
             </div>
-            <button type="button" class="btn" data-variant="primary" data-open-city>
+            <button type="button" class="btn" data-variant="primary" data-open-city data-i18n="city.cta">
               Enter the city →
             </button>
           </div>
 
-          <p class="inline-note" id="storage-note" hidden>
+          <p class="inline-note" id="storage-note" data-i18n="storage.note" hidden>
             Your browser is blocking site storage, so anything you tick off will be forgotten when
             you close this tab. Everything still works — it just will not be remembered.
           </p>
@@ -147,9 +145,9 @@
 
       <section class="section" id="more" aria-labelledby="more-heading" hidden>
         <div class="wrap">
-          <p class="mono section-label">Everything else</p>
-          <h2 id="more-heading">Other questions people ask</h2>
-          <p class="section-intro">
+          <p class="mono section-label" data-i18n="more.label">Everything else</p>
+          <h2 id="more-heading" data-i18n="more.heading">Other questions people ask</h2>
+          <p class="section-intro" data-i18n="more.intro">
             These are in the same content file, they just are not on the path you picked. Same rule
             applies: every one of them shows the source it came from and the date it was checked.
           </p>
@@ -159,21 +157,21 @@
 
       <section class="section" aria-labelledby="elsewhere-heading">
         <div class="wrap">
-          <p class="mono section-label">The same content, two other ways</p>
-          <h2 id="elsewhere-heading">Read it however suits you</h2>
+          <p class="mono section-label" data-i18n="elsewhere.label">The same content, two other ways</p>
+          <h2 id="elsewhere-heading" data-i18n="elsewhere.heading">Read it however suits you</h2>
           <div class="elsewhere-grid">
             <button type="button" class="elsewhere-card" data-open-city>
-              <span class="mono" style="color: var(--sand-mid)">The game</span>
-              <h3>Walk the district →</h3>
-              <p>
+              <span class="mono" style="color: var(--sand-mid)" data-i18n="elsewhere.game.label">The game</span>
+              <h3 data-i18n="elsewhere.game.title">Walk the district →</h3>
+              <p data-i18n="elsewhere.game.body">
                 A small top-down pixel city, opened right over this page. Knock on a door, read the
                 same answer, same source, same date. Keyboard or touch.
               </p>
             </button>
             <a class="elsewhere-card" href="/guide.html">
-              <span class="mono" style="color: var(--sand-mid)">The guarantee</span>
-              <h3>Plain HTML guide →</h3>
-              <p>
+              <span class="mono" style="color: var(--sand-mid)" data-i18n="elsewhere.guide.label">The guarantee</span>
+              <h3 data-i18n="elsewhere.guide.title">Plain HTML guide →</h3>
+              <p data-i18n="elsewhere.guide.body">
                 Every answer as semantic HTML: headings, real links, screen-reader friendly, no
                 canvas and nothing clever.
               </p>
@@ -186,19 +184,19 @@
     <footer class="site-footer">
       <div class="wrap">
         <p>
-          <strong>Unofficial guide — always confirm with the official source.</strong>
-          An independent community project, not affiliated with any Dubai government body. No
-          government logo, crest, seal or official colour scheme appears anywhere on this site.
+          <strong data-i18n="notice.title">Unofficial guide — always confirm with the official source.</strong>
+          <span data-i18n="footer.disclaimer">An independent community project, not affiliated with any Dubai government body. No
+          government logo, crest, seal or official colour scheme appears anywhere on this site.</span>
         </p>
         <p>
-          Answers are stored as data in <code>src/content/answers.json</code> and shown verbatim.
+          <span data-i18n="footer.verbatim">Answers are stored as data and shown verbatim.
           Nothing on this page is generated, summarised or paraphrased at runtime, and no fee,
-          timeline or document list is stated that the linked source does not state itself.
+          timeline or document list is stated that the linked source does not state itself.</span>
         </p>
         <p>
-          Your progress is kept in this browser only, in <code>localStorage</code>. There is no
-          account, no server and nothing is sent anywhere.
-          <button type="button" class="btn" data-variant="quiet" id="reset-progress">
+          <span data-i18n="footer.storage">Your progress is kept in this browser only. There is no
+          account, no server and nothing is sent anywhere.</span>
+          <button type="button" class="btn" data-variant="quiet" id="reset-progress" data-i18n="footer.clear">
             Clear my progress
           </button>
         </p>

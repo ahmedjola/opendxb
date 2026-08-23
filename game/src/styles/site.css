@@ -94,7 +94,7 @@ a:hover {
 .ar {
   unicode-bidi: isolate;
   direction: rtl;
-  text-align: right;
+  text-align: end;
   font-feature-settings: "liga" 1;
 }
 
@@ -117,14 +117,26 @@ a:hover {
   padding-inline: var(--gutter);
 }
 
+/* Hidden by clipping, NOT by a negative offset. Parking it at -9999px means
+   9999px off the RIGHT edge under dir="rtl", which gave the Arabic page an
+   11,000px-wide document and a horizontal scrollbar across every screen. */
 .skip-link {
   position: absolute;
-  left: -9999px;
+  inset-inline-start: 0.5rem;
   top: 0;
   z-index: 100;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .skip-link:focus {
-  left: 0.5rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+  inset-inline-start: 0.5rem;
   top: 0.5rem;
   display: inline-block;
   padding: 0.75rem 1rem;
@@ -228,7 +240,7 @@ a:hover {
   margin-inline: auto;
   width: 100%;
   padding: 6rem var(--gutter) 5.5rem;
-  text-align: left;
+  text-align: start;
 }
 .hero-copy > * {
   max-width: 34rem;
@@ -253,10 +265,10 @@ a:hover {
   color: var(--accent-light);
 }
 
-/* RTL text, but aligned to the start of an LTR column: direction still governs
-   the bidi ordering, alignment is only where the line sits. */
-.hero-ar {
-  text-align: left;
+/* The greeting sits in whichever language the page is in; direction comes from
+   <html dir>, so this only has to say where the line sits. */
+.hero-greeting {
+  text-align: start;
   font-size: clamp(1.25rem, 1rem + 1.1vw, 1.75rem);
   color: var(--sand);
   margin: 0 0 1.25rem;
@@ -354,7 +366,7 @@ a:hover {
   width: 100%;
   min-height: var(--tap);
   padding: 1.5rem 1.25rem 1.25rem;
-  text-align: left;
+  text-align: start;
   font: inherit;
   color: var(--body);
   background: var(--panel);
@@ -384,7 +396,7 @@ a:hover {
   text-transform: uppercase;
   position: absolute;
   top: -0.6rem;
-  left: 1.25rem;
+  inset-inline-start: 1.25rem;
   padding: 0.3rem 0.5rem;
   background: var(--accent);
   color: #120e16;
@@ -398,8 +410,8 @@ a:hover {
   font-weight: 600;
   margin: 0;
 }
-.fork-card .fork-ar {
-  text-align: left;
+.fork-card .fork-ar-unused-removed {
+  text-align: start;
   color: var(--sand-mid);
   font-size: 1.0625rem;
   margin: 0;
@@ -416,7 +428,7 @@ a:hover {
 .fork-card li::before {
   content: "·";
   color: var(--accent);
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
   font-weight: 700;
 }
 .fork-go {
@@ -473,7 +485,7 @@ a:hover {
 .steps::before {
   content: "";
   position: absolute;
-  left: 1.09rem;
+  inset-inline-start: 1.09rem;
   top: 1rem;
   bottom: 1rem;
   width: 2px;
@@ -485,7 +497,7 @@ a:hover {
 }
 @media (max-width: 34rem) {
   .steps::before {
-    left: 0.96rem;
+    inset-inline-start: 0.96rem;
   }
 }
 
@@ -498,16 +510,16 @@ a:hover {
 }
 @media (max-width: 34rem) {
   .step {
-    padding-left: 3.1rem;
+    padding-inline-start: 3.1rem;
   }
 }
 .step-marker {
   position: absolute;
-  left: -1px;
+  inset-inline-start: -1px;
   top: 0.7rem;
   width: 2.25rem;
   height: 2.25rem;
-  margin-left: -0.1rem;
+  margin-inline-start: -0.1rem;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
@@ -545,8 +557,7 @@ a:hover {
 }
 /* Locked steps are dimmed, not made unreadable — "you cannot do this yet" must
    never turn into "you cannot read this". These still clear 4.5:1. */
-.step[data-state="locked"] .step-title,
-.step[data-state="locked"] .step-ar {
+.step[data-state="locked"] .step-title {
   color: var(--muted);
 }
 .step[data-state="locked"] .step-marker {
@@ -564,10 +575,6 @@ a:hover {
   font-weight: 600;
   color: var(--text);
   margin: 0;
-}
-.step-ar {
-  color: var(--sand-mid);
-  font-size: 0.9375rem;
 }
 .step-badge {
   font-family: var(--mono);
@@ -661,7 +668,7 @@ a:hover {
 .answer {
   background: var(--raised);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--teal);
+  border-inline-start: 3px solid var(--teal);
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
 }
@@ -669,19 +676,9 @@ a:hover {
   font-size: 1rem;
   margin: 0 0 0.15rem;
 }
-.answer .q-ar {
-  color: var(--sand-mid);
-  font-size: 0.9375rem;
-  margin: 0 0 0.75rem;
-}
-.answer .a-en {
+.answer .a-body {
   color: var(--body-bright);
-  margin: 0 0 0.75rem;
-}
-.answer .a-ar {
-  color: var(--body);
   margin: 0 0 0.9rem;
-  font-size: 0.9375rem;
 }
 .answer .source {
   margin: 0;
@@ -1014,7 +1011,7 @@ body.city-open {
   padding: 1.25rem var(--gutter);
   background: linear-gradient(120deg, var(--panel), var(--raised));
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);
   border-radius: var(--radius);
 }
 
@@ -1050,4 +1047,77 @@ body.city-open {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin: 1.75rem 0 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Bilingual.
+
+   The site shows ONE language at a time and flips the whole document with it.
+   `dir` on <html> does the mirroring; everything here is what `dir` cannot
+   infer on its own — the script's own type, and the handful of things that
+   must NOT flip.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.lang-toggle {
+  margin-inline-start: auto;
+  flex: 0 0 auto;
+  min-height: 1.75rem;
+  padding: 0.15rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--dim);
+  border-radius: var(--radius);
+  color: var(--accent-light);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* Arabic needs more leading than Latin at the same size, and the display face
+   is not a display face in Arabic — it has no Arabic glyphs at all. */
+:root[lang="ar"] body {
+  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
+  line-height: 1.85;
+}
+:root[lang="ar"] h1,
+:root[lang="ar"] h2,
+:root[lang="ar"] h3 {
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+/* "Press Start 2P" has no Arabic coverage, so a mono label in Arabic silently
+   falls back to whatever the system picks. Give Arabic its own label face. */
+:root[lang="ar"] .mono {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Things that must never mirror. Latin-script citations, URLs, dates and
+   licence numbers are written left-to-right on the documents themselves. */
+[dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+:root[dir="rtl"] .source a,
+:root[dir="rtl"] .checked {
+  text-align: start;
+}
+
+/* Arrows in call-to-action copy point the way the language reads. */
+:root[dir="rtl"] .scroll-cue .arrow {
+  transform: none;
+}
+
+/* The game canvas is a picture, not text: it stays left-to-right in both. */
+:root[dir="rtl"] .city-stage,
+:root[dir="rtl"] #city-mount {
+  direction: ltr;
 }
