@@ -1,0 +1,38 @@
+# Prove every answer's source link is real and reachable.
+#
+# The content was assembled without being able to open a single official page —
+# this project's sandbox blocks every .ae government domain, so the research ran
+# against a search index restricted to those domains. Good enough to FIND an
+# answer, not good enough to TRUST one.
+#
+# GitHub's runners are not blocked, so verification belongs here.
+name: Verify answer sources
+
+on:
+  schedule:
+    # Weekly. Government pages get reorganised without notice, and an answer
+    # pointing at a dead page is worse than no answer.
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'content/answers.json'
+      - 'scripts/verify-sources.mjs'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: node scripts/verify-sources.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-verification
+          path: content/verification.json
+          if-no-files-found: warn
