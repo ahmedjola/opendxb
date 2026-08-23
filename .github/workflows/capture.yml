@@ -1,0 +1,34 @@
+# Capture the full request/response contract of DLD's open-data API.
+#
+# Discovery caught dubailand.gov.ae calling gateway.dubailand.gov.ae with no
+# user login — an anonymous auth followed by data requests. That host is
+# reachable from anywhere, so replaying those calls would give real DLD data
+# from CI with no Dubai Pulse account and no UAE presence. To replay them we
+# need the bodies and headers, not just the URLs.
+name: Capture DLD API contract
+
+on:
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Kept out of package.json: this is a one-off investigation tool, not a
+      # dependency of the library.
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+
+      - run: node scripts/capture-dld-api.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capture
+          path: capture
+          if-no-files-found: ignore
