@@ -40,12 +40,12 @@
           Now come the forms, the queues and the eight government departments nobody warned you
           about. Let&rsquo;s get you through them.
         </p>
+        <p class="hero-actions">
+          <a class="btn" data-variant="primary" href="#start">Sort my paperwork</a>
+          <button type="button" class="btn" data-open-city>Walk the city instead</button>
+        </p>
       </div>
 
-      <a class="scroll-cue" href="#start">
-        <span class="mono">Start here</span>
-        <span class="arrow" aria-hidden="true">▼</span>
-      </a>
     </header>
 
     <main id="main">
@@ -118,6 +118,20 @@
             </button>
           </div>
 
+          <div class="city-invite">
+            <div class="city-invite-copy">
+              <span class="mono section-label">Or don’t read at all</span>
+              <h3>Walk into the offices yourself</h3>
+              <p>
+                A small top-down pixel city, right here on this page. Knock on a door, ask your
+                question, get the same answer with the same source and the same checked date.
+              </p>
+            </div>
+            <button type="button" class="btn" data-variant="primary" data-open-city>
+              Enter the city →
+            </button>
+          </div>
+
           <p class="inline-note" id="storage-note" hidden>
             Your browser is blocking site storage, so anything you tick off will be forgotten when
             you close this tab. Everything still works — it just will not be remembered.
@@ -148,14 +162,14 @@
           <p class="mono section-label">The same content, two other ways</p>
           <h2 id="elsewhere-heading">Read it however suits you</h2>
           <div class="elsewhere-grid">
-            <a class="elsewhere-card" href="/game.html">
+            <button type="button" class="elsewhere-card" data-open-city>
               <span class="mono" style="color: var(--sand-mid)">The game</span>
               <h3>Walk the district →</h3>
               <p>
-                A small top-down pixel game. Knock on a door, read the same answer, same source,
-                same date. Keyboard or touch.
+                A small top-down pixel city, opened right over this page. Knock on a door, read the
+                same answer, same source, same date. Keyboard or touch.
               </p>
-            </a>
+            </button>
             <a class="elsewhere-card" href="/guide.html">
               <span class="mono" style="color: var(--sand-mid)">The guarantee</span>
               <h3>Plain HTML guide →</h3>

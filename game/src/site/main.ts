@@ -10,6 +10,7 @@
  */
 import { ANSWERS, hasRealSource } from '../content/loader';
 import type { Answer } from '../content/types';
+import { initCityOverlay } from './cityOverlay';
 import { heroSvg } from './hero';
 import {
   answersForStep,
@@ -502,6 +503,8 @@ resetButton?.addEventListener('click', () => {
 /* ── boot ──────────────────────────────────────────────────────────────── */
 
 if (heroScene) heroScene.innerHTML = heroSvg();
+// Mounts hidden and loads nothing until someone asks for it.
+initCityOverlay();
 if (!storage) storageNote?.removeAttribute('hidden');
 renderFork();
 if (progress.status) selectStatus(progress.status, false);
