@@ -76,9 +76,9 @@ describe("dld.areawise source definition", () => {
 
 describe("parsing DLD's real envelope", () => {
   it("extracts the result array", () => {
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
     expect(rows).toHaveLength(2);
-    expect(rows[0].areaId).toBe(230);
+    expect(rows[0]!.areaId).toBe(230);
   });
 
   it("throws a typed error on non-JSON rather than crashing obscurely", () => {
@@ -94,8 +94,8 @@ describe("parsing DLD's real envelope", () => {
 describe("normalising", () => {
   it("carries DLD's official areaId and both name forms", () => {
     const { ctx } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
-    const record = dldAreawiseSales.normalize(rows[0], ctx) as AreaTransactionSummary;
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
+    const record = dldAreawiseSales.normalize(rows[0]!, ctx) as AreaTransactionSummary;
 
     expect(record.areaId).toBe(230);
     expect(record.areaNameEn).toBe("Abu Hail");
@@ -107,22 +107,22 @@ describe("normalising", () => {
 
   it("derives mean value per transaction", () => {
     const { ctx } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
-    const record = dldAreawiseSales.normalize(rows[0], ctx) as AreaTransactionSummary;
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
+    const record = dldAreawiseSales.normalize(rows[0]!, ctx) as AreaTransactionSummary;
     expect(record.meanWorthAed).toBe(1_980_000);
   });
 
   it("joins to the canonical community where the registry knows the area", () => {
     const { ctx } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
-    const marina = dldAreawiseSales.normalize(rows[1], ctx) as AreaTransactionSummary;
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
+    const marina = dldAreawiseSales.normalize(rows[1]!, ctx) as AreaTransactionSummary;
     expect(marina.communitySlug).toBe("marsa-dubai");
   });
 
   it("reports an unresolved area rather than dropping it", () => {
     const { ctx, unresolved } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
-    const abuHail = dldAreawiseSales.normalize(rows[0], ctx) as AreaTransactionSummary;
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
+    const abuHail = dldAreawiseSales.normalize(rows[0]!, ctx) as AreaTransactionSummary;
     // Abu Hail is not in the seed registry, so it must surface as a gap while
     // still being stored with its raw name and official id intact.
     expect(abuHail.communitySlug).toBeNull();
@@ -132,8 +132,8 @@ describe("normalising", () => {
 
   it("flattens project breakdowns", () => {
     const { ctx } = context();
-    const rows = dldAreawiseSales.parse(REAL_ENVELOPE);
-    const record = dldAreawiseSales.normalize(rows[0], ctx) as AreaTransactionSummary;
+    const rows = dldAreawiseSales.parse(REAL_ENVELOPE)!;
+    const record = dldAreawiseSales.normalize(rows[0]!, ctx) as AreaTransactionSummary;
     expect(record.projects).toHaveLength(1);
     expect(record.projects[0]).toMatchObject({ projectId: -1, nameEn: "Other", worthAed: 9900000 });
   });

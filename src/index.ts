@@ -13,7 +13,7 @@
 
 export { OpenDXB, defaultDataDir, credentialsFromEnv } from "./client.js";
 export type {
-  OpenDXBOptions, TransactionFilter, RentFilter, CommunityProfile,
+  OpenDXBOptions, TransactionFilter, RentFilter, CommunityProfile, AreaActivity,
 } from "./client.js";
 
 export {

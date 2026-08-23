@@ -43,9 +43,12 @@ for (const community of dxb.communities) {
   const profile = await dxb.profile(community.slug);
 
   // A community with no data in any source would just be noise in the index.
+  // marketActivity has to count here: on a credential-free ingest it is the
+  // only source that lands, and omitting it wrote an empty index.
   const hasData =
     profile.sales.count || profile.rents.count ||
-    profile.schools.count || profile.health.count || profile.transit.count;
+    profile.schools.count || profile.health.count || profile.transit.count ||
+    profile.marketActivity.sales || profile.marketActivity.mortgages;
   if (!hasData) continue;
 
   writeFileSync(
@@ -59,6 +62,13 @@ for (const community of dxb.communities) {
     nameEn: community.nameEn,
     nameAr: community.nameAr,
     alsoKnownAs: community.marketNames,
+    dldAreaId: profile.marketActivity.sales?.areaId ?? null,
+    periodFrom: profile.marketActivity.sales?.periodFrom ?? null,
+    periodTo: profile.marketActivity.sales?.periodTo ?? null,
+    transactionCount: profile.marketActivity.sales?.transactionCount ?? null,
+    totalWorthAed: profile.marketActivity.sales?.totalWorthAed ?? null,
+    meanWorthAed: profile.marketActivity.sales?.meanWorthAed ?? null,
+    firstSaleSharePct: profile.marketActivity.sales?.firstSaleSharePct ?? null,
     medianSaleAed: profile.sales.amountAed.median,
     medianAnnualRentAed: profile.rents.annualRentAed.median,
     grossYieldPct: profile.grossYieldPct,

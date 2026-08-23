@@ -8,13 +8,31 @@ import { csvSource } from "../src/sources/base.js";
 const dxb = new OpenDXB({ store: new SampleStore() });
 
 describe("cross-authority profile", () => {
-  it("joins five sources for one community", async () => {
+  it("joins every source for one community", async () => {
     const profile = await dxb.profile("Dubai Marina");
     expect(profile.community.slug).toBe("marsa-dubai");
-    expect(profile.sourcesUsed).toHaveLength(5);
+    expect(profile.sourcesUsed).toHaveLength(7);
     expect(profile.missingSources).toHaveLength(0);
     expect(profile.sales.count).toBeGreaterThan(0);
     expect(profile.rents.count).toBeGreaterThan(0);
+  });
+
+  it("reports area-level market activity, the only credential-free property source", async () => {
+    const profile = await dxb.profile("Dubai Marina");
+    expect(profile.marketActivity.sales).not.toBeNull();
+    expect(profile.marketActivity.sales!.transactionCount).toBeGreaterThan(0);
+    expect(profile.marketActivity.sales!.firstSaleSharePct).toBeGreaterThan(0);
+    expect(profile.marketActivity.mortgages).not.toBeNull();
+  });
+
+  it("leaves market activity null when that source is absent", async () => {
+    const partial = new MemoryStore();
+    await partial.put(
+      { sourceId: "khda.schools", authority: "KHDA", ingestedAt: new Date().toISOString(), recordCount: 0, endpoint: "x", license: "x" },
+      [],
+    );
+    const profile = await new OpenDXB({ store: partial }).profile("Dubai Marina");
+    expect(profile.marketActivity.sales).toBeNull();
   });
 
   it("reaches the same profile from every spelling of the name", async () => {

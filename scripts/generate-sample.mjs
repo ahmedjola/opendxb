@@ -178,7 +178,50 @@ for (const area of AREAS) {
   }
 }
 
+// --- areawise summaries -----------------------------------------------------
+// Mirrors DLD's public gateway, which is the only property source that works
+// without credentials — so the sample must exercise it too, or the demo shows
+// a capability the real product does not lead with.
+const PERIOD_FROM = "2026-07-01";
+const PERIOD_TO = "2026-07-31";
+
+function areawise(kind) {
+  return AREAS.map((area, index) => {
+    const transactionCount = Math.round(between(20, 400) * area.tier);
+    const meanWorth = Math.round(between(900_000, 3_500_000) * area.tier);
+    const totalWorthAed = transactionCount * meanWorth;
+    const firstSaleCount = Math.round(transactionCount * between(0.05, 0.6));
+    return {
+      source: `dld.areawise-${kind}`,
+      authority: "DLD",
+      communitySlug: area.slug,
+      rawLocation: area.raw,
+      id: `SYN-AW-${kind}-${area.slug}`,
+      kind: kind === "sales" ? "sale" : "mortgage",
+      periodFrom: PERIOD_FROM,
+      periodTo: PERIOD_TO,
+      // Synthetic identifiers, deliberately far from DLD's real numbering so
+      // they can never be mistaken for official area ids.
+      areaId: 900000 + index,
+      areaNameEn: area.raw,
+      areaNameAr: "",
+      totalWorthAed,
+      transactionCount,
+      propertyCount: transactionCount - Math.round(between(0, 5)),
+      firstSaleCount,
+      meanWorthAed: meanWorth,
+      projects: [],
+      synthetic: true,
+    };
+  });
+}
+
+const areawiseSales = areawise("sales");
+const areawiseMortgage = areawise("mortgage");
+
 const files = [
+  ["dld.areawise-sales.json", envelope("dld.areawise-sales", "DLD", areawiseSales, "SYNTHETIC")],
+  ["dld.areawise-mortgage.json", envelope("dld.areawise-mortgage", "DLD", areawiseMortgage, "SYNTHETIC")],
   ["dld.transactions.json", envelope("dld.transactions", "DLD", transactions, "SYNTHETIC")],
   ["dld.rents.json", envelope("dld.rents", "DLD", rents, "SYNTHETIC")],
   ["khda.schools.json", envelope("khda.schools", "KHDA", schools, "SYNTHETIC")],

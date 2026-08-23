@@ -75,9 +75,35 @@ export interface CommunityProfile {
   };
   readonly health: { readonly count: number; readonly byType: Record<string, number> };
   readonly transit: { readonly count: number; readonly byMode: Record<string, number> };
+  /**
+   * Area-level market activity from DLD's public gateway.
+   *
+   * Present far more often than the register-derived `sales` and `rents`
+   * blocks above, because this is the only property source that works without
+   * Dubai Pulse credentials and a UAE IP.
+   */
+  readonly marketActivity: {
+    readonly sales: AreaActivity | null;
+    readonly mortgages: AreaActivity | null;
+  };
   /** Which sources actually had data; the rest were not ingested. */
   readonly sourcesUsed: readonly string[];
   readonly missingSources: readonly string[];
+}
+
+/** Totals for one area over one reporting period. */
+export interface AreaActivity {
+  readonly periodFrom: string;
+  readonly periodTo: string;
+  /** DLD's official area identifier. */
+  readonly areaId: number;
+  readonly totalWorthAed: number;
+  readonly transactionCount: number;
+  readonly propertyCount: number;
+  readonly firstSaleCount: number;
+  readonly meanWorthAed: number | null;
+  /** Share of transactions that were first sales; null when there were none. */
+  readonly firstSaleSharePct: number | null;
 }
 
 /** The Dubai open-data layer. */
@@ -270,12 +296,14 @@ export class OpenDXB {
       return rows.filter((row) => row.communitySlug === community.slug);
     };
 
-    const [sales, rentals, schools, health, transit] = await Promise.all([
+    const [sales, rentals, schools, health, transit, areaSales, areaMortgages] = await Promise.all([
       load<PropertyTransaction>("dld.transactions"),
       load<RentalContract>("dld.rents"),
       load<School>("khda.schools"),
       load<HealthFacility>("dha.facilities"),
       load<TransitStation>("rta.stations"),
+      load<AreaTransactionSummary>("dld.areawise-sales"),
+      load<AreaTransactionSummary>("dld.areawise-mortgage"),
     ]);
 
     const saleAmounts = sales.filter((s) => s.kind === "sale").map((s) => s.amountAed);
@@ -310,6 +338,10 @@ export class OpenDXB {
       },
       health: { count: health.length, byType: countBy(health, (f) => f.facilityType) },
       transit: { count: transit.length, byMode: countBy(transit, (s) => s.mode) },
+      marketActivity: {
+        sales: toAreaActivity(areaSales),
+        mortgages: toAreaActivity(areaMortgages),
+      },
       sourcesUsed: used,
       missingSources: missing,
     };
@@ -335,6 +367,36 @@ export class OpenDXB {
     if (rows === null) throw new NotIngestedError(sourceId);
     return rows;
   }
+}
+
+/**
+ * Collapse a community's area summaries into one activity block.
+ *
+ * A community normally maps to a single DLD area, but the registry allows
+ * several market names per community, so more than one row can arrive. Summing
+ * is correct for counts and value; the mean is recomputed from the totals
+ * rather than averaged, which would weight a quiet area equally with a busy one.
+ */
+function toAreaActivity(rows: readonly AreaTransactionSummary[]): AreaActivity | null {
+  const first = rows[0];
+  if (!first) return null;
+
+  const totalWorthAed = rows.reduce((sum, row) => sum + row.totalWorthAed, 0);
+  const transactionCount = rows.reduce((sum, row) => sum + row.transactionCount, 0);
+  const firstSaleCount = rows.reduce((sum, row) => sum + row.firstSaleCount, 0);
+
+  return {
+    periodFrom: first.periodFrom,
+    periodTo: first.periodTo,
+    areaId: first.areaId,
+    totalWorthAed,
+    transactionCount,
+    propertyCount: rows.reduce((sum, row) => sum + row.propertyCount, 0),
+    firstSaleCount,
+    meanWorthAed: transactionCount > 0 ? Math.round(totalWorthAed / transactionCount) : null,
+    firstSaleSharePct:
+      transactionCount > 0 ? Number(((firstSaleCount / transactionCount) * 100).toFixed(1)) : null,
+  };
 }
 
 /** Default on-disk location for ingested data. */

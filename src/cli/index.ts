@@ -125,12 +125,31 @@ async function profile(args: Args): Promise<number> {
   const result = await client(args).profile(query);
   if (args.json) { console.log(JSON.stringify(result, null, 2)); return 0; }
 
-  const { community: c, sales, rents, schools, health, transit } = result;
+  const { community: c, sales, rents, schools, health, transit, marketActivity } = result;
   console.log(`\n${c.nameEn}  /  ${c.nameAr}`);
   if (c.marketNames.length) console.log(`also known as ${c.marketNames.join(", ")}`);
   console.log(`${"─".repeat(56)}`);
 
-  console.log(`\nSALES (DLD)                       ${sales.count} transactions`);
+  // Shown first because it is the only property data most installations will
+  // actually have: the register behind the other blocks needs Dubai Pulse
+  // credentials and a UAE IP, this does not.
+  const activity = marketActivity.sales;
+  if (activity) {
+    console.log(`\nMARKET ACTIVITY (DLD gateway)     ${activity.periodFrom} to ${activity.periodTo}`);
+    console.log(`  DLD area id       ${activity.areaId}`);
+    console.log(`  transactions      ${activity.transactionCount}`);
+    console.log(`  total value       ${num(activity.totalWorthAed)}`);
+    console.log(`  mean per deal     ${num(activity.meanWorthAed)}`);
+    if (activity.firstSaleSharePct !== null) {
+      console.log(`  first sales       ${activity.firstSaleSharePct}%   (off-plan / developer)`);
+    }
+    const mortgages = marketActivity.mortgages;
+    if (mortgages) {
+      console.log(`  mortgages         ${mortgages.transactionCount} worth ${num(mortgages.totalWorthAed)}`);
+    }
+  }
+
+  console.log(`\nSALES (DLD register)              ${sales.count} transactions`);
   console.log(`  median            ${num(sales.amountAed.median)}`);
   console.log(`  quartiles         ${num(sales.amountAed.p25)} — ${num(sales.amountAed.p75)}`);
   console.log(`  median AED/sqm    ${num(sales.pricePerSqm.median)}`);

@@ -44,26 +44,46 @@ jobs:
         env:
           DUBAI_PULSE_CLIENT_ID: ${{ secrets.DUBAI_PULSE_CLIENT_ID }}
           DUBAI_PULSE_CLIENT_SECRET: ${{ secrets.DUBAI_PULSE_CLIENT_SECRET }}
-          OPENDXB_DATA_DIR: ${{ github.workspace }}/.ingest
+          OPENDXB_DATA_DIR: ${{ github.workspace }}/ingest-data
         run: |
-          # A source that fails must not stop the others: partial freshness
-          # beats none, and the summary below reports what did not land.
-          failed=0
-          for source in dld.areawise-sales dld.areawise-mortgage khda.schools dha.facilities rta.stations dld.transactions dld.rents; do
-            echo "::group::$source"
+          # Sources that need nothing. These are the ones that actually run on
+          # a GitHub runner, and a failure here is a genuine regression.
+          CORE="dld.areawise-sales dld.areawise-mortgage"
+
+          # Sources behind Dubai Pulse. The portal is geo-fenced to the UAE, so
+          # these cannot succeed from GitHub regardless of credentials. They are
+          # attempted only when credentials exist, and their failure is reported
+          # but never fails the run — otherwise every nightly build goes red for
+          # a reason nobody can fix from here.
+          PULSE="khda.schools dha.facilities rta.stations dld.transactions dld.rents"
+
+          core_failed=0
+          for source in $CORE; do
+            echo "::group::$source (core)"
             if node dist/cli/index.js ingest "$source"; then
               echo "$source: ok"
             else
               echo "$source: FAILED"
-              failed=$((failed+1))
+              core_failed=$((core_failed+1))
             fi
             echo "::endgroup::"
           done
-          echo "sources_failed=$failed" >> "$GITHUB_ENV"
+
+          if [ -n "$DUBAI_PULSE_CLIENT_ID" ]; then
+            for source in $PULSE; do
+              echo "::group::$source (needs Dubai Pulse)"
+              node dist/cli/index.js ingest "$source" || echo "$source: failed (expected outside the UAE)"
+              echo "::endgroup::"
+            done
+          else
+            echo "No Dubai Pulse credentials set; skipping: $PULSE"
+          fi
+
+          echo "core_failed=$core_failed" >> "$GITHUB_ENV"
 
       - name: Build per-community aggregates
         env:
-          OPENDXB_DATA_DIR: ${{ github.workspace }}/.ingest
+          OPENDXB_DATA_DIR: ${{ github.workspace }}/ingest-data
         run: node scripts/build-profiles.mjs
 
       - name: Commit refreshed aggregates
@@ -78,17 +98,22 @@ jobs:
             git push
           fi
 
+      # Directory is `ingest-data`, not `.ingest`: upload-artifact treats
+      # dot-prefixed paths as hidden and silently uploaded nothing.
       - name: Keep the raw ingest as an artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: raw-ingest
-          path: .ingest
+          path: ingest-data
           retention-days: 14
-          if-no-files-found: ignore
+          if-no-files-found: warn
 
-      - name: Fail the run if any source did not land
-        if: env.sources_failed != '0'
+      # Only core sources gate the build. A Dubai Pulse source failing from a
+      # US runner is the documented, unavoidable state — failing on it would
+      # make every nightly run red and train everyone to ignore the signal.
+      - name: Fail the run if a core source did not land
+        if: env.core_failed != '0'
         run: |
-          echo "::error::${{ env.sources_failed }} source(s) failed to ingest."
+          echo "::error::${{ env.core_failed }} core source(s) failed to ingest."
           exit 1
