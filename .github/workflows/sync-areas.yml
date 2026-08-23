@@ -1,0 +1,57 @@
+# Reconcile the community registry against DLD's own area list.
+#
+# The first real ingest matched 71 of DLD's 127 areas. The rest are gaps in a
+# hand-written crosswalk, and DLD is the authority on what the list should be.
+# This reads the areas from its public gateway and fills in official areaIds
+# plus any communities the registry was missing.
+#
+# Only exact and alias matches auto-assign an id; fuzzy matches are reported
+# for review, never written. Runs monthly, since DLD's area register changes
+# rarely.
+name: Sync community registry with DLD areas
+
+on:
+  schedule:
+    # 04:00 Dubai time on the 2nd of each month, after the nightly ingest.
+    - cron: '0 0 2 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: sync-areas
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Reconcile registry against DLD
+        run: node scripts/sync-areas.mjs
+
+      # The registry is the join key for every source, so a bad write here
+      # corrupts everything downstream. The suite asserts the matcher's
+      # refusals directly, and runs against the rewritten file.
+      - name: Test against the updated registry
+        run: npm test
+
+      - name: Commit registry updates
+        run: |
+          git config user.name  "opendxb-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/communities.json
+          if git diff --cached --quiet; then
+            echo "Registry already matches DLD; nothing to commit."
+          else
+            git commit -m "data: sync community registry with DLD area register"
+            git push
+          fi
