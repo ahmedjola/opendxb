@@ -7,3 +7,4 @@ coverage/
 !.env.example
 .opendxb-cache/
 .DS_Store
+dist-single/

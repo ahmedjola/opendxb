@@ -186,6 +186,25 @@ Read these before trusting a number.
 - **`grossYieldPct` is indicative only.** Median rent over median sale price across all unit sizes; it ignores service charges, vacancy and transaction costs, and mixes studios with penthouses. A signal, not a valuation.
 - **Registry data has its own biases.** Ejari registration compliance is imperfect, so contracts understate the low end of the rental market. DLD amounts are the registered consideration, which for related-party and portfolio transfers is not the economic price. Per-source caveats are in [docs/DATA-SOURCES.md](docs/DATA-SOURCES.md) and surfaced by `opendxb sources`.
 
+## The thing people actually use
+
+The data layer is the foundation; [`game/`](game) is what a person opens. **Landing in
+Dubai** — an unofficial guide for people arriving here: a pixel arrival scene, an
+onboarding fork (visiting / moving / already resident), and a dependency-aware path
+through your first 90 days.
+
+The dependency locking is the idea worth stealing. Those errands are not independent — you
+cannot open a bank account without an Emirates ID, cannot connect DEWA without Ejari,
+cannot register a tenancy without a visa. People lose weeks discovering that one queue at
+a time. Showing what blocks what is worth more than any single answer.
+
+Same content renders three ways: the site, a walkable Phaser city, and a plain
+keyboard-navigable page. Nobody is required to play a game to read a government fact.
+
+```bash
+cd game && npm install && npm run dev
+```
+
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md) — how the layer is put together and why

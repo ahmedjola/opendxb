@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>opendxb — an unofficial guide to landing in Dubai</title>
+    <meta
+      name="description"
+      content="A small, independent, unofficial retro game about the paperwork of moving to Dubai."
+    />
+    <link rel="stylesheet" href="/src/styles/game.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#plain-guide-link">Skip to the plain text guide</a>
+
+    <!-- Persistent, always-visible notice. Do not remove. -->
+    <div class="disclaimer-bar" role="note">
+      <strong>Unofficial guide — always confirm with the official source.</strong>
+      <span class="disclaimer-sub"
+        >Independent community project. Not affiliated with any government body. All offices in
+        this game are fictional.</span
+      >
+    </div>
+
+    <div id="game" role="application" aria-label="opendxb district — top-down game"></div>
+
+    <div class="under-game">
+      <p class="controls-help">
+        <strong>Keyboard:</strong> arrows or WASD to walk · <kbd>E</kbd>/<kbd>Enter</kbd> to enter a
+        door and choose · <kbd>Esc</kbd> to go back. <strong>Touch:</strong> use the pad below.
+      </p>
+      <p><a href="/index.html">← Back to Landing in Dubai</a></p>
+      <p>
+        <a id="plain-guide-link" href="/guide.html">
+          Prefer plain text? Read the same content as a keyboard-navigable HTML page →
+        </a>
+      </p>
+      <p class="fine-print">
+        Answers are stored as data and shown verbatim with their source link and the date they were
+        checked. Nothing on this page is generated at runtime.
+      </p>
+    </div>
+
+    <!-- Touch controls. Keyboard users have full parity via arrows/WASD, so these
+         are pointer affordances and are removed from the tab order on purpose. -->
+    <div class="touchpad" id="touchpad" data-visible="false">
+      <div class="dpad">
+        <button type="button" class="tbtn up" data-dir="up" tabindex="-1" aria-label="Walk up">▲</button>
+        <button type="button" class="tbtn left" data-dir="left" tabindex="-1" aria-label="Walk left">◀</button>
+        <button type="button" class="tbtn right" data-dir="right" tabindex="-1" aria-label="Walk right">▶</button>
+        <button type="button" class="tbtn down" data-dir="down" tabindex="-1" aria-label="Walk down">▼</button>
+      </div>
+      <div class="actions">
+        <button type="button" class="tbtn act" data-action="confirm" tabindex="-1" aria-label="Enter or confirm">A</button>
+        <button type="button" class="tbtn act" data-action="cancel" tabindex="-1" aria-label="Back or cancel">B</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

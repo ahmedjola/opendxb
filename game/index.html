@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Landing in Dubai — an unofficial guide for people who just arrived</title>
+    <meta
+      name="description"
+      content="An independent, unofficial guide to the paperwork of arriving in Dubai: the order things happen in, what blocks what, and a link to the official source for every answer."
+    />
+    <meta name="color-scheme" content="dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Permanent, always-visible. Do not remove, do not collapse, do not
+         hide behind a dismiss button. -->
+    <div class="notice-bar" role="note">
+      <strong>Unofficial guide — always confirm with the official source.</strong>
+      <span>
+        An independent community project, not affiliated with any Dubai government body.
+      </span>
+    </div>
+
+    <header class="hero">
+      <div class="hero-scene" id="hero-scene"></div>
+
+      <div class="hero-copy">
+        <p class="mono hero-label">DXB · 17:42 · 34°C</p>
+        <h1>You&rsquo;ve just <b>landed</b>.</h1>
+        <p class="hero-ar" lang="ar" dir="rtl">أهلاً بك في دبي</p>
+        <p class="hero-body">
+          Now come the forms, the queues and the eight government departments nobody warned you
+          about. Let&rsquo;s get you through them.
+        </p>
+      </div>
+
+      <a class="scroll-cue" href="#start">
+        <span class="mono">Start here</span>
+        <span class="arrow" aria-hidden="true">▼</span>
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="section" id="start" aria-labelledby="fork-heading">
+        <div class="wrap">
+          <p class="mono section-label">Step one</p>
+          <h2 id="fork-heading">Which one are <b>you</b>?</h2>
+          <p class="section-intro">
+            The paperwork is completely different depending on why you are here. Pick the one that
+            fits and the rest of this page rearranges itself around it.
+          </p>
+
+          <noscript>
+            <p class="inline-note">
+              This page needs JavaScript to sort the steps for you. The full text of every answer,
+              with its source, is on the
+              <a href="/guide.html">plain HTML guide</a> — no JavaScript required.
+            </p>
+          </noscript>
+
+          <div class="fork-grid" id="fork" role="group" aria-labelledby="fork-heading">
+            <button
+              type="button"
+              class="fork-card"
+              data-status="visiting"
+              aria-pressed="false"
+            >
+              <h3>Just visiting</h3>
+              <p class="fork-ar" lang="ar" dir="rtl">زائر</p>
+              <ul>
+                <li>Getting in</li>
+                <li>Driving while you are here</li>
+                <li>Health cover</li>
+              </ul>
+              <span class="fork-go" aria-hidden="true">Show my list →</span>
+            </button>
+
+            <button
+              type="button"
+              class="fork-card"
+              data-status="moving"
+              data-primary="true"
+              aria-pressed="false"
+            >
+              <span class="fork-tag" aria-hidden="true">Most people</span>
+              <h3>Moving here</h3>
+              <p class="fork-ar" lang="ar" dir="rtl">أنتقل للعيش هنا</p>
+              <ul>
+                <li>Medical test and residence visa</li>
+                <li>Emirates ID</li>
+                <li>Ejari, DEWA, bank, licence</li>
+              </ul>
+              <span class="fork-go" aria-hidden="true">Show my 9 steps →</span>
+            </button>
+
+            <button
+              type="button"
+              class="fork-card"
+              data-status="resident"
+              aria-pressed="false"
+            >
+              <h3>Already living here</h3>
+              <p class="fork-ar" lang="ar" dir="rtl">مقيم</p>
+              <ul>
+                <li>Emirates ID and proof of residency</li>
+                <li>Ejari, DEWA and insurance</li>
+                <li>Schools and KHDA</li>
+              </ul>
+              <span class="fork-go" aria-hidden="true">Show my list →</span>
+            </button>
+          </div>
+
+          <p class="inline-note" id="storage-note" hidden>
+            Your browser is blocking site storage, so anything you tick off will be forgotten when
+            you close this tab. Everything still works — it just will not be remembered.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="journey" aria-labelledby="journey-heading" hidden>
+        <div class="wrap" id="journey-body">
+          <!-- Rendered by src/site/main.ts -->
+        </div>
+      </section>
+
+      <section class="section" id="more" aria-labelledby="more-heading" hidden>
+        <div class="wrap">
+          <p class="mono section-label">Everything else</p>
+          <h2 id="more-heading">Other questions people ask</h2>
+          <p class="section-intro">
+            These are in the same content file, they just are not on the path you picked. Same rule
+            applies: every one of them shows the source it came from and the date it was checked.
+          </p>
+          <div class="more-list" id="more-list"></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="elsewhere-heading">
+        <div class="wrap">
+          <p class="mono section-label">The same content, two other ways</p>
+          <h2 id="elsewhere-heading">Read it however suits you</h2>
+          <div class="elsewhere-grid">
+            <a class="elsewhere-card" href="/game.html">
+              <span class="mono" style="color: var(--sand-mid)">The game</span>
+              <h3>Walk the district →</h3>
+              <p>
+                A small top-down pixel game. Knock on a door, read the same answer, same source,
+                same date. Keyboard or touch.
+              </p>
+            </a>
+            <a class="elsewhere-card" href="/guide.html">
+              <span class="mono" style="color: var(--sand-mid)">The guarantee</span>
+              <h3>Plain HTML guide →</h3>
+              <p>
+                Every answer as semantic HTML: headings, real links, screen-reader friendly, no
+                canvas and nothing clever.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          <strong>Unofficial guide — always confirm with the official source.</strong>
+          An independent community project, not affiliated with any Dubai government body. No
+          government logo, crest, seal or official colour scheme appears anywhere on this site.
+        </p>
+        <p>
+          Answers are stored as data in <code>src/content/answers.json</code> and shown verbatim.
+          Nothing on this page is generated, summarised or paraphrased at runtime, and no fee,
+          timeline or document list is stated that the linked source does not state itself.
+        </p>
+        <p>
+          Your progress is kept in this browser only, in <code>localStorage</code>. There is no
+          account, no server and nothing is sent anywhere.
+          <button type="button" class="btn" data-variant="quiet" id="reset-progress">
+            Clear my progress
+          </button>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/site/main.ts"></script>
+  </body>
+</html>

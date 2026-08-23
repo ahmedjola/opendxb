@@ -1,0 +1,818 @@
+/* ==========================================================================
+   Landing in Dubai — design system.
+
+   One palette, one type pairing, no third-party CSS. "Press Start 2P" is used
+   for small mono labels ONLY (never for reading text — it is unreadable in
+   paragraphs and terrible for dyslexic readers). "IBM Plex Sans Arabic" does
+   everything else, Latin and Arabic, from one family so the two scripts sit on
+   the same rhythm.
+   ========================================================================== */
+
+:root {
+  --bg: #120e16;
+  --panel: #1b1420;
+  --raised: #241a2a;
+  --border: #3a2c3f;
+  --dim: #5a4560;
+  --muted: #8a7a8f;
+  --body: #b8a8bc;
+  --body-bright: #c4b4c8;
+  --text: #efe3d6;
+  --accent: #f2a25c;
+  --accent-deep: #d9944a;
+  --accent-light: #ffd9a0;
+  --teal: #2e8b8b;
+  --teal-light: #4fb8ae;
+  --sand: #e8c89a;
+  --sand-mid: #c9a876;
+  --brown: #8f5228;
+  --green: #35663c;
+
+  --mono: "Press Start 2P", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --wrap: 60rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --radius: 4px;
+  --tap: 44px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* The sticky notice must never cover the thing you jumped to. */
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  color: var(--accent-light);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Arabic: always isolated so it cannot re-order the Latin around it. */
+[lang="ar"],
+.ar {
+  unicode-bidi: isolate;
+  direction: rtl;
+  text-align: right;
+  font-feature-settings: "liga" 1;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.06em;
+  line-height: 1.9;
+  text-transform: uppercase;
+}
+@media (min-width: 40rem) {
+  .mono {
+    font-size: 0.625rem;
+  }
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background: var(--accent-light);
+  color: #120e16;
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+
+/* ── The permanent unofficial notice ─────────────────────────────────── */
+
+.notice-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #1a1119;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgb(242 162 92 / 0.18);
+  padding: 0.5rem var(--gutter);
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--body);
+}
+.notice-bar strong {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+.notice-bar span {
+  color: var(--muted);
+}
+@media (max-width: 34rem) {
+  .notice-bar span {
+    display: block;
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: calc(100svh - 3rem);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  /* The window: a hard dark vignette all round, so the scene reads as
+     something you are looking THROUGH rather than a background image. */
+  box-shadow:
+    inset 0 0 5rem 1.5rem rgb(18 14 22 / 0.95),
+    inset 0 0 14rem 4rem rgb(18 14 22 / 0.7),
+    inset 0 0 26rem 9rem rgb(18 14 22 / 0.4);
+  pointer-events: none;
+}
+/* Scrim: the copy has to stay readable over a busy, high-contrast scene, and
+   contrast is not something to leave to luck. */
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(18 14 22 / 0.92) 0%,
+      rgb(18 14 22 / 0.78) 30%,
+      rgb(18 14 22 / 0.3) 62%,
+      rgb(18 14 22 / 0) 88%
+    ),
+    linear-gradient(180deg, rgb(18 14 22 / 0.55) 0%, rgb(18 14 22 / 0) 30%);
+}
+@media (max-width: 52rem) {
+  .hero-scene::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(18 14 22 / 0.45) 0%,
+        rgb(18 14 22 / 0.1) 26%,
+        rgb(18 14 22 / 0.72) 52%,
+        rgb(18 14 22 / 0.92) 100%
+      );
+  }
+}
+.hero-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  width: 100%;
+  padding: 6rem var(--gutter) 5.5rem;
+  text-align: left;
+}
+.hero-copy > * {
+  max-width: 34rem;
+}
+
+.hero-label {
+  color: var(--accent-light);
+  margin: 0 0 1.25rem;
+  text-shadow: 0 2px 0 #120e16;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 1.4rem + 5.4vw, 4.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  text-shadow: 0 3px 14px rgb(18 14 22 / 0.85);
+}
+.hero h1 b {
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+/* RTL text, but aligned to the start of an LTR column: direction still governs
+   the bidi ordering, alignment is only where the line sits. */
+.hero-ar {
+  text-align: left;
+  font-size: clamp(1.25rem, 1rem + 1.1vw, 1.75rem);
+  color: var(--sand);
+  margin: 0 0 1.25rem;
+  text-shadow: 0 2px 10px rgb(18 14 22 / 0.9);
+}
+
+.hero-body {
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  color: var(--body-bright);
+  margin: 0;
+  text-shadow: 0 2px 10px rgb(18 14 22 / 0.9);
+}
+
+.scroll-cue {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: var(--tap);
+  padding: 0.5rem 0.9rem;
+  color: var(--sand);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(18 14 22 / 0.72);
+}
+.scroll-cue:hover {
+  color: var(--accent-light);
+  border-color: var(--dim);
+}
+.scroll-cue .arrow {
+  font-size: 0.85rem;
+  line-height: 1;
+  animation: nudge 1.8s ease-in-out infinite;
+}
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+/* ── Sections ─────────────────────────────────────────────────────────── */
+
+.section {
+  padding: clamp(3rem, 8vw, 5.5rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-label {
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+.section h2 {
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+.section h2 b {
+  font-weight: 700;
+}
+.section-intro {
+  max-width: 44rem;
+  color: var(--body);
+}
+
+/* ── The fork ─────────────────────────────────────────────────────────── */
+
+.fork-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+@media (min-width: 52rem) {
+  .fork-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+.fork-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 1.5rem 1.25rem 1.25rem;
+  text-align: left;
+  font: inherit;
+  color: var(--body);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.fork-card:hover {
+  background: var(--raised);
+  border-color: var(--dim);
+  transform: translateY(-2px);
+}
+.fork-card[data-primary="true"] {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #241a2a, #1b1420);
+  box-shadow: 0 0 0 1px rgb(242 162 92 / 0.25);
+}
+.fork-card[aria-pressed="true"] {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 0 2px rgb(255 217 160 / 0.35);
+}
+.fork-tag {
+  text-transform: uppercase;
+  position: absolute;
+  top: -0.6rem;
+  left: 1.25rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--accent);
+  color: #120e16;
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+}
+.fork-card h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+}
+.fork-card .fork-ar {
+  text-align: left;
+  color: var(--sand-mid);
+  font-size: 1.0625rem;
+  margin: 0;
+}
+.fork-card ul {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+.fork-card li::before {
+  content: "·";
+  color: var(--accent);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.fork-go {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.fork-card[data-primary="true"] .fork-go {
+  color: var(--accent-light);
+}
+
+/* ── The journey ──────────────────────────────────────────────────────── */
+
+.journey-head > div:first-child {
+  flex: 1 1 24rem;
+}
+.journey-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.progress-meter {
+  display: block;
+  height: 6px;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.75rem 0 0.5rem;
+  max-width: 26rem;
+}
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent-light));
+  transition: width 0.35s ease;
+}
+
+.steps {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  position: relative;
+}
+/* The path itself: a line running down the left of the markers. */
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 1.09rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--border) 0 6px,
+    transparent 6px 12px
+  );
+}
+@media (max-width: 34rem) {
+  .steps::before {
+    left: 0.96rem;
+  }
+}
+
+.step {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem 0.85rem 3.5rem;
+}
+@media (max-width: 34rem) {
+  .step {
+    padding-left: 3.1rem;
+  }
+}
+.step-marker {
+  position: absolute;
+  left: -1px;
+  top: 0.7rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-left: -0.1rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.625rem;
+}
+@media (max-width: 34rem) {
+  .step-marker {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.step[data-state="complete"] .step-marker {
+  border-color: var(--green);
+  background: var(--green);
+  color: #eaf6ea;
+}
+.step[data-state="current"] {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #241a2a, #1b1420);
+  box-shadow: 0 0 0 1px rgb(242 162 92 / 0.2);
+}
+.step[data-state="current"] .step-marker {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #120e16;
+}
+.step[data-state="locked"] {
+  background: #171020;
+  border-style: dashed;
+}
+/* Locked steps are dimmed, not made unreadable — "you cannot do this yet" must
+   never turn into "you cannot read this". These still clear 4.5:1. */
+.step[data-state="locked"] .step-title,
+.step[data-state="locked"] .step-ar {
+  color: var(--muted);
+}
+.step[data-state="locked"] .step-marker {
+  color: var(--dim);
+}
+
+.step-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+}
+.step-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.step-ar {
+  color: var(--sand-mid);
+  font-size: 0.9375rem;
+}
+.step-badge {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.42rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.step-badge[data-kind="current"] {
+  background: var(--accent);
+  color: #120e16;
+}
+.step-badge[data-kind="complete"] {
+  background: var(--green);
+  color: #eaf6ea;
+}
+.step-badge[data-kind="locked"] {
+  background: var(--raised);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.step-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.step[data-state="current"] .step-note {
+  color: var(--sand);
+}
+
+.step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: var(--tap);
+  padding: 0.5rem 0.95rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--body-bright);
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  border-color: var(--dim);
+  color: var(--text);
+  background: #2b1f32;
+}
+.btn[data-variant="primary"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #120e16;
+  font-weight: 600;
+}
+.btn[data-variant="primary"]:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  color: #120e16;
+}
+.btn[data-variant="quiet"] {
+  background: transparent;
+  color: var(--muted);
+}
+.btn[data-variant="quiet"]:hover {
+  color: var(--text);
+}
+
+.step-panel {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 1rem;
+}
+.step-panel[hidden] {
+  display: none;
+}
+
+/* ── Answers ──────────────────────────────────────────────────────────── */
+
+.answer {
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+.answer h4 {
+  font-size: 1rem;
+  margin: 0 0 0.15rem;
+}
+.answer .q-ar {
+  color: var(--sand-mid);
+  font-size: 0.9375rem;
+  margin: 0 0 0.75rem;
+}
+.answer .a-en {
+  color: var(--body-bright);
+  margin: 0 0 0.75rem;
+}
+.answer .a-ar {
+  color: var(--body);
+  margin: 0 0 0.9rem;
+  font-size: 0.9375rem;
+}
+.answer .source {
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+}
+.answer .source a {
+  min-height: 1.5rem;
+  display: inline-block;
+}
+.answer .source .checked {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+  color: var(--dim);
+}
+.answer .source-missing {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.empty-note {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* ── Storage / misc notes ─────────────────────────────────────────────── */
+
+.inline-note {
+  margin: 1rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.inline-note[hidden] {
+  display: none;
+}
+
+.elsewhere-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1.5rem;
+}
+@media (min-width: 44rem) {
+  .elsewhere-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.elsewhere-card {
+  display: block;
+  padding: 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--body);
+  text-decoration: none;
+}
+.elsewhere-card:hover {
+  border-color: var(--dim);
+  background: var(--raised);
+}
+.elsewhere-card h3 {
+  margin: 0.35rem 0 0.35rem;
+  font-size: 1.125rem;
+  color: var(--accent);
+}
+.elsewhere-card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 4rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.site-footer strong {
+  color: var(--body-bright);
+}
+.site-footer a {
+  color: var(--sand);
+}
+
+.more-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fork-card:hover {
+    transform: none;
+  }
+}
+
+/* ── Screen-reader-only text ──────────────────────────────────────────── */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
