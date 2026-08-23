@@ -1,8 +1,26 @@
 {
-  "version": "0.1.0",
-  "about": "Curated crosswalk between Dubai Land Department official community names, their Arabic forms, and the market names residents and portals actually use. Official community numbers, sector codes and centroids are intentionally absent here and are populated from Dubai Pulse by `opendxb ingest` — this file never asserts an identifier it cannot source. The alias layer is the hand-maintained contribution: it is what makes a KHDA school row join to a DLD transaction row.",
+  "version": "0.2.0",
+  "about": "Curated crosswalk between Dubai Land Department official community names, their Arabic forms, and the market names residents and portals actually use. communityNumber is DLD's own areaId, read from its public gateway — never invented here. The alias layer mapping market names (Dubai Marina, JLT, JVC, DIFC) onto official names is the hand-maintained contribution, and is what lets a KHDA school row join to a DLD transaction row.",
   "coverage": "The communities carrying the large majority of Dubai's residential transactions, schools and population. Not the full DLD register; `opendxb ingest` extends it.",
   "communities": [
+    {
+      "slug": "abu-hail",
+      "nameEn": "Abu Hail",
+      "nameAr": "ابو هيل",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 230,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-athbah",
+      "nameEn": "AL Athbah",
+      "nameAr": "العذبة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 473,
+      "sectorNumber": null
+    },
     {
       "slug": "al-aweer-first",
       "nameEn": "Al Aweer First",
@@ -10,25 +28,59 @@
       "marketNames": [
         "Al Aweer 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 398
+    },
+    {
+      "slug": "al-aweer-second",
+      "nameEn": "Al Aweer Second",
+      "nameAr": "العوير الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 399,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-bada",
+      "nameEn": "Al Bada",
+      "nameAr": "البدع",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 276,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-baraha",
+      "nameEn": "Al Baraha",
+      "nameAr": "البراحه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 239,
+      "sectorNumber": null
     },
     {
       "slug": "al-barsha-first",
       "nameEn": "Al Barsha First",
-      "nameAr": "البرشاء الأولى",
+      "nameAr": "البرشاء الاولى",
       "marketNames": [
         "Al Barsha 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "البرشاء الأولى"
+      ],
+      "communityNumber": 368
     },
     {
       "slug": "al-barsha-second",
       "nameEn": "Al Barsha Second",
-      "nameAr": "البرشاء الثانية",
+      "nameAr": "البرشاء الثانيه",
       "marketNames": [
         "Al Barsha 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "البرشاء الثانية"
+      ],
+      "communityNumber": 393
     },
     {
       "slug": "al-barsha-south-fifth",
@@ -40,7 +92,8 @@
       ],
       "marketNamesAr": [
         "أرجان"
-      ]
+      ],
+      "communityNumber": 442
     },
     {
       "slug": "al-barsha-south-fourth",
@@ -52,7 +105,8 @@
       ],
       "marketNamesAr": [
         "قرية جميرا الدائرية"
-      ]
+      ],
+      "communityNumber": 441
     },
     {
       "slug": "al-barsha-south-third",
@@ -64,57 +118,159 @@
       ],
       "marketNamesAr": [
         "مثلث قرية جميرا"
-      ]
+      ],
+      "communityNumber": 409
     },
     {
       "slug": "al-barsha-third",
       "nameEn": "Al Barsha Third",
-      "nameAr": "البرشاء الثالثة",
+      "nameAr": "البرشاء الثالثه",
       "marketNames": [
         "Al Barsha 3"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "البرشاء الثالثة"
+      ],
+      "communityNumber": 369
+    },
+    {
+      "slug": "al-barshaa-south-first",
+      "nameEn": "Al Barshaa South First",
+      "nameAr": "البرشاء جنوب الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 415,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-barshaa-south-second",
+      "nameEn": "Al Barshaa South Second",
+      "nameAr": "البرشاء جنوب الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 414,
+      "sectorNumber": null
     },
     {
       "slug": "al-buteen",
       "nameEn": "Al Buteen",
       "nameAr": "البطين",
       "marketNames": [],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 254
+    },
+    {
+      "slug": "al-dhagaya",
+      "nameEn": "Al Dhagaya",
+      "nameAr": "الضغايه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 238,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-eyas",
+      "nameEn": "Al Eyas",
+      "nameAr": "العياص",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 400,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-garhoud",
+      "nameEn": "Al Garhoud",
+      "nameAr": "القرهود",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 378,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-goze-industrial-second",
+      "nameEn": "Al Goze Industrial Second",
+      "nameAr": "القوز الصناعيه الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 372,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-hamriya",
+      "nameEn": "Al Hamriya",
+      "nameAr": "الحمريه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 269,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-hebiah-fifth",
+      "nameEn": "Al Hebiah Fifth",
+      "nameAr": "الحبيه الخامسة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 451,
+      "sectorNumber": null
     },
     {
       "slug": "al-hebiah-first",
       "nameEn": "Al Hebiah First",
-      "nameAr": "الهبية الأولى",
+      "nameAr": "الحبيه الاولى",
       "marketNames": [
         "Motor City",
         "Uptown Motor City"
       ],
       "marketNamesAr": [
-        "مدينة السيارات"
-      ]
+        "مدينة السيارات",
+        "الهبية الأولى"
+      ],
+      "communityNumber": 444
     },
     {
       "slug": "al-hebiah-fourth",
       "nameEn": "Al Hebiah Fourth",
-      "nameAr": "الهبية الرابعة",
+      "nameAr": "الحبيه الرابعة",
       "marketNames": [
         "Dubai Sports City",
         "Sports City"
       ],
       "marketNamesAr": [
-        "مدينة دبي الرياضية"
-      ]
+        "مدينة دبي الرياضية",
+        "الهبية الرابعة"
+      ],
+      "communityNumber": 435
+    },
+    {
+      "slug": "al-hebiah-second",
+      "nameEn": "Al Hebiah Second",
+      "nameAr": "الحبيه الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 452,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-hebiah-sixth",
+      "nameEn": "Al Hebiah Sixth",
+      "nameAr": "الحبيه السادسة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 531,
+      "sectorNumber": null
     },
     {
       "slug": "al-hebiah-third",
       "nameEn": "Al Hebiah Third",
-      "nameAr": "الهبية الثالثة",
+      "nameAr": "الحبية الثالثة",
       "marketNames": [
         "Dubai Studio City",
         "Arabian Ranches III"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الهبية الثالثة"
+      ],
+      "communityNumber": 523
     },
     {
       "slug": "al-jaddaf",
@@ -124,7 +280,35 @@
         "Jaddaf Waterfront",
         "Culture Village"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 334
+    },
+    {
+      "slug": "al-jafliya",
+      "nameEn": "Al Jafliya",
+      "nameAr": "الجافليه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 328,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-karama",
+      "nameEn": "Al Karama",
+      "nameAr": "الكرامه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 271,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-khabeesi",
+      "nameEn": "Al Khabeesi",
+      "nameAr": "الخبيصى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 247,
+      "sectorNumber": null
     },
     {
       "slug": "al-khairan-first",
@@ -136,12 +320,85 @@
       ],
       "marketNamesAr": [
         "مرسى خور دبي"
-      ]
+      ],
+      "communityNumber": 447
+    },
+    {
+      "slug": "al-khawaneej-first",
+      "nameEn": "Al Khawaneej First",
+      "nameAr": "الخوانيج الأولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 396,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-khawaneej-second",
+      "nameEn": "Al Khawaneej Second",
+      "nameAr": "الخوانيج الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 397,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-kheeran",
+      "nameEn": "Al Kheeran",
+      "nameAr": "الخيران",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 437,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-kifaf",
+      "nameEn": "Al Kifaf",
+      "nameAr": "الكفاف",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 366,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-lusaily",
+      "nameEn": "Al Lusaily",
+      "nameAr": "اللسيلى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 391,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-mamzer",
+      "nameEn": "Al Mamzer",
+      "nameAr": "الممزر",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 231,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-manara",
+      "nameEn": "Al Manara",
+      "nameAr": "المناره",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 315,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-mararr",
+      "nameEn": "Al Mararr",
+      "nameAr": "المرر",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 339,
+      "sectorNumber": null
     },
     {
       "slug": "al-merkadh",
       "nameEn": "Al Merkadh",
-      "nameAr": "المركض",
+      "nameAr": "المركاض",
       "marketNames": [
         "Sobha Hartland",
         "Mohammed Bin Rashid City",
@@ -149,8 +406,46 @@
         "District One"
       ],
       "marketNamesAr": [
-        "مدينة محمد بن راشد"
-      ]
+        "مدينة محمد بن راشد",
+        "المركض"
+      ],
+      "communityNumber": 412
+    },
+    {
+      "slug": "al-mizhar-first",
+      "nameEn": "Al Mizhar First",
+      "nameAr": "المزهر الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 316,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-mizhar-fourth",
+      "nameEn": "AL MIZHAR FOURTH",
+      "nameAr": "المزهر الرابعة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 402,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-mizhar-second",
+      "nameEn": "Al Mizhar Second",
+      "nameAr": "المزهر الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 394,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-mizhar-third",
+      "nameEn": "Al Mizhar Third",
+      "nameAr": "المزهر الثالثة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 403,
+      "sectorNumber": null
     },
     {
       "slug": "al-muraqqabat",
@@ -160,44 +455,84 @@
         "Muraqqabat",
         "Deira"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 244
+    },
+    {
+      "slug": "al-muteena",
+      "nameEn": "Al Muteena",
+      "nameAr": "المطينه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 249,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-nahda-first",
+      "nameEn": "Al Nahda First",
+      "nameAr": "النهده الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 355,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-nahda-second",
+      "nameEn": "Al Nahda Second",
+      "nameAr": "النهده الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 301,
+      "sectorNumber": null
     },
     {
       "slug": "al-quoz-first",
       "nameEn": "Al Quoz First",
-      "nameAr": "القوز الأولى",
+      "nameAr": "القوز الاولى",
       "marketNames": [
         "Al Quoz 1",
         "Alserkal Avenue"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القوز الأولى"
+      ],
+      "communityNumber": 338
     },
     {
       "slug": "al-quoz-fourth",
       "nameEn": "Al Quoz Fourth",
-      "nameAr": "القوز الرابعة",
+      "nameAr": "القوز الرابعه",
       "marketNames": [
         "Al Quoz 4"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القوز الرابعة"
+      ],
+      "communityNumber": 348
     },
     {
       "slug": "al-quoz-industrial-first",
       "nameEn": "Al Quoz Industrial First",
-      "nameAr": "القوز الصناعية الأولى",
+      "nameAr": "القوز الصناعيه الاولى",
       "marketNames": [
         "Al Quoz Industrial Area 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القوز الصناعية الأولى"
+      ],
+      "communityNumber": 308
     },
     {
       "slug": "al-quoz-industrial-fourth",
       "nameEn": "Al Quoz Industrial Fourth",
-      "nameAr": "القوز الصناعية الرابعة",
+      "nameAr": "القوز الصناعيه الرابعه",
       "marketNames": [
         "Al Quoz Industrial Area 4"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القوز الصناعية الرابعة"
+      ],
+      "communityNumber": 373
     },
     {
       "slug": "al-quoz-second",
@@ -211,11 +546,23 @@
     {
       "slug": "al-quoz-third",
       "nameEn": "Al Quoz Third",
-      "nameAr": "القوز الثالثة",
+      "nameAr": "القوز الثالثه",
       "marketNames": [
         "Al Quoz 3"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القوز الثالثة"
+      ],
+      "communityNumber": 347
+    },
+    {
+      "slug": "al-qusais",
+      "nameEn": "AL QUSAIS",
+      "nameAr": "القصيص",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 305,
+      "sectorNumber": null
     },
     {
       "slug": "al-qusais-first",
@@ -227,13 +574,52 @@
       "marketNamesAr": []
     },
     {
+      "slug": "al-qusais-industrial-fifth",
+      "nameEn": "Al Qusais Industrial Fifth",
+      "nameAr": "القصيص الصناعيه الخامسه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 323,
+      "sectorNumber": null
+    },
+    {
       "slug": "al-qusais-industrial-first",
       "nameEn": "Al Qusais Industrial First",
-      "nameAr": "القصيص الصناعية الأولى",
+      "nameAr": "القصيص الصناعيه الاولى",
       "marketNames": [
         "Al Qusais Industrial Area 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "القصيص الصناعية الأولى"
+      ],
+      "communityNumber": 363
+    },
+    {
+      "slug": "al-qusais-industrial-fourth",
+      "nameEn": "Al Qusais Industrial Fourth",
+      "nameAr": "القصيص الصناعيه الرابعه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 322,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-qusais-industrial-third",
+      "nameEn": "Al Qusais Industrial Third",
+      "nameAr": "القصيص الصناعيه الثالثه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 321,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-raffa",
+      "nameEn": "Al Raffa",
+      "nameAr": "الرفاعه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 267,
+      "sectorNumber": null
     },
     {
       "slug": "al-ras",
@@ -242,14 +628,36 @@
       "marketNames": [
         "Deira Al Ras"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 242
+    },
+    {
+      "slug": "al-rashidiya",
+      "nameEn": "Al Rashidiya",
+      "nameAr": "الراشديه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 300,
+      "sectorNumber": null
     },
     {
       "slug": "al-rigga",
       "nameEn": "Al Rigga",
-      "nameAr": "الرقة",
+      "nameAr": "الرقه",
       "marketNames": [],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الرقة"
+      ],
+      "communityNumber": 356
+    },
+    {
+      "slug": "al-rowaiyah-first",
+      "nameEn": "Al Rowaiyah First",
+      "nameAr": "الروية الأولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 492,
+      "sectorNumber": null
     },
     {
       "slug": "al-sabkha",
@@ -261,83 +669,118 @@
     {
       "slug": "al-safa-first",
       "nameEn": "Al Safa First",
-      "nameAr": "الصفا الأولى",
+      "nameAr": "الصفا الاولى",
       "marketNames": [
         "Al Safa 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الصفا الأولى"
+      ],
+      "communityNumber": 313
     },
     {
       "slug": "al-safa-second",
       "nameEn": "Al Safa Second",
-      "nameAr": "الصفا الثانية",
+      "nameAr": "الصفا الثانيه",
       "marketNames": [
         "Al Safa 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الصفا الثانية"
+      ],
+      "communityNumber": 314
+    },
+    {
+      "slug": "al-satwa",
+      "nameEn": "Al Satwa",
+      "nameAr": "السطوه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 266,
+      "sectorNumber": null
     },
     {
       "slug": "al-sufouh-first",
       "nameEn": "Al Sufouh First",
-      "nameAr": "الصفوح الأولى",
+      "nameAr": "الصفوح الاولى",
       "marketNames": [
         "Al Sufouh 1",
         "Knowledge Village"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الصفوح الأولى"
+      ],
+      "communityNumber": 307
     },
     {
       "slug": "al-sufouh-second",
       "nameEn": "Al Sufouh Second",
-      "nameAr": "الصفوح الثانية",
+      "nameAr": "الصفوح الثانيه",
       "marketNames": [
         "Al Sufouh 2",
         "Dubai Media City"
       ],
       "marketNamesAr": [
-        "مدينة دبي للإعلام"
-      ]
+        "مدينة دبي للإعلام",
+        "الصفوح الثانية"
+      ],
+      "communityNumber": 371
+    },
+    {
+      "slug": "al-suq-al-kabeer",
+      "nameEn": "Al Suq Al Kabeer",
+      "nameAr": "السوق الكبير",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 367,
+      "sectorNumber": null
     },
     {
       "slug": "al-thanyah-fifth",
       "nameEn": "Al Thanyah Fifth",
-      "nameAr": "الثنية الخامسة",
+      "nameAr": "الثنيه الخامسة",
       "marketNames": [
         "Jumeirah Lake Towers",
         "JLT"
       ],
       "marketNamesAr": [
-        "أبراج بحيرات جميرا"
-      ]
+        "أبراج بحيرات جميرا",
+        "الثنية الخامسة"
+      ],
+      "communityNumber": 350
     },
     {
       "slug": "al-thanyah-first",
       "nameEn": "Al Thanyah First",
-      "nameAr": "الثنية الأولى",
+      "nameAr": "الثنيه الأولى",
       "marketNames": [
         "Barsha Heights",
         "TECOM",
         "Dubai Internet City"
       ],
       "marketNamesAr": [
-        "برشاء هايتس"
-      ]
+        "برشاء هايتس",
+        "الثنية الأولى"
+      ],
+      "communityNumber": 443
     },
     {
       "slug": "al-thanyah-fourth",
       "nameEn": "Al Thanyah Fourth",
-      "nameAr": "الثنية الرابعة",
+      "nameAr": "الثنيه الرابعة",
       "marketNames": [
         "Jumeirah Islands"
       ],
       "marketNamesAr": [
-        "جزر جميرا"
-      ]
+        "جزر جميرا",
+        "الثنية الرابعة"
+      ],
+      "communityNumber": 352
     },
     {
       "slug": "al-thanyah-third",
       "nameEn": "Al Thanyah Third",
-      "nameAr": "الثنية الثالثة",
+      "nameAr": "الثنيه الثالثة",
       "marketNames": [
         "Emirates Hills",
         "The Springs",
@@ -346,17 +789,121 @@
         "Emirates Living"
       ],
       "marketNamesAr": [
-        "تلال الإمارات"
-      ]
+        "تلال الإمارات",
+        "الثنية الثالثة"
+      ],
+      "communityNumber": 351
+    },
+    {
+      "slug": "al-ttay",
+      "nameEn": "Al Ttay",
+      "nameAr": "الطي",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 438,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-twar-fifth",
+      "nameEn": "AL TWAR FIFTH",
+      "nameAr": "الطوار الخامسة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 357,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-twar-first",
+      "nameEn": "Al Twar First",
+      "nameAr": "الطوار الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 358,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-twar-fourth",
+      "nameEn": "Al Twar Fourth",
+      "nameAr": "الطوار الرابعة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 306,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-twar-second",
+      "nameEn": "Al Twar Second",
+      "nameAr": "الطوار الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 310,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-twar-third",
+      "nameEn": "Al Twar Third",
+      "nameAr": "الطوار الثالثه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 359,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-waheda",
+      "nameEn": "Al Waheda",
+      "nameAr": "الوحيده",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 382,
+      "sectorNumber": null
     },
     {
       "slug": "al-warqa-first",
       "nameEn": "Al Warqa First",
-      "nameAr": "الورقاء الأولى",
+      "nameAr": "الورقاء الاولى",
       "marketNames": [
         "Al Warqa 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الورقاء الأولى"
+      ],
+      "communityNumber": 297
+    },
+    {
+      "slug": "al-warqa-second",
+      "nameEn": "Al Warqa Second",
+      "nameAr": "الورقاء الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 354,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-warqa-third",
+      "nameEn": "Al Warqa Third",
+      "nameAr": "الورقاء الثالثه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 298,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-warsan-second",
+      "nameEn": "Al Warsan Second",
+      "nameAr": "ورسان الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 344,
+      "sectorNumber": null
+    },
+    {
+      "slug": "al-warsan-third",
+      "nameEn": "Al Warsan Third",
+      "nameAr": "ورسان الثالثه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 345,
+      "sectorNumber": null
     },
     {
       "slug": "al-wasl",
@@ -366,7 +913,17 @@
         "City Walk",
         "Jumeirah Garden City"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 364
+    },
+    {
+      "slug": "al-yelayiss-1",
+      "nameEn": "Al Yelayiss 1",
+      "nameAr": "اليلايس 1",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 506,
+      "sectorNumber": null
     },
     {
       "slug": "al-yelayiss-2",
@@ -376,16 +933,38 @@
         "Town Square",
         "Nshama Town Square"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 507
+    },
+    {
+      "slug": "al-yelayiss-5",
+      "nameEn": "Al Yelayiss 5",
+      "nameAr": "اليلايس 5",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 510,
+      "sectorNumber": null
     },
     {
       "slug": "al-yufrah-1",
       "nameEn": "Al Yufrah 1",
-      "nameAr": "اليفرة 1",
+      "nameAr": "اليفره 1",
       "marketNames": [
         "Dubai Land Oasis"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "اليفرة 1"
+      ],
+      "communityNumber": 469
+    },
+    {
+      "slug": "bukadra",
+      "nameEn": "Bukadra",
+      "nameAr": "بوكدرة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 405,
+      "sectorNumber": null
     },
     {
       "slug": "burj-khalifa",
@@ -398,36 +977,46 @@
       ],
       "marketNamesAr": [
         "وسط مدينة دبي"
-      ]
+      ],
+      "communityNumber": 390
     },
     {
       "slug": "business-bay",
       "nameEn": "Business Bay",
-      "nameAr": "الخليج التجاري",
+      "nameAr": "الخليج التجارى",
       "marketNames": [
         "Bay Avenue"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "الخليج التجاري"
+      ],
+      "communityNumber": 526
     },
     {
       "slug": "dubai-investment-park-first",
       "nameEn": "Dubai Investment Park First",
-      "nameAr": "مجمع دبي للاستثمار الأولى",
+      "nameAr": "مجمع دبي للاستثمار الاول",
       "marketNames": [
         "DIP 1",
         "Dubai Investments Park 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "مجمع دبي للاستثمار الأولى"
+      ],
+      "communityNumber": 458
     },
     {
       "slug": "dubai-investment-park-second",
       "nameEn": "Dubai Investment Park Second",
-      "nameAr": "مجمع دبي للاستثمار الثانية",
+      "nameAr": "مجمع دبي للاستثمار الثاني",
       "marketNames": [
         "DIP 2",
         "Dubai Investments Park 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "مجمع دبي للاستثمار الثانية"
+      ],
+      "communityNumber": 459
     },
     {
       "slug": "dubai-silicon-oasis",
@@ -440,6 +1029,24 @@
       "marketNamesAr": []
     },
     {
+      "slug": "eyal-nasser",
+      "nameEn": "Eyal Nasser",
+      "nameAr": "عيال ناصر",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 235,
+      "sectorNumber": null
+    },
+    {
+      "slug": "ghadeer-al-tair",
+      "nameEn": "Ghadeer Al tair",
+      "nameAr": "غدير الطير",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 340,
+      "sectorNumber": null
+    },
+    {
       "slug": "hadaeq-sheikh-mohammed-bin-rashid",
       "nameEn": "Hadaeq Sheikh Mohammed Bin Rashid",
       "nameAr": "حدائق الشيخ محمد بن راشد",
@@ -449,7 +1056,8 @@
       ],
       "marketNamesAr": [
         "دبي هيلز"
-      ]
+      ],
+      "communityNumber": 482
     },
     {
       "slug": "hatta",
@@ -459,11 +1067,30 @@
       "marketNamesAr": []
     },
     {
+      "slug": "hessyan-first",
+      "nameEn": "Hessyan First",
+      "nameAr": "حصيان الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 522,
+      "sectorNumber": null
+    },
+    {
+      "slug": "hessyan-second",
+      "nameEn": "Hessyan Second",
+      "nameAr": "حصيان الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 481,
+      "sectorNumber": null
+    },
+    {
       "slug": "hor-al-anz",
       "nameEn": "Hor Al Anz",
       "nameAr": "هور العنز",
       "marketNames": [],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 233
     },
     {
       "slug": "hor-al-anz-east",
@@ -471,7 +1098,16 @@
       "nameAr": "هور العنز شرق",
       "marketNames": [],
       "marketNamesAr": [],
-      "communityNumber": null,
+      "communityNumber": 234,
+      "sectorNumber": null
+    },
+    {
+      "slug": "island-2",
+      "nameEn": "Island 2",
+      "nameAr": "جزيرة 2",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 527,
       "sectorNumber": null
     },
     {
@@ -485,46 +1121,68 @@
       ],
       "marketNamesAr": [
         "الفرجان"
-      ]
+      ],
+      "communityNumber": 445
     },
     {
       "slug": "jabal-ali-industrial-first",
       "nameEn": "Jabal Ali Industrial First",
-      "nameAr": "جبل علي الصناعية الأولى",
+      "nameAr": "جبل على الصناعية الأولى",
       "marketNames": [
         "Jebel Ali Industrial Area 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "جبل علي الصناعية الأولى"
+      ],
+      "communityNumber": 395
+    },
+    {
+      "slug": "jabal-ali-industrial-second",
+      "nameEn": "Jabal Ali Industrial Second",
+      "nameAr": "جبل علي الصناعية الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 478,
+      "sectorNumber": null
     },
     {
       "slug": "jumeirah-first",
       "nameEn": "Jumeirah First",
-      "nameAr": "جميرا الأولى",
+      "nameAr": "جميرا الاولى",
       "marketNames": [
         "Jumeirah 1",
         "Jumeira 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "جميرا الأولى"
+      ],
+      "communityNumber": 317
     },
     {
       "slug": "jumeirah-second",
       "nameEn": "Jumeirah Second",
-      "nameAr": "جميرا الثانية",
+      "nameAr": "جميرا الثانيه",
       "marketNames": [
         "Jumeirah 2",
         "Jumeira 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "جميرا الثانية"
+      ],
+      "communityNumber": 375
     },
     {
       "slug": "jumeirah-third",
       "nameEn": "Jumeirah Third",
-      "nameAr": "جميرا الثالثة",
+      "nameAr": "جميرا الثالثه",
       "marketNames": [
         "Jumeirah 3",
         "Jumeira 3"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "جميرا الثالثة"
+      ],
+      "communityNumber": 318
     },
     {
       "slug": "madinat-al-mataar",
@@ -538,7 +1196,53 @@
       ],
       "marketNamesAr": [
         "دبي الجنوب"
-      ]
+      ],
+      "communityNumber": 462
+    },
+    {
+      "slug": "madinat-dubai-almelaheyah",
+      "nameEn": "Madinat Dubai Almelaheyah",
+      "nameAr": "مدينة دبي الملاحية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 333,
+      "sectorNumber": null
+    },
+    {
+      "slug": "madinat-hind-3",
+      "nameEn": "Madinat Hind 3",
+      "nameAr": "مدينة هند 3",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 504,
+      "sectorNumber": null
+    },
+    {
+      "slug": "madinat-hind-4",
+      "nameEn": "Madinat Hind 4",
+      "nameAr": "مدينة هند 4",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 505,
+      "sectorNumber": null
+    },
+    {
+      "slug": "madinat-latifa",
+      "nameEn": "Madinat Latifa",
+      "nameAr": "مدينة لطيفة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 513,
+      "sectorNumber": null
+    },
+    {
+      "slug": "mankhool",
+      "nameEn": "Mankhool",
+      "nameAr": "منخول",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 278,
+      "sectorNumber": null
     },
     {
       "slug": "marsa-dubai",
@@ -549,19 +1253,31 @@
       ],
       "marketNamesAr": [
         "دبي مارينا"
-      ]
+      ],
+      "communityNumber": 330
     },
     {
       "slug": "me-aisem-first",
       "nameEn": "Me'aisem First",
-      "nameAr": "معيصم الأولى",
+      "nameAr": "معيصم الأول",
       "marketNames": [
         "IMPZ",
         "Dubai Production City"
       ],
       "marketNamesAr": [
-        "مدينة دبي للإنتاج"
-      ]
+        "مدينة دبي للإنتاج",
+        "معيصم الأولى"
+      ],
+      "communityNumber": 485
+    },
+    {
+      "slug": "meaisem-second",
+      "nameEn": "Me'Aisem Second",
+      "nameAr": "معيصم الثانية",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 486,
+      "sectorNumber": null
     },
     {
       "slug": "mirdif",
@@ -570,45 +1286,127 @@
       "marketNames": [
         "Uptown Mirdif"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 232
+    },
+    {
+      "slug": "muhaisanah-first",
+      "nameEn": "Muhaisanah First",
+      "nameAr": "محيصنه الاولى",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 312,
+      "sectorNumber": null
+    },
+    {
+      "slug": "muhaisanah-second",
+      "nameEn": "Muhaisanah Second",
+      "nameAr": "محيصنه الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 360,
+      "sectorNumber": null
+    },
+    {
+      "slug": "muhaisanah-third",
+      "nameEn": "Muhaisanah Third",
+      "nameAr": "محيصنه الثالثه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 311,
+      "sectorNumber": null
     },
     {
       "slug": "muhaisnah-fourth",
       "nameEn": "Muhaisnah Fourth",
-      "nameAr": "محيصنة الرابعة",
+      "nameAr": "محيصنه الرابعه",
       "marketNames": [
         "Muhaisnah 4",
         "Sonapur"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "محيصنة الرابعة"
+      ],
+      "communityNumber": 361
+    },
+    {
+      "slug": "mushrif",
+      "nameEn": "Mushrif",
+      "nameAr": "مشرف",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 404,
+      "sectorNumber": null
     },
     {
       "slug": "nad-al-sheba-first",
       "nameEn": "Nad Al Sheba First",
-      "nameAr": "ند الشبا الأولى",
+      "nameAr": "ند الشبا الاولى",
       "marketNames": [
         "Nad Al Sheba 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "ند الشبا الأولى"
+      ],
+      "communityNumber": 335
     },
     {
       "slug": "nad-al-sheba-third",
       "nameEn": "Nad Al Sheba Third",
-      "nameAr": "ند الشبا الثالثة",
+      "nameAr": "ند الشبا الثالثه",
       "marketNames": [
         "Nad Al Sheba 3",
         "Meydan"
       ],
       "marketNamesAr": [
-        "ميدان"
-      ]
+        "ميدان",
+        "ند الشبا الثالثة"
+      ],
+      "communityNumber": 337
+    },
+    {
+      "slug": "nad-al-shiba-fourth",
+      "nameEn": "Nad Al Shiba Fourth",
+      "nameAr": "ند الشبا الرابعه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 406,
+      "sectorNumber": null
+    },
+    {
+      "slug": "nad-al-shiba-second",
+      "nameEn": "Nad Al Shiba Second",
+      "nameAr": "ند الشبا الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 336,
+      "sectorNumber": null
+    },
+    {
+      "slug": "nad-shamma",
+      "nameEn": "Nad Shamma",
+      "nameAr": "ند شما",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 327,
+      "sectorNumber": null
     },
     {
       "slug": "nadd-al-hamar",
       "nameEn": "Nadd Al Hamar",
       "nameAr": "ند الحمر",
       "marketNames": [],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 264
+    },
+    {
+      "slug": "nadd-hessa",
+      "nameEn": "Nadd Hessa",
+      "nameAr": "ند حصة",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 484,
+      "sectorNumber": null
     },
     {
       "slug": "naif",
@@ -617,7 +1415,8 @@
       "marketNames": [
         "Naif Deira"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 362
     },
     {
       "slug": "nakhlat-jumeirah",
@@ -629,15 +1428,18 @@
       ],
       "marketNamesAr": [
         "نخلة جميرة"
-      ]
+      ],
+      "communityNumber": 410
     },
     {
       "slug": "oud-metha",
       "nameEn": "Oud Metha",
-      "nameAr": "عود ميثاء",
+      "nameAr": "عود ميثا",
       "marketNames": [],
-      "marketNamesAr": [],
-      "communityNumber": null,
+      "marketNamesAr": [
+        "عود ميثاء"
+      ],
+      "communityNumber": 388,
       "sectorNumber": null
     },
     {
@@ -649,37 +1451,81 @@
         "Dubai Islands"
       ],
       "marketNamesAr": [],
-      "communityNumber": null,
+      "communityNumber": 432,
+      "sectorNumber": null
+    },
+    {
+      "slug": "palm-jabal-ali",
+      "nameEn": "Palm Jabal Ali",
+      "nameAr": "نخلة جبل علي",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 411,
       "sectorNumber": null
     },
     {
       "slug": "port-saeed",
       "nameEn": "Port Saeed",
-      "nameAr": "بورسعيد",
+      "nameAr": "بور سعيد",
       "marketNames": [
         "Deira Creek",
         "Airport Road"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "بورسعيد"
+      ],
+      "communityNumber": 240
     },
     {
       "slug": "ras-al-khor-industrial-first",
       "nameEn": "Ras Al Khor Industrial First",
-      "nameAr": "رأس الخور الصناعية الأولى",
+      "nameAr": "راس الخور الصناعيه الاولى",
       "marketNames": [
         "Ras Al Khor Industrial Area 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "رأس الخور الصناعية الأولى"
+      ],
+      "communityNumber": 376
+    },
+    {
+      "slug": "ras-al-khor-industrial-second",
+      "nameEn": "Ras Al Khor Industrial Second",
+      "nameAr": "راس الخور الصناعيه الثانيه",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 319,
+      "sectorNumber": null
     },
     {
       "slug": "rega-al-buteen",
       "nameEn": "Rega Al Buteen",
-      "nameAr": "الرقة البطين",
+      "nameAr": "رقه البطين",
       "marketNames": [
         "Rigga Al Buteen"
       ],
+      "marketNamesAr": [
+        "الرقة البطين"
+      ],
+      "communityNumber": 255,
+      "sectorNumber": null
+    },
+    {
+      "slug": "saih-aldahal",
+      "nameEn": "Saih Aldahal",
+      "nameAr": "سيح الدحل",
+      "marketNames": [],
       "marketNamesAr": [],
-      "communityNumber": null,
+      "communityNumber": 515,
+      "sectorNumber": null
+    },
+    {
+      "slug": "saih-shuaib-1",
+      "nameEn": "Saih Shuaib 1",
+      "nameAr": "سيح شعيب 1",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 480,
       "sectorNumber": null
     },
     {
@@ -691,77 +1537,178 @@
       ],
       "marketNamesAr": [
         "مدينة دبي الصناعية"
-      ]
+      ],
+      "communityNumber": 453
+    },
+    {
+      "slug": "saih-shuaib-3",
+      "nameEn": "Saih Shuaib 3",
+      "nameAr": "سيح شعيب 3",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 454,
+      "sectorNumber": null
+    },
+    {
+      "slug": "saih-shuaib-4",
+      "nameEn": "Saih Shuaib 4",
+      "nameAr": "سيح شعيب 4",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 455,
+      "sectorNumber": null
     },
     {
       "slug": "trade-centre-first",
       "nameEn": "Trade Centre First",
-      "nameAr": "مركز التجارة الأول",
+      "nameAr": "المركز التجارى الاولى",
       "marketNames": [
         "DIFC",
         "Dubai International Financial Centre",
         "Trade Centre 1"
       ],
       "marketNamesAr": [
-        "مركز دبي المالي العالمي"
-      ]
+        "مركز دبي المالي العالمي",
+        "مركز التجارة الأول"
+      ],
+      "communityNumber": 341
     },
     {
       "slug": "trade-centre-second",
       "nameEn": "Trade Centre Second",
-      "nameAr": "مركز التجارة الثاني",
+      "nameAr": "المركز التجارى الثانيه",
       "marketNames": [
         "Trade Centre 2",
         "World Trade Centre"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "مركز التجارة الثاني"
+      ],
+      "communityNumber": 329
+    },
+    {
+      "slug": "um-al-sheif",
+      "nameEn": "Um Al Sheif",
+      "nameAr": "ام الشيف",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 374,
+      "sectorNumber": null
+    },
+    {
+      "slug": "um-ramool",
+      "nameEn": "Um Ramool",
+      "nameAr": "ام رمول",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 248,
+      "sectorNumber": null
+    },
+    {
+      "slug": "umm-addamin",
+      "nameEn": "Umm Addamin",
+      "nameAr": "أم الدمن",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 494,
+      "sectorNumber": null
     },
     {
       "slug": "umm-hurair-first",
       "nameEn": "Umm Hurair First",
-      "nameAr": "أم هرير الأولى",
+      "nameAr": "ام هرير الاولى",
       "marketNames": [
         "Umm Hurair 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "أم هرير الأولى"
+      ],
+      "communityNumber": 325
     },
     {
       "slug": "umm-hurair-second",
       "nameEn": "Umm Hurair Second",
-      "nameAr": "أم هرير الثانية",
+      "nameAr": "ام هرير الثانيه",
       "marketNames": [
         "Umm Hurair 2"
       ],
       "marketNamesAr": [
-        "عود ميثاء"
-      ]
+        "عود ميثاء",
+        "أم هرير الثانية"
+      ],
+      "communityNumber": 326
     },
     {
       "slug": "umm-suqeim-first",
       "nameEn": "Umm Suqeim First",
-      "nameAr": "أم سقيم الأولى",
+      "nameAr": "ام سقيم الاولى",
       "marketNames": [
         "Umm Suqeim 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "أم سقيم الأولى"
+      ],
+      "communityNumber": 303
     },
     {
       "slug": "umm-suqeim-second",
       "nameEn": "Umm Suqeim Second",
-      "nameAr": "أم سقيم الثانية",
+      "nameAr": "ام سقيم الثانيه",
       "marketNames": [
         "Umm Suqeim 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "أم سقيم الثانية"
+      ],
+      "communityNumber": 304
     },
     {
       "slug": "umm-suqeim-third",
       "nameEn": "Umm Suqeim Third",
-      "nameAr": "أم سقيم الثالثة",
+      "nameAr": "ام سقيم الثالثه",
       "marketNames": [
         "Umm Suqeim 3"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "أم سقيم الثالثة"
+      ],
+      "communityNumber": 370
+    },
+    {
+      "slug": "wadi-al-amardi",
+      "nameEn": "Wadi Al Amardi",
+      "nameAr": "وادي العمردي",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 401,
+      "sectorNumber": null
+    },
+    {
+      "slug": "wadi-al-safa-2",
+      "nameEn": "Wadi Al Safa 2",
+      "nameAr": "وادي الصفا 2",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 464,
+      "sectorNumber": null
+    },
+    {
+      "slug": "wadi-al-safa-3",
+      "nameEn": "Wadi Al Safa 3",
+      "nameAr": "وادي الصفا 3",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 465,
+      "sectorNumber": null
+    },
+    {
+      "slug": "wadi-al-safa-4",
+      "nameEn": "Wadi Al Safa 4",
+      "nameAr": "وادي الصفا 4",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 466,
+      "sectorNumber": null
     },
     {
       "slug": "wadi-al-safa-5",
@@ -773,7 +1720,8 @@
       ],
       "marketNamesAr": [
         "ليوان"
-      ]
+      ],
+      "communityNumber": 467
     },
     {
       "slug": "wadi-al-safa-6",
@@ -785,7 +1733,8 @@
       ],
       "marketNamesAr": [
         "المرابع العربية"
-      ]
+      ],
+      "communityNumber": 434
     },
     {
       "slug": "wadi-al-safa-7",
@@ -796,19 +1745,22 @@
         "Villanova",
         "Mudon"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 463
     },
     {
       "slug": "warsan-first",
       "nameEn": "Warsan First",
-      "nameAr": "ورسان الأولى",
+      "nameAr": "ورسان الاولى",
       "marketNames": [
         "International City",
         "Warsan 1"
       ],
       "marketNamesAr": [
-        "المدينة العالمية"
-      ]
+        "المدينة العالمية",
+        "ورسان الأولى"
+      ],
+      "communityNumber": 343
     },
     {
       "slug": "warsan-fourth",
@@ -818,28 +1770,45 @@
         "Warsan 4",
         "International City Phase 2"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [],
+      "communityNumber": 483
+    },
+    {
+      "slug": "world-islands",
+      "nameEn": "World Islands",
+      "nameAr": "جزر العالم",
+      "marketNames": [],
+      "marketNamesAr": [],
+      "communityNumber": 413,
+      "sectorNumber": null
     },
     {
       "slug": "zaabeel-first",
       "nameEn": "Zaabeel First",
-      "nameAr": "زعبيل الأولى",
+      "nameAr": "زعبيل الاولى",
       "marketNames": [
         "Zabeel 1",
         "Za'abeel 1"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "زعبيل الأولى"
+      ],
+      "communityNumber": 331
     },
     {
       "slug": "zaabeel-second",
       "nameEn": "Zaabeel Second",
-      "nameAr": "زعبيل الثانية",
+      "nameAr": "زعبيل الثانيه",
       "marketNames": [
         "Zabeel 2",
         "Za'abeel 2",
         "Dubai World Trade Centre Residences"
       ],
-      "marketNamesAr": []
+      "marketNamesAr": [
+        "زعبيل الثانية"
+      ],
+      "communityNumber": 332
     }
-  ]
+  ],
+  "areasSyncedAt": "2026-08-23T13:25:16.205Z"
 }
