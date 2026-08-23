@@ -81,6 +81,34 @@ npm install opendxb        # SDK
 npx opendxb demo           # try it with no credentials, no download
 ```
 
+## Real data, no account, no UAE address
+
+Dubai Pulse — the emirate's open-data portal — **only accepts traffic from inside the UAE**. Its hostname resolves from anywhere and then silently drops the connection, which is why every naive attempt to automate against it fails with an unhelpful `fetch failed`. That rules out CI, and rules out most people outside the country.
+
+There is a way around it. Dubai Land Department's own public pages call a gateway that **is** reachable worldwide, authenticating as `Guest` with no user account:
+
+```
+GET https://gateway.dubailand.gov.ae/areawise/transaction/sales?fromDate=…&toDate=…
+GET https://gateway.dubailand.gov.ae/areawise/transaction/mortgage?fromDate=…&toDate=…
+```
+
+`opendxb ingest dld.areawise-sales` uses it. No credentials, no VPN, no registration:
+
+```
+DUBAI, JULY 2026 — 127 areas, live from DLD
+  AED 35.30bn across 14,143 transactions, mean AED 2,495,656
+
+  462  Madinat Al Mataar      AED 2.90bn   2457 deals   avg 1.18m   79.1% off-plan
+  410  Nakhlat Jumeirah       AED 1.85bn    289 deals   avg 6.41m   60.9% off-plan
+  526  Business Bay           AED 1.36bn    440 deals   avg 3.08m   23.0% off-plan
+  330  Marsa Dubai            AED 1.15bn    353 deals   avg 3.26m   12.2% off-plan
+  375  Jumeirah Second        AED 0.83bn     23 deals   avg 36.01m   4.3% off-plan
+```
+
+The trade-off is granularity: this is **totals per area per period**, not one row per registration. Everything the full register offers beyond that still needs Dubai Pulse credentials and a UAE connection. [docs/ACCESS-FINDINGS.md](docs/ACCESS-FINDINGS.md) records exactly what was tested, host by host and layer by layer.
+
+A nightly GitHub Action keeps it fresh and commits per-community aggregates to [`data/profiles/`](data/profiles), so the repo doubles as a versioned public record of Dubai community statistics — something the registries themselves do not publish, since they only ever show current state.
+
 ## The hard part: the community crosswalk
 
 The join key is a canonical **community**, and getting a name onto it is most of the work.
@@ -92,7 +120,7 @@ Matching then runs fuzzy token alignment with two deliberate refusals:
 - **Numbers are identity, not detail.** `Al Barsha 1`, `Al Barsha 2` and `Al Barsha 3` are distinct communities kilometres apart. When both sides carry digits and the digits disagree, similarity collapses to zero. A missed join is visible and recoverable; a confident wrong join silently corrupts every number downstream.
 - **Ambiguity is reported, never guessed.** If the top two candidates are within 0.05, `match` is `null` and you get the candidate list. `Jumeirah Village Circle` and `Jumeirah Village Triangle` do not collapse into each other.
 
-The crosswalk itself — DLD's official name, the Arabic name, and the market names people actually use — lives in [`data/communities.json`](data/communities.json). That mapping is the part no API gives you:
+The crosswalk itself lives in [`data/communities.json`](data/communities.json): **172 communities, 167 carrying Dubai Land Department's own area identifier**, reconciled against DLD's live register by [`scripts/sync-areas.mjs`](scripts/sync-areas.mjs). The mapping from official name to market name is the part no API gives you:
 
 | Official (DLD) | Market name |
 |---|---|
@@ -104,6 +132,10 @@ The crosswalk itself — DLD's official name, the Arabic name, and the market na
 | `Hadaeq Sheikh Mohammed Bin Rashid` | Dubai Hills Estate |
 | `Warsan First` | International City |
 | `Madinat Al Mataar` | Dubai South / Expo City |
+
+Reconciling against DLD taught the matcher things no amount of desk work would have: DLD writes `Al Goze` for Al Quoz, `Trade Center` for Trade Centre, `Um Suqaim`, `Al Saffa`, `Al Jadaf`, `Nad Al Shiba`, `Al Thanayah`, `Muhaisanah`, `Al Barshaa`. Each of those was quietly producing a duplicate community until the normaliser learned it.
+
+It also caught a mistake worth keeping in mind: `Palm Deira` scores **0.727** against `Palm Jumeirah`, above the 0.72 threshold. They are different islands. Official identifiers are therefore **never** assigned on a fuzzy match — only on exact or alias hits. A fuzzy match is reported for a human to review and nothing is written.
 
 ## Use it from an AI agent
 
@@ -125,9 +157,9 @@ Tools: `dubai_resolve_community`, `dubai_community_profile`, `dubai_property_tra
 
 Responses always carry their provenance, and sample-backed responses are labelled synthetic in the payload so a model cannot present them as registry data.
 
-## Ingesting real data
+## Ingesting the Dubai Pulse sources
 
-The bundled sample is synthetic. For real figures you need Dubai Pulse credentials ([register here](https://www.dubaipulse.gov.ae)):
+Everything beyond the areawise gateway — the full transaction register, Ejari contracts, schools, clinics, transit — needs Dubai Pulse credentials **and a UAE connection**. Note that DLD's API Gateway is provisioned for registered businesses rather than individual developers, so this path is not open to everyone ([register here](https://www.dubaipulse.gov.ae)):
 
 ```bash
 export DUBAI_PULSE_CLIENT_ID=...
@@ -148,8 +180,9 @@ Read these before trusting a number.
 
 - **The bundled sample is synthetic.** It is generated by [`scripts/generate-sample.mjs`](scripts/generate-sample.mjs) from a seeded PRNG so it is byte-stable, every record carries `synthetic: true`, and `SampleStore` refuses writes. It exists so the first five minutes work without credentials. It is not Dubai data and must never be quoted as such.
 - **Endpoint URLs need verifying.** Dubai Pulse reorganises dataset paths without notice. The resource URLs in this package are the best known at time of writing, not a contract; every one is overridable via `OPENDXB_ENDPOINT_<SOURCE_ID>`. See [docs/DATA-SOURCES.md](docs/DATA-SOURCES.md).
-- **Community numbers are null until you ingest.** This package does not assert official DLD identifiers it cannot source. `communityNumber` and `sectorNumber` stay `null` until a real ingest fills them.
-- **The registry is partial.** 78 communities, covering the large majority of Dubai's transactions and population — not the full DLD register.
+- **Community numbers come from DLD or stay null.** 167 of 172 carry DLD's own `areaId`, read from its register. The other five — Al Quoz Second, Al Qusais First, Al Sabkha, Dubai Silicon Oasis, Hatta — recorded no transactions in the months sampled, so nothing was invented for them and their identifiers are explicitly `null`.
+- **`dld.areawise-*` is aggregate, not row-level.** Totals per area per period. It cannot answer questions about individual properties or unit sizes.
+- **Dubai Pulse sources will fail outside the UAE.** `dld.transactions`, `dld.rents`, `khda.schools`, `dha.facilities` and `rta.stations` all depend on a geo-fenced portal. The nightly workflow attempts them only when credentials are present and never fails the build on them.
 - **`grossYieldPct` is indicative only.** Median rent over median sale price across all unit sizes; it ignores service charges, vacancy and transaction costs, and mixes studios with penthouses. A signal, not a valuation.
 - **Registry data has its own biases.** Ejari registration compliance is imperfect, so contracts understate the low end of the rental market. DLD amounts are the registered consideration, which for related-party and portfolio transfers is not the economic price. Per-source caveats are in [docs/DATA-SOURCES.md](docs/DATA-SOURCES.md) and surfaced by `opendxb sources`.
 
