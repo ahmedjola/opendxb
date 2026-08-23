@@ -17,7 +17,9 @@ import { virtualInput } from '../ui/touchControls';
 
 const MONO = 'ui-monospace, "DejaVu Sans Mono", monospace';
 const PANEL_X = 20;
-const PANEL_TOP = 116;
+// The interior needs real room: at 116 the wall, windows, desk, title and
+// blurb were all fighting over 92 pixels and overlapping each other.
+const PANEL_TOP = 152;
 
 type Mode = 'list' | 'answer';
 
@@ -82,18 +84,48 @@ export class OfficeScene extends Phaser.Scene {
   /** A small, entirely invented office interior. No emblem, seal or crest. */
   private drawInterior(): void {
     const { width } = this.scale;
+    const cx = width / 2;
     const g = this.add.graphics();
-    g.fillStyle(0x2b2822, 1).fillRect(0, 24, width, 92);
-    g.fillStyle(this.office.roof, 1).fillRect(0, 24, width, 8);
-    g.fillStyle(0x6b4f36, 1).fillRect(width / 2 - 90, 78, 180, 30); // desk
-    g.fillStyle(0x53402c, 1).fillRect(width / 2 - 90, 106, 180, 6);
 
-    this.add.image(width / 2 - 120, 96, 'planter').setOrigin(0.5, 1);
-    this.add.image(width / 2 + 120, 96, 'planter').setOrigin(0.5, 1);
-    this.add.sprite(width / 2, 82, 'player-a').setOrigin(0.5, 1).setTint(0xbfd8c9); // clerk
+    // Back wall, in the office's own colour, with a lit picture rail and a
+    // skirting board — the two edges that make a flat fill read as a wall.
+    g.fillStyle(0x2b2822, 1).fillRect(0, 24, width, 116);
+    g.fillStyle(this.office.roof, 1).fillRect(0, 24, width, 10);
+    g.fillStyle(0x000000, 0.25).fillRect(0, 34, width, 3);
+    g.fillStyle(0x3a3630, 1).fillRect(0, 132, width, 6); // skirting
+    g.fillStyle(0x1a1815, 1).fillRect(0, 138, width, 3);
+
+    // Windows onto the street, well out to the sides so nothing collides with
+    // the centred title and blurb.
+    for (const wx of [cx - 262, cx + 218]) {
+      g.fillStyle(0x1a1815, 1).fillRect(wx - 2, 62, 48, 46);
+      g.fillStyle(0x2b5f6e, 1).fillRect(wx, 64, 44, 42);
+      g.fillStyle(0x6fc7d4, 0.6).fillRect(wx, 64, 44, 15);
+      g.fillStyle(0xdff1f6, 0.35).fillRect(wx + 6, 66, 8, 32);
+      g.fillStyle(0x3a3630, 1).fillRect(wx - 2, 106, 48, 4); // sill
+    }
+
+    // The clerk, standing behind the desk. Drawn before the desk so the desk
+    // occludes them from the waist down, which is what puts them behind it.
+    this.add.image(cx, 106, 'shadow').setAlpha(0.22);
+    this.add.sprite(cx, 104, 'player-down-0').setOrigin(0.5, 1).setTint(0xbfd8c9).setScale(1.6);
+
+    // The desk: a lit top edge, a body, a base and a shadow beneath.
+    const desk = this.add.graphics();
+    desk.fillStyle(0x000000, 0.32).fillRect(cx - 112, 134, 224, 8);
+    desk.fillStyle(0x7d5c3e, 1).fillRect(cx - 110, 100, 220, 7); // lit counter edge
+    desk.fillStyle(0x6b4f36, 1).fillRect(cx - 110, 107, 220, 23);
+    desk.fillStyle(0x53402c, 1).fillRect(cx - 110, 130, 220, 5);
+    // A stack of forms on the counter, which is the joke of the whole game.
+    desk.fillStyle(0xe8e4dc, 1).fillRect(cx + 62, 92, 30, 9);
+    desk.fillStyle(0xc2ad8c, 1).fillRect(cx + 62, 98, 30, 3);
+    desk.fillStyle(0xe8e4dc, 1).fillRect(cx + 58, 88, 30, 5);
+
+    this.add.image(cx - 150, 132, 'planter').setOrigin(0.5, 1);
+    this.add.image(cx + 150, 132, 'planter').setOrigin(0.5, 1);
 
     this.add
-      .text(width / 2, 44, `${this.office.nameEn}  ·  fictional office`, {
+      .text(cx, 46, `${this.office.nameEn}  ·  fictional office`, {
         fontFamily: MONO,
         fontSize: '14px',
         color: '#ffffff',
@@ -101,7 +133,7 @@ export class OfficeScene extends Phaser.Scene {
       .setOrigin(0.5, 0.5)
       .setResolution(2);
     this.add
-      .text(width / 2, 62, this.office.blurbEn, {
+      .text(cx, 64, this.office.blurbEn, {
         fontFamily: MONO,
         fontSize: '11px',
         color: '#b3ac9e',

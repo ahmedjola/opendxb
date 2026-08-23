@@ -30,6 +30,7 @@ export function overlayMarkup(): string {
       <span class="mono city-bar-title">Walk the city</span>
       <span class="city-bar-hint">
         Arrows or WASD to walk &middot; <kbd>E</kbd> at a door &middot; <kbd>Esc</kbd> to step back
+        &middot; <kbd>Tab</kbd> then <kbd>Enter</kbd> to leave
       </span>
       <button type="button" class="btn city-close" id="city-close" data-variant="primary">
         Close
@@ -84,14 +85,21 @@ let gamePromise: Promise<unknown> | null = null;
 
 /** Import and boot Phaser. Deliberately not at module scope — see the header. */
 async function bootCity(): Promise<unknown> {
-  const [{ default: Phaser }, { BootScene }, { DistrictScene }, { OfficeScene }, { initTouchControls }] =
-    await Promise.all([
-      import('phaser'),
-      import('../scenes/BootScene'),
-      import('../scenes/DistrictScene'),
-      import('../scenes/OfficeScene'),
-      import('../ui/touchControls'),
-    ]);
+  const [
+    { default: Phaser },
+    { BootScene },
+    { DistrictScene },
+    { HudScene },
+    { OfficeScene },
+    { initTouchControls },
+  ] = await Promise.all([
+    import('phaser'),
+    import('../scenes/BootScene'),
+    import('../scenes/DistrictScene'),
+    import('../scenes/hud'),
+    import('../scenes/OfficeScene'),
+    import('../ui/touchControls'),
+  ]);
 
   initTouchControls(document.getElementById(TOUCHPAD_ID));
 
@@ -104,7 +112,7 @@ async function bootCity(): Promise<unknown> {
     backgroundColor: '#0d0c0a',
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     physics: { default: 'arcade', arcade: { gravity: { x: 0, y: 0 }, debug: false } },
-    scene: [BootScene, DistrictScene, OfficeScene],
+    scene: [BootScene, DistrictScene, HudScene, OfficeScene],
   });
 }
 
@@ -123,6 +131,10 @@ export function initCityOverlay(): void {
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', 'Walk the city');
   overlay.hidden = true;
+  // Focusable, so opening can put focus HERE rather than on the close button.
+  // With focus on Close, pressing Enter — the game's own confirm key — fired
+  // the button and shut the whole city instead of opening a door.
+  overlay.tabIndex = -1;
   overlay.innerHTML = overlayMarkup();
   document.body.append(overlay);
 
@@ -143,7 +155,7 @@ export function initCityOverlay(): void {
     opener = trigger;
     overlay.hidden = false;
     document.body.classList.add('city-open');
-    closeButton?.focus();
+    overlay.focus();
 
     gamePromise ??= bootCity().catch((error: unknown) => {
       const mount = document.getElementById(MOUNT_ID);
@@ -164,10 +176,10 @@ export function initCityOverlay(): void {
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || overlay.hidden) return;
-    // Phaser listens for Escape too — inside an office it means "step back out".
-    // Only close the whole overlay when the canvas does not have the keyboard.
-    const active = document.activeElement;
-    if (active === closeButton || active === document.body || active === overlay) close();
+    // Escape belongs to the game: inside an office it means "step back out".
+    // It closes the overlay only from the Close button, which is the first stop
+    // in the overlay's tab order and is named in the bar.
+    if (document.activeElement === closeButton) close();
   });
 
   // Any control anywhere on the page can open it.

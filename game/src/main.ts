@@ -8,6 +8,7 @@
 import Phaser from 'phaser';
 import { BootScene } from './scenes/BootScene';
 import { DistrictScene } from './scenes/DistrictScene';
+import { HudScene } from './scenes/hud';
 import { OfficeScene } from './scenes/OfficeScene';
 import { initTouchControls } from './ui/touchControls';
 import './styles/game.css';
@@ -29,7 +30,7 @@ const game = new Phaser.Game({
     default: 'arcade',
     arcade: { gravity: { x: 0, y: 0 }, debug: false },
   },
-  scene: [BootScene, DistrictScene, OfficeScene],
+  scene: [BootScene, DistrictScene, HudScene, OfficeScene],
 });
 
 // Dev-only handle so the scenes can be poked from the console (and from the
