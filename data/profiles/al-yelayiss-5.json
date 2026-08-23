@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-23T13:30:07.901Z",
+  "community": {
+    "slug": "al-yelayiss-5",
+    "nameEn": "Al Yelayiss 5",
+    "nameAr": "اليلايس 5",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 510,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 510,
+      "totalWorthAed": 123910114,
+      "transactionCount": 16,
+      "propertyCount": 16,
+      "firstSaleCount": 16,
+      "meanWorthAed": 7744382,
+      "firstSaleSharePct": 100
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 510,
+      "totalWorthAed": 12078000,
+      "transactionCount": 12,
+      "propertyCount": 12,
+      "firstSaleCount": 8,
+      "meanWorthAed": 1006500,
+      "firstSaleSharePct": 66.7
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

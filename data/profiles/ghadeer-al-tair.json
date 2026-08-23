@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-23T13:30:07.901Z",
+  "community": {
+    "slug": "ghadeer-al-tair",
+    "nameEn": "Ghadeer Al tair",
+    "nameAr": "غدير الطير",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 340,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 340,
+      "totalWorthAed": 92900000,
+      "transactionCount": 6,
+      "propertyCount": 6,
+      "firstSaleCount": 0,
+      "meanWorthAed": 15483333,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 340,
+      "totalWorthAed": 19363000,
+      "transactionCount": 7,
+      "propertyCount": 7,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2766143,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

@@ -1,15 +1,17 @@
 {
-  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "generatedAt": "2026-08-23T13:30:07.901Z",
   "community": {
     "slug": "jumeirah-first",
     "nameEn": "Jumeirah First",
-    "nameAr": "جميرا الأولى",
+    "nameAr": "جميرا الاولى",
     "marketNames": [
       "Jumeirah 1",
       "Jumeira 1"
     ],
-    "marketNamesAr": [],
-    "communityNumber": null,
+    "marketNamesAr": [
+      "جميرا الأولى"
+    ],
+    "communityNumber": 317,
     "sectorNumber": null
   },
   "sales": {

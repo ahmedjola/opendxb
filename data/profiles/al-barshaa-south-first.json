@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-23T13:30:07.901Z",
+  "community": {
+    "slug": "al-barshaa-south-first",
+    "nameEn": "Al Barshaa South First",
+    "nameAr": "البرشاء جنوب الاولى",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 415,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 415,
+      "totalWorthAed": 5100000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 5100000,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 415,
+      "totalWorthAed": 7226594,
+      "transactionCount": 8,
+      "propertyCount": 8,
+      "firstSaleCount": 0,
+      "meanWorthAed": 903324,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

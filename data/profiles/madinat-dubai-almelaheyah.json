@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-23T13:30:07.901Z",
+  "community": {
+    "slug": "madinat-dubai-almelaheyah",
+    "nameEn": "Madinat Dubai Almelaheyah",
+    "nameAr": "مدينة دبي الملاحية",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 333,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 333,
+      "totalWorthAed": 226748255.48,
+      "transactionCount": 84,
+      "propertyCount": 84,
+      "firstSaleCount": 62,
+      "meanWorthAed": 2699384,
+      "firstSaleSharePct": 73.8
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 333,
+      "totalWorthAed": 10598153,
+      "transactionCount": 6,
+      "propertyCount": 6,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1766359,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "generatedAt": "2026-08-23T13:30:07.901Z",
   "community": {
     "slug": "al-yufrah-1",
     "nameEn": "Al Yufrah 1",
-    "nameAr": "اليفرة 1",
+    "nameAr": "اليفره 1",
     "marketNames": [
       "Dubai Land Oasis"
     ],
-    "marketNamesAr": [],
-    "communityNumber": null,
+    "marketNamesAr": [
+      "اليفرة 1"
+    ],
+    "communityNumber": 469,
     "sectorNumber": null
   },
   "sales": {

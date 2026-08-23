@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-23T13:30:07.901Z",
+  "community": {
+    "slug": "wadi-al-safa-4",
+    "nameEn": "Wadi Al Safa 4",
+    "nameAr": "وادي الصفا 4",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 466,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 466,
+      "totalWorthAed": 2865218533.2,
+      "transactionCount": 707,
+      "propertyCount": 707,
+      "firstSaleCount": 515,
+      "meanWorthAed": 4052643,
+      "firstSaleSharePct": 72.8
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 466,
+      "totalWorthAed": 1583804501,
+      "transactionCount": 23,
+      "propertyCount": 23,
+      "firstSaleCount": 0,
+      "meanWorthAed": 68861065,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

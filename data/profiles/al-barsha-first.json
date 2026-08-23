@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "generatedAt": "2026-08-23T13:30:07.901Z",
   "community": {
     "slug": "al-barsha-first",
     "nameEn": "Al Barsha First",
-    "nameAr": "البرشاء الأولى",
+    "nameAr": "البرشاء الاولى",
     "marketNames": [
       "Al Barsha 1"
     ],
-    "marketNamesAr": [],
-    "communityNumber": null,
+    "marketNamesAr": [
+      "البرشاء الأولى"
+    ],
+    "communityNumber": 368,
     "sectorNumber": null
   },
   "sales": {

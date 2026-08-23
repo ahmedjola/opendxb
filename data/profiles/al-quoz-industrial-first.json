@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "generatedAt": "2026-08-23T13:30:07.901Z",
   "community": {
     "slug": "al-quoz-industrial-first",
     "nameEn": "Al Quoz Industrial First",
-    "nameAr": "القوز الصناعية الأولى",
+    "nameAr": "القوز الصناعيه الاولى",
     "marketNames": [
       "Al Quoz Industrial Area 1"
     ],
-    "marketNamesAr": [],
-    "communityNumber": null,
+    "marketNamesAr": [
+      "القوز الصناعية الأولى"
+    ],
+    "communityNumber": 308,
     "sectorNumber": null
   },
   "sales": {

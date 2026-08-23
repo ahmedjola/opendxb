@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "generatedAt": "2026-08-23T13:30:07.901Z",
   "community": {
     "slug": "hor-al-anz",
     "nameEn": "Hor Al Anz",
     "nameAr": "هور العنز",
-    "marketNames": [
-      "Hor Al Anz East"
-    ],
+    "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": null,
+    "communityNumber": 233,
     "sectorNumber": null
   },
   "sales": {
@@ -61,22 +59,22 @@
       "periodFrom": "2026-07-01",
       "periodTo": "2026-07-31",
       "areaId": 233,
-      "totalWorthAed": 56209201,
-      "transactionCount": 16,
-      "propertyCount": 16,
-      "firstSaleCount": 2,
-      "meanWorthAed": 3513075,
-      "firstSaleSharePct": 12.5
+      "totalWorthAed": 56155231,
+      "transactionCount": 15,
+      "propertyCount": 15,
+      "firstSaleCount": 1,
+      "meanWorthAed": 3743682,
+      "firstSaleSharePct": 6.7
     },
     "mortgages": {
       "periodFrom": "2026-07-01",
       "periodTo": "2026-07-31",
       "areaId": 233,
-      "totalWorthAed": 25293000,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 1100000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 12646500,
+      "meanWorthAed": 1100000,
       "firstSaleSharePct": 0
     }
   },
