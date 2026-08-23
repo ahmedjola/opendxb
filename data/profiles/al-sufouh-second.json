@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "al-sufouh-second",
+    "nameEn": "Al Sufouh Second",
+    "nameAr": "الصفوح الثانية",
+    "marketNames": [
+      "Al Sufouh 2",
+      "Dubai Media City"
+    ],
+    "marketNamesAr": [
+      "مدينة دبي للإعلام"
+    ],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 371,
+      "totalWorthAed": 107175620.88,
+      "transactionCount": 20,
+      "propertyCount": 20,
+      "firstSaleCount": 9,
+      "meanWorthAed": 5358781,
+      "firstSaleSharePct": 45
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 371,
+      "totalWorthAed": 8157362,
+      "transactionCount": 4,
+      "propertyCount": 4,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2039341,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

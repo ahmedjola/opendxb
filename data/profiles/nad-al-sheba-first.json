@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "nad-al-sheba-first",
+    "nameEn": "Nad Al Sheba First",
+    "nameAr": "ند الشبا الأولى",
+    "marketNames": [
+      "Nad Al Sheba 1"
+    ],
+    "marketNamesAr": [],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 335,
+      "totalWorthAed": 559457916.56,
+      "transactionCount": 193,
+      "propertyCount": 193,
+      "firstSaleCount": 166,
+      "meanWorthAed": 2898746,
+      "firstSaleSharePct": 86
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 335,
+      "totalWorthAed": 127191707,
+      "transactionCount": 24,
+      "propertyCount": 24,
+      "firstSaleCount": 2,
+      "meanWorthAed": 5299654,
+      "firstSaleSharePct": 8.3
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "al-yufrah-1",
+    "nameEn": "Al Yufrah 1",
+    "nameAr": "اليفرة 1",
+    "marketNames": [
+      "Dubai Land Oasis"
+    ],
+    "marketNamesAr": [],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 469,
+      "totalWorthAed": 300182055.35,
+      "transactionCount": 105,
+      "propertyCount": 105,
+      "firstSaleCount": 47,
+      "meanWorthAed": 2858877,
+      "firstSaleSharePct": 44.8
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 469,
+      "totalWorthAed": 94680830,
+      "transactionCount": 45,
+      "propertyCount": 45,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2104018,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

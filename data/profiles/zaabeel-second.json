@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "zaabeel-second",
+    "nameEn": "Zaabeel Second",
+    "nameAr": "زعبيل الثانية",
+    "marketNames": [
+      "Zabeel 2",
+      "Za'abeel 2",
+      "Dubai World Trade Centre Residences"
+    ],
+    "marketNamesAr": [],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 332,
+      "totalWorthAed": 116780950,
+      "transactionCount": 29,
+      "propertyCount": 29,
+      "firstSaleCount": 16,
+      "meanWorthAed": 4026929,
+      "firstSaleSharePct": 55.2
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 332,
+      "totalWorthAed": 22351000,
+      "transactionCount": 10,
+      "propertyCount": 10,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2235100,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

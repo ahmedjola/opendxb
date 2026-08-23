@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "al-merkadh",
+    "nameEn": "Al Merkadh",
+    "nameAr": "المركض",
+    "marketNames": [
+      "Sobha Hartland",
+      "Mohammed Bin Rashid City",
+      "MBR City",
+      "District One"
+    ],
+    "marketNamesAr": [
+      "مدينة محمد بن راشد"
+    ],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 412,
+      "totalWorthAed": 722845126.17,
+      "transactionCount": 323,
+      "propertyCount": 323,
+      "firstSaleCount": 94,
+      "meanWorthAed": 2237911,
+      "firstSaleSharePct": 29.1
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 412,
+      "totalWorthAed": 321979277.91,
+      "transactionCount": 137,
+      "propertyCount": 172,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2350214,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

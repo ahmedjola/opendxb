@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "al-thanyah-fifth",
+    "nameEn": "Al Thanyah Fifth",
+    "nameAr": "الثنية الخامسة",
+    "marketNames": [
+      "Jumeirah Lake Towers",
+      "JLT"
+    ],
+    "marketNamesAr": [
+      "أبراج بحيرات جميرا"
+    ],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 350,
+      "totalWorthAed": 1100033982.07,
+      "transactionCount": 457,
+      "propertyCount": 457,
+      "firstSaleCount": 301,
+      "meanWorthAed": 2407077,
+      "firstSaleSharePct": 65.9
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 350,
+      "totalWorthAed": 585396257.98,
+      "transactionCount": 131,
+      "propertyCount": 160,
+      "firstSaleCount": 0,
+      "meanWorthAed": 4468674,
+      "firstSaleSharePct": 0
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}

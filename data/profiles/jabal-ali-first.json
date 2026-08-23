@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-08-23T13:07:58.894Z",
+  "community": {
+    "slug": "jabal-ali-first",
+    "nameEn": "Jabal Ali First",
+    "nameAr": "جبل علي الأولى",
+    "marketNames": [
+      "Al Furjan",
+      "Discovery Gardens",
+      "Jebel Ali 1"
+    ],
+    "marketNamesAr": [
+      "الفرجان"
+    ],
+    "communityNumber": null,
+    "sectorNumber": null
+  },
+  "sales": {
+    "count": 0,
+    "amountAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "pricePerSqm": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    },
+    "offPlanShare": null
+  },
+  "rents": {
+    "count": 0,
+    "annualRentAed": {
+      "count": 0,
+      "min": null,
+      "p25": null,
+      "median": null,
+      "p75": null,
+      "max": null
+    }
+  },
+  "grossYieldPct": null,
+  "schools": {
+    "count": 0,
+    "byRating": {},
+    "byCurriculum": {}
+  },
+  "health": {
+    "count": 0,
+    "byType": {}
+  },
+  "transit": {
+    "count": 0,
+    "byMode": {}
+  },
+  "marketActivity": {
+    "sales": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 445,
+      "totalWorthAed": 1303264812.27,
+      "transactionCount": 550,
+      "propertyCount": 550,
+      "firstSaleCount": 331,
+      "meanWorthAed": 2369572,
+      "firstSaleSharePct": 60.2
+    },
+    "mortgages": {
+      "periodFrom": "2026-07-01",
+      "periodTo": "2026-07-31",
+      "areaId": 445,
+      "totalWorthAed": 1248310533.68,
+      "transactionCount": 536,
+      "propertyCount": 549,
+      "firstSaleCount": 3,
+      "meanWorthAed": 2328938,
+      "firstSaleSharePct": 0.6
+    }
+  },
+  "sourcesUsed": [
+    "dld.areawise-sales",
+    "dld.areawise-mortgage"
+  ],
+  "missingSources": [
+    "dld.transactions",
+    "dld.rents",
+    "khda.schools",
+    "dha.facilities",
+    "rta.stations"
+  ]
+}
