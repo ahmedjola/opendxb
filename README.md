@@ -4,6 +4,8 @@
 
 SDK · CLI · MCP server — for Node 20+, in TypeScript, MIT licensed.
 
+**Landing in Dubai**, the game and guide built on this layer, is live at [opendxb.io](https://www.opendxb.io) ([game](https://www.opendxb.io/game), [plain guide](https://www.opendxb.io/guide)).
+
 ```bash
 npx opendxb demo
 ```
