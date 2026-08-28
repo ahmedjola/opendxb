@@ -217,7 +217,7 @@ cd game && npm install && npm run dev
 
 ```bash
 npm install
-npm test          # 85 tests
+npm test          # 105 tests
 npm run typecheck
 npm run build
 node scripts/generate-sample.mjs   # regenerate the synthetic sample
