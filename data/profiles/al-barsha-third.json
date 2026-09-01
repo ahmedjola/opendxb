@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-barsha-third",
     "nameEn": "Al Barsha Third",
@@ -59,16 +59,26 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+    "sales": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 369,
-      "totalWorthAed": 1275000,
-      "transactionCount": 3,
-      "propertyCount": 3,
+      "totalWorthAed": 7500000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 425000,
+      "meanWorthAed": 7500000,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 369,
+      "totalWorthAed": 1150000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1150000,
       "firstSaleSharePct": 0
     }
   },

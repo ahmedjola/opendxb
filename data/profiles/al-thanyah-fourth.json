@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-thanyah-fourth",
     "nameEn": "Al Thanyah Fourth",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 352,
-      "totalWorthAed": 327403927.14,
-      "transactionCount": 45,
-      "propertyCount": 45,
+      "totalWorthAed": 550937000,
+      "transactionCount": 36,
+      "propertyCount": 36,
       "firstSaleCount": 0,
-      "meanWorthAed": 7275643,
+      "meanWorthAed": 15303806,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 352,
-      "totalWorthAed": 355327131.02,
-      "transactionCount": 66,
-      "propertyCount": 67,
+      "totalWorthAed": 371602317.73,
+      "transactionCount": 49,
+      "propertyCount": 49,
       "firstSaleCount": 0,
-      "meanWorthAed": 5383744,
+      "meanWorthAed": 7583721,
       "firstSaleSharePct": 0
     }
   },

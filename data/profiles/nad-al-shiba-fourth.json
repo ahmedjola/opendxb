@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "nad-al-shiba-fourth",
     "nameEn": "Nad Al Shiba Fourth",
@@ -57,15 +57,15 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 406,
-      "totalWorthAed": 14466646,
-      "transactionCount": 4,
-      "propertyCount": 4,
-      "firstSaleCount": 0,
-      "meanWorthAed": 3616662,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 10812087.36,
+      "transactionCount": 6,
+      "propertyCount": 6,
+      "firstSaleCount": 2,
+      "meanWorthAed": 1802015,
+      "firstSaleSharePct": 33.3
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "nadd-hessa",
     "nameEn": "Nadd Hessa",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 484,
-      "totalWorthAed": 299906740.84,
-      "transactionCount": 160,
-      "propertyCount": 160,
-      "firstSaleCount": 59,
-      "meanWorthAed": 1874417,
-      "firstSaleSharePct": 36.9
+      "totalWorthAed": 141467218.62,
+      "transactionCount": 135,
+      "propertyCount": 135,
+      "firstSaleCount": 35,
+      "meanWorthAed": 1047905,
+      "firstSaleSharePct": 25.9
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 484,
-      "totalWorthAed": 104268824,
-      "transactionCount": 64,
-      "propertyCount": 64,
+      "totalWorthAed": 1372564654,
+      "transactionCount": 67,
+      "propertyCount": 67,
       "firstSaleCount": 1,
-      "meanWorthAed": 1629200,
-      "firstSaleSharePct": 1.6
+      "meanWorthAed": 20486040,
+      "firstSaleSharePct": 1.5
     }
   },
   "sourcesUsed": [

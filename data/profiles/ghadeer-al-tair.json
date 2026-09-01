@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "ghadeer-al-tair",
     "nameEn": "Ghadeer Al tair",
@@ -56,27 +56,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 340,
-      "totalWorthAed": 92900000,
-      "transactionCount": 6,
-      "propertyCount": 6,
+      "totalWorthAed": 63978800,
+      "transactionCount": 5,
+      "propertyCount": 5,
       "firstSaleCount": 0,
-      "meanWorthAed": 15483333,
+      "meanWorthAed": 12795760,
       "firstSaleSharePct": 0
     },
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 340,
-      "totalWorthAed": 19363000,
-      "transactionCount": 7,
-      "propertyCount": 7,
-      "firstSaleCount": 0,
-      "meanWorthAed": 2766143,
-      "firstSaleSharePct": 0
-    }
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

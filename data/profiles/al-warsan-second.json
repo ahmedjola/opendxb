@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "al-karama",
-    "nameEn": "Al Karama",
-    "nameAr": "الكرامه",
+    "slug": "al-warsan-second",
+    "nameEn": "Al Warsan Second",
+    "nameAr": "ورسان الثانيه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 271,
+    "communityNumber": 344,
     "sectorNumber": null
   },
   "sales": {
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 271,
-      "totalWorthAed": 13700000,
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 344,
+      "totalWorthAed": 12747475,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 13700000,
+      "meanWorthAed": 12747475,
       "firstSaleSharePct": 0
     }
   },

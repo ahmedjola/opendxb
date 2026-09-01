@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "mirdif",
     "nameEn": "Mirdif",
@@ -58,25 +58,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 232,
-      "totalWorthAed": 67477545,
-      "transactionCount": 19,
-      "propertyCount": 19,
-      "firstSaleCount": 4,
-      "meanWorthAed": 3551450,
-      "firstSaleSharePct": 21.1
+      "totalWorthAed": 39400126.86,
+      "transactionCount": 18,
+      "propertyCount": 18,
+      "firstSaleCount": 2,
+      "meanWorthAed": 2188896,
+      "firstSaleSharePct": 11.1
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 232,
-      "totalWorthAed": 15089030,
+      "totalWorthAed": 19303603,
       "transactionCount": 10,
       "propertyCount": 10,
       "firstSaleCount": 0,
-      "meanWorthAed": 1508903,
+      "meanWorthAed": 1930360,
       "firstSaleSharePct": 0
     }
   },

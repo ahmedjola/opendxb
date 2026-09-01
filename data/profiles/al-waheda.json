@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-waheda",
     "nameEn": "Al Waheda",
@@ -56,17 +56,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 382,
-      "totalWorthAed": 8650000,
-      "transactionCount": 5,
-      "propertyCount": 5,
+      "totalWorthAed": 6370000,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 1730000,
+      "meanWorthAed": 3185000,
       "firstSaleSharePct": 0
     },
-    "mortgages": null
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 382,
+      "totalWorthAed": 13000000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 13000000,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

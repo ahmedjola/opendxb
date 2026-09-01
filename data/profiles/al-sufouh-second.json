@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-sufouh-second",
     "nameEn": "Al Sufouh Second",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 371,
-      "totalWorthAed": 107175620.88,
+      "totalWorthAed": 77400683.47,
       "transactionCount": 20,
       "propertyCount": 20,
-      "firstSaleCount": 9,
-      "meanWorthAed": 5358781,
-      "firstSaleSharePct": 45
+      "firstSaleCount": 16,
+      "meanWorthAed": 3870034,
+      "firstSaleSharePct": 80
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 371,
-      "totalWorthAed": 8157362,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 8009453,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 2039341,
+      "meanWorthAed": 2669818,
       "firstSaleSharePct": 0
     }
   },

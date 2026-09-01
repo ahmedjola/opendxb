@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-barsha-first",
     "nameEn": "Al Barsha First",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 368,
-      "totalWorthAed": 166559808,
-      "transactionCount": 16,
-      "propertyCount": 16,
-      "firstSaleCount": 12,
-      "meanWorthAed": 10409988,
-      "firstSaleSharePct": 75
+      "totalWorthAed": 14325916.15,
+      "transactionCount": 6,
+      "propertyCount": 6,
+      "firstSaleCount": 4,
+      "meanWorthAed": 2387653,
+      "firstSaleSharePct": 66.7
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 368,
-      "totalWorthAed": 1435364395,
-      "transactionCount": 11,
-      "propertyCount": 11,
-      "firstSaleCount": 1,
-      "meanWorthAed": 130487672,
-      "firstSaleSharePct": 9.1
+      "totalWorthAed": 483000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 483000,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

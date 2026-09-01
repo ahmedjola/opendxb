@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "nakhlat-jumeirah",
     "nameEn": "Nakhlat Jumeirah",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 410,
-      "totalWorthAed": 1133051862.59,
-      "transactionCount": 91,
-      "propertyCount": 91,
-      "firstSaleCount": 24,
-      "meanWorthAed": 12451119,
-      "firstSaleSharePct": 26.4
+      "totalWorthAed": 967625197.36,
+      "transactionCount": 67,
+      "propertyCount": 67,
+      "firstSaleCount": 8,
+      "meanWorthAed": 14442167,
+      "firstSaleSharePct": 11.9
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 410,
-      "totalWorthAed": 632228716.86,
-      "transactionCount": 65,
-      "propertyCount": 69,
+      "totalWorthAed": 544470326.28,
+      "transactionCount": 78,
+      "propertyCount": 78,
       "firstSaleCount": 0,
-      "meanWorthAed": 9726596,
+      "meanWorthAed": 6980389,
       "firstSaleSharePct": 0
     }
   },

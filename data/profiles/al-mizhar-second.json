@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-mizhar-second",
     "nameEn": "Al Mizhar Second",
@@ -55,18 +55,18 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+    "sales": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 394,
-      "totalWorthAed": 1350000,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 7012500,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 675000,
+      "meanWorthAed": 7012500,
       "firstSaleSharePct": 0
-    }
+    },
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

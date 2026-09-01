@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "palm-deira",
     "nameEn": "Palm Deira",
@@ -59,25 +59,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 432,
-      "totalWorthAed": 720312182.87,
-      "transactionCount": 198,
-      "propertyCount": 198,
-      "firstSaleCount": 152,
-      "meanWorthAed": 3637940,
-      "firstSaleSharePct": 76.8
+      "totalWorthAed": 516934870.92,
+      "transactionCount": 127,
+      "propertyCount": 127,
+      "firstSaleCount": 106,
+      "meanWorthAed": 4070353,
+      "firstSaleSharePct": 83.5
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 432,
-      "totalWorthAed": 34364726.98,
-      "transactionCount": 8,
-      "propertyCount": 11,
+      "totalWorthAed": 3880390.79,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 4295591,
+      "meanWorthAed": 1293464,
       "firstSaleSharePct": 0
     }
   },

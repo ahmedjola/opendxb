@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "al-qusais-industrial-fourth",
-    "nameEn": "Al Qusais Industrial Fourth",
-    "nameAr": "القصيص الصناعيه الرابعه",
+    "slug": "al-rowaiyah-first",
+    "nameEn": "Al Rowaiyah First",
+    "nameAr": "الروية الأولى",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 322,
+    "communityNumber": 492,
     "sectorNumber": null
   },
   "sales": {
@@ -56,17 +56,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 322,
-      "totalWorthAed": 350000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 350000,
-      "firstSaleSharePct": 0
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 492,
+      "totalWorthAed": 121819054.8,
+      "transactionCount": 29,
+      "propertyCount": 29,
+      "firstSaleCount": 29,
+      "meanWorthAed": 4200657,
+      "firstSaleSharePct": 100
     },
-    "mortgages": null
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 492,
+      "totalWorthAed": 1713543533,
+      "transactionCount": 2,
+      "propertyCount": 66,
+      "firstSaleCount": 0,
+      "meanWorthAed": 856771767,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

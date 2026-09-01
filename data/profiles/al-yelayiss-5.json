@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-yelayiss-5",
     "nameEn": "Al Yelayiss 5",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 510,
-      "totalWorthAed": 123910114,
-      "transactionCount": 16,
-      "propertyCount": 16,
-      "firstSaleCount": 16,
-      "meanWorthAed": 7744382,
-      "firstSaleSharePct": 100
+      "totalWorthAed": 84353131,
+      "transactionCount": 11,
+      "propertyCount": 11,
+      "firstSaleCount": 10,
+      "meanWorthAed": 7668466,
+      "firstSaleSharePct": 90.9
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 510,
-      "totalWorthAed": 12078000,
-      "transactionCount": 12,
-      "propertyCount": 12,
-      "firstSaleCount": 8,
-      "meanWorthAed": 1006500,
-      "firstSaleSharePct": 66.7
+      "totalWorthAed": 20163987,
+      "transactionCount": 19,
+      "propertyCount": 19,
+      "firstSaleCount": 6,
+      "meanWorthAed": 1061262,
+      "firstSaleSharePct": 31.6
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "dubai-investment-park-second",
     "nameEn": "Dubai Investment Park Second",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 459,
-      "totalWorthAed": 183117896.88,
-      "transactionCount": 58,
-      "propertyCount": 58,
-      "firstSaleCount": 34,
-      "meanWorthAed": 3157205,
-      "firstSaleSharePct": 58.6
+      "totalWorthAed": 165386437,
+      "transactionCount": 49,
+      "propertyCount": 49,
+      "firstSaleCount": 32,
+      "meanWorthAed": 3375233,
+      "firstSaleSharePct": 65.3
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 459,
-      "totalWorthAed": 111937000,
-      "transactionCount": 13,
-      "propertyCount": 13,
+      "totalWorthAed": 120205000,
+      "transactionCount": 11,
+      "propertyCount": 11,
       "firstSaleCount": 0,
-      "meanWorthAed": 8610538,
+      "meanWorthAed": 10927727,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "jumeirah-third",
     "nameEn": "Jumeirah Third",
@@ -60,16 +60,26 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+    "sales": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 318,
-      "totalWorthAed": 6000000,
+      "totalWorthAed": 13520000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 6000000,
+      "meanWorthAed": 13520000,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 318,
+      "totalWorthAed": 12600000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 12600000,
       "firstSaleSharePct": 0
     }
   },

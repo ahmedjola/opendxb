@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-mizhar-third",
     "nameEn": "Al Mizhar Third",
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 403,
-      "totalWorthAed": 600000,
+      "totalWorthAed": 2500000,
       "transactionCount": 2,
       "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 300000,
+      "meanWorthAed": 1250000,
       "firstSaleSharePct": 0
     }
   },

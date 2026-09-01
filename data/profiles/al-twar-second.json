@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "al-twar-third",
-    "nameEn": "Al Twar Third",
-    "nameAr": "الطوار الثالثه",
+    "slug": "al-twar-second",
+    "nameEn": "Al Twar Second",
+    "nameAr": "الطوار الثانيه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 359,
+    "communityNumber": 310,
     "sectorNumber": null
   },
   "sales": {
@@ -56,27 +56,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 359,
-      "totalWorthAed": 200000,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 310,
+      "totalWorthAed": 7024007.2,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 200000,
+      "meanWorthAed": 3512004,
       "firstSaleSharePct": 0
     },
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 359,
-      "totalWorthAed": 1000000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 1000000,
-      "firstSaleSharePct": 0
-    }
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "ras-al-khor-industrial-first",
     "nameEn": "Ras Al Khor Industrial First",
@@ -60,27 +60,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 376,
-      "totalWorthAed": 220355793.48,
-      "transactionCount": 45,
-      "propertyCount": 45,
-      "firstSaleCount": 38,
-      "meanWorthAed": 4896795,
-      "firstSaleSharePct": 84.4
+      "totalWorthAed": 72110086,
+      "transactionCount": 25,
+      "propertyCount": 25,
+      "firstSaleCount": 18,
+      "meanWorthAed": 2884403,
+      "firstSaleSharePct": 72
     },
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 376,
-      "totalWorthAed": 1822570,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 911285,
-      "firstSaleSharePct": 0
-    }
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

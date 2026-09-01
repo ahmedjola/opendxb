@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-khawaneej-first",
     "nameEn": "Al Khawaneej First",
@@ -55,27 +55,17 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 396,
-      "totalWorthAed": 29331000,
-      "transactionCount": 3,
-      "propertyCount": 3,
-      "firstSaleCount": 2,
-      "meanWorthAed": 9777000,
-      "firstSaleSharePct": 66.7
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 396,
-      "totalWorthAed": 13670331,
-      "transactionCount": 7,
-      "propertyCount": 7,
-      "firstSaleCount": 0,
-      "meanWorthAed": 1952904,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 20516279.97,
+      "transactionCount": 9,
+      "propertyCount": 9,
+      "firstSaleCount": 1,
+      "meanWorthAed": 2279587,
+      "firstSaleSharePct": 11.1
     }
   },
   "sourcesUsed": [

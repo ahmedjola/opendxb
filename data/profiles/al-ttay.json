@@ -1,16 +1,12 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "al-quoz-industrial-first",
-    "nameEn": "Al Quoz Industrial First",
-    "nameAr": "القوز الصناعيه الاولى",
-    "marketNames": [
-      "Al Quoz Industrial Area 1"
-    ],
-    "marketNamesAr": [
-      "القوز الصناعية الأولى"
-    ],
-    "communityNumber": 308,
+    "slug": "al-ttay",
+    "nameEn": "Al Ttay",
+    "nameAr": "الطي",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 438,
     "sectorNumber": null
   },
   "sales": {
@@ -60,14 +56,14 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 308,
-      "totalWorthAed": 12151113,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 438,
+      "totalWorthAed": 10019956,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 12151113,
+      "meanWorthAed": 5009978,
       "firstSaleSharePct": 0
     },
     "mortgages": null

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "nadd-al-hamar",
     "nameEn": "Nadd Al Hamar",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 264,
-      "totalWorthAed": 17089000,
-      "transactionCount": 8,
-      "propertyCount": 8,
-      "firstSaleCount": 5,
-      "meanWorthAed": 2136125,
-      "firstSaleSharePct": 62.5
+      "totalWorthAed": 61065104,
+      "transactionCount": 9,
+      "propertyCount": 9,
+      "firstSaleCount": 4,
+      "meanWorthAed": 6785012,
+      "firstSaleSharePct": 44.4
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 264,
-      "totalWorthAed": 368600000,
-      "transactionCount": 3,
-      "propertyCount": 3,
+      "totalWorthAed": 23700000,
+      "transactionCount": 5,
+      "propertyCount": 5,
       "firstSaleCount": 0,
-      "meanWorthAed": 122866667,
+      "meanWorthAed": 4740000,
       "firstSaleSharePct": 0
     }
   },

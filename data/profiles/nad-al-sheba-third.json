@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "nad-al-sheba-third",
     "nameEn": "Nad Al Sheba Third",
@@ -61,16 +61,26 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+    "sales": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 337,
-      "totalWorthAed": 14713700,
-      "transactionCount": 6,
-      "propertyCount": 6,
+      "totalWorthAed": 14730000,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 2452283,
+      "meanWorthAed": 4910000,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 337,
+      "totalWorthAed": 40179151,
+      "transactionCount": 15,
+      "propertyCount": 15,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2678610,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "hadaeq-sheikh-mohammed-bin-rashid",
     "nameEn": "Hadaeq Sheikh Mohammed Bin Rashid",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 482,
-      "totalWorthAed": 626454657.21,
-      "transactionCount": 181,
-      "propertyCount": 181,
-      "firstSaleCount": 28,
-      "meanWorthAed": 3461075,
-      "firstSaleSharePct": 15.5
+      "totalWorthAed": 656350424.83,
+      "transactionCount": 166,
+      "propertyCount": 166,
+      "firstSaleCount": 19,
+      "meanWorthAed": 3953918,
+      "firstSaleSharePct": 11.4
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 482,
-      "totalWorthAed": 461387087.12,
-      "transactionCount": 110,
-      "propertyCount": 116,
+      "totalWorthAed": 638775748.18,
+      "transactionCount": 122,
+      "propertyCount": 122,
       "firstSaleCount": 0,
-      "meanWorthAed": 4194428,
+      "meanWorthAed": 5235867,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-aweer-second",
     "nameEn": "Al Aweer Second",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 399,
-      "totalWorthAed": 2000038.7,
+      "totalWorthAed": 10000000,
       "transactionCount": 1,
       "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 2000039,
-      "firstSaleSharePct": 0
+      "firstSaleCount": 1,
+      "meanWorthAed": 10000000,
+      "firstSaleSharePct": 100
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 399,
-      "totalWorthAed": 7100000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 7100000,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 3099000,
+      "transactionCount": 3,
+      "propertyCount": 3,
+      "firstSaleCount": 1,
+      "meanWorthAed": 1033000,
+      "firstSaleSharePct": 33.3
     }
   },
   "sourcesUsed": [

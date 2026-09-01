@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "zaabeel-second",
     "nameEn": "Zaabeel Second",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 332,
-      "totalWorthAed": 116780950,
-      "transactionCount": 29,
-      "propertyCount": 29,
-      "firstSaleCount": 16,
-      "meanWorthAed": 4026929,
-      "firstSaleSharePct": 55.2
+      "totalWorthAed": 145714910,
+      "transactionCount": 32,
+      "propertyCount": 32,
+      "firstSaleCount": 23,
+      "meanWorthAed": 4553591,
+      "firstSaleSharePct": 71.9
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 332,
-      "totalWorthAed": 22351000,
-      "transactionCount": 10,
-      "propertyCount": 10,
+      "totalWorthAed": 13600000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 2235100,
+      "meanWorthAed": 13600000,
       "firstSaleSharePct": 0
     }
   },

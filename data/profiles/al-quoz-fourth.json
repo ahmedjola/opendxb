@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-quoz-fourth",
     "nameEn": "Al Quoz Fourth",
@@ -60,25 +60,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 348,
-      "totalWorthAed": 2675000,
-      "transactionCount": 3,
-      "propertyCount": 3,
+      "totalWorthAed": 5550000,
+      "transactionCount": 6,
+      "propertyCount": 6,
       "firstSaleCount": 0,
-      "meanWorthAed": 891667,
+      "meanWorthAed": 925000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 348,
-      "totalWorthAed": 190907923,
-      "transactionCount": 6,
-      "propertyCount": 98,
+      "totalWorthAed": 70539000,
+      "transactionCount": 5,
+      "propertyCount": 97,
       "firstSaleCount": 0,
-      "meanWorthAed": 31817987,
+      "meanWorthAed": 14107800,
       "firstSaleSharePct": 0
     }
   },

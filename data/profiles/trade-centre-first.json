@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "trade-centre-first",
     "nameEn": "Trade Centre First",
@@ -63,17 +63,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 341,
-      "totalWorthAed": 63519264.5,
-      "transactionCount": 17,
-      "propertyCount": 17,
-      "firstSaleCount": 16,
-      "meanWorthAed": 3736427,
-      "firstSaleSharePct": 94.1
+      "totalWorthAed": 21922243.5,
+      "transactionCount": 7,
+      "propertyCount": 7,
+      "firstSaleCount": 1,
+      "meanWorthAed": 3131749,
+      "firstSaleSharePct": 14.3
     },
-    "mortgages": null
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 341,
+      "totalWorthAed": 6000000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 6000000,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

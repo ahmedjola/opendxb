@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-barshaa-south-first",
     "nameEn": "Al Barshaa South First",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 415,
-      "totalWorthAed": 5100000,
+      "totalWorthAed": 101000000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 5100000,
+      "meanWorthAed": 101000000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 415,
-      "totalWorthAed": 7226594,
-      "transactionCount": 8,
-      "propertyCount": 8,
+      "totalWorthAed": 2500000,
+      "transactionCount": 6,
+      "propertyCount": 6,
       "firstSaleCount": 0,
-      "meanWorthAed": 903324,
+      "meanWorthAed": 416667,
       "firstSaleSharePct": 0
     }
   },

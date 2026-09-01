@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-thanyah-first",
     "nameEn": "Al Thanyah First",
@@ -63,25 +63,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 443,
-      "totalWorthAed": 823354222.14,
-      "transactionCount": 30,
-      "propertyCount": 30,
-      "firstSaleCount": 11,
-      "meanWorthAed": 27445141,
-      "firstSaleSharePct": 36.7
+      "totalWorthAed": 41295906.3,
+      "transactionCount": 24,
+      "propertyCount": 24,
+      "firstSaleCount": 6,
+      "meanWorthAed": 1720663,
+      "firstSaleSharePct": 25
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 443,
-      "totalWorthAed": 428524301,
-      "transactionCount": 12,
-      "propertyCount": 12,
+      "totalWorthAed": 9088000,
+      "transactionCount": 5,
+      "propertyCount": 8,
       "firstSaleCount": 0,
-      "meanWorthAed": 35710358,
+      "meanWorthAed": 1817600,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "bukadra",
     "nameEn": "Bukadra",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 405,
-      "totalWorthAed": 492450069.97,
-      "transactionCount": 177,
-      "propertyCount": 177,
-      "firstSaleCount": 160,
-      "meanWorthAed": 2782204,
-      "firstSaleSharePct": 90.4
+      "totalWorthAed": 211085324.88,
+      "transactionCount": 77,
+      "propertyCount": 77,
+      "firstSaleCount": 64,
+      "meanWorthAed": 2741368,
+      "firstSaleSharePct": 83.1
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 405,
-      "totalWorthAed": 69943956.16,
-      "transactionCount": 5,
-      "propertyCount": 22,
+      "totalWorthAed": 690000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 13988791,
+      "meanWorthAed": 690000,
       "firstSaleSharePct": 0
     }
   },

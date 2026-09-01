@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-bada",
     "nameEn": "Al Bada",
@@ -56,27 +56,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 276,
-      "totalWorthAed": 37571000,
-      "transactionCount": 3,
-      "propertyCount": 3,
-      "firstSaleCount": 0,
-      "meanWorthAed": 12523667,
-      "firstSaleSharePct": 0
-    },
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 276,
-      "totalWorthAed": 64800000,
+      "totalWorthAed": 158131,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 64800000,
+      "meanWorthAed": 158131,
       "firstSaleSharePct": 0
-    }
+    },
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

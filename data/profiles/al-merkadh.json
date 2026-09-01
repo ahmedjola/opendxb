@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-merkadh",
     "nameEn": "Al Merkadh",
@@ -64,25 +64,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 412,
-      "totalWorthAed": 722845126.17,
-      "transactionCount": 323,
-      "propertyCount": 323,
-      "firstSaleCount": 94,
-      "meanWorthAed": 2237911,
-      "firstSaleSharePct": 29.1
+      "totalWorthAed": 560440538.65,
+      "transactionCount": 190,
+      "propertyCount": 190,
+      "firstSaleCount": 24,
+      "meanWorthAed": 2949687,
+      "firstSaleSharePct": 12.6
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 412,
-      "totalWorthAed": 321979277.91,
-      "transactionCount": 137,
-      "propertyCount": 172,
+      "totalWorthAed": 294844366,
+      "transactionCount": 99,
+      "propertyCount": 112,
       "firstSaleCount": 0,
-      "meanWorthAed": 2350214,
+      "meanWorthAed": 2978226,
       "firstSaleSharePct": 0
     }
   },

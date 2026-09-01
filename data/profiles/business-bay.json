@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "business-bay",
     "nameEn": "Business Bay",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 526,
-      "totalWorthAed": 1355384274.84,
-      "transactionCount": 440,
-      "propertyCount": 440,
-      "firstSaleCount": 101,
-      "meanWorthAed": 3080419,
-      "firstSaleSharePct": 23
+      "totalWorthAed": 1606233122.1,
+      "transactionCount": 415,
+      "propertyCount": 415,
+      "firstSaleCount": 90,
+      "meanWorthAed": 3870441,
+      "firstSaleSharePct": 21.7
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 526,
-      "totalWorthAed": 510280786.95,
+      "totalWorthAed": 336004695.43,
       "transactionCount": 154,
-      "propertyCount": 235,
-      "firstSaleCount": 0,
-      "meanWorthAed": 3313512,
-      "firstSaleSharePct": 0
+      "propertyCount": 181,
+      "firstSaleCount": 15,
+      "meanWorthAed": 2181849,
+      "firstSaleSharePct": 9.7
     }
   },
   "sourcesUsed": [

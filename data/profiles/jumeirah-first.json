@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "jumeirah-first",
     "nameEn": "Jumeirah First",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 317,
-      "totalWorthAed": 203601024.45,
-      "transactionCount": 23,
-      "propertyCount": 23,
+      "totalWorthAed": 179193000,
+      "transactionCount": 7,
+      "propertyCount": 7,
       "firstSaleCount": 2,
-      "meanWorthAed": 8852218,
-      "firstSaleSharePct": 8.7
+      "meanWorthAed": 25599000,
+      "firstSaleSharePct": 28.6
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 317,
-      "totalWorthAed": 107016763.16,
-      "transactionCount": 12,
-      "propertyCount": 12,
+      "totalWorthAed": 52742500,
+      "transactionCount": 5,
+      "propertyCount": 5,
       "firstSaleCount": 0,
-      "meanWorthAed": 8918064,
+      "meanWorthAed": 10548500,
       "firstSaleSharePct": 0
     }
   },

@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "al-qusais",
-    "nameEn": "AL QUSAIS",
-    "nameAr": "القصيص",
+    "slug": "al-rigga",
+    "nameEn": "Al Rigga",
+    "nameAr": "الرقه",
     "marketNames": [],
-    "marketNamesAr": [],
-    "communityNumber": 305,
+    "marketNamesAr": [
+      "الرقة"
+    ],
+    "communityNumber": 356,
     "sectorNumber": null
   },
   "sales": {
@@ -55,18 +57,18 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 305,
-      "totalWorthAed": 19709000,
+    "sales": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 356,
+      "totalWorthAed": 16000000,
       "transactionCount": 1,
       "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 19709000,
-      "firstSaleSharePct": 0
-    }
+      "firstSaleCount": 1,
+      "meanWorthAed": 16000000,
+      "firstSaleSharePct": 100
+    },
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

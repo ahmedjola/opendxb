@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-mizhar-fourth",
     "nameEn": "AL MIZHAR FOURTH",
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 402,
-      "totalWorthAed": 2250000,
+      "totalWorthAed": 3366700,
       "transactionCount": 3,
       "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 750000,
+      "meanWorthAed": 1122233,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-nahda-second",
     "nameEn": "Al Nahda Second",
@@ -56,17 +56,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 301,
-      "totalWorthAed": 56000000,
+      "totalWorthAed": 40750000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 56000000,
+      "meanWorthAed": 40750000,
       "firstSaleSharePct": 0
     },
-    "mortgages": null
+    "mortgages": {
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 301,
+      "totalWorthAed": 137784000,
+      "transactionCount": 3,
+      "propertyCount": 3,
+      "firstSaleCount": 0,
+      "meanWorthAed": 45928000,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

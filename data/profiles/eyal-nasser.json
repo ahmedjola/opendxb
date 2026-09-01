@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
-    "slug": "hessyan-first",
-    "nameEn": "Hessyan First",
-    "nameAr": "حصيان الاولى",
+    "slug": "eyal-nasser",
+    "nameEn": "Eyal Nasser",
+    "nameAr": "عيال ناصر",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 522,
+    "communityNumber": 235,
     "sectorNumber": null
   },
   "sales": {
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 522,
-      "totalWorthAed": 615000,
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 235,
+      "totalWorthAed": 921000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 615000,
+      "meanWorthAed": 921000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
-      "areaId": 522,
-      "totalWorthAed": 11776000,
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
+      "areaId": 235,
+      "totalWorthAed": 70000000,
       "transactionCount": 2,
       "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 5888000,
+      "meanWorthAed": 35000000,
       "firstSaleSharePct": 0
     }
   },

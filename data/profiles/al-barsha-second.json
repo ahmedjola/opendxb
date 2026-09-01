@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-barsha-second",
     "nameEn": "Al Barsha Second",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 393,
-      "totalWorthAed": 29900000,
-      "transactionCount": 3,
-      "propertyCount": 3,
-      "firstSaleCount": 1,
-      "meanWorthAed": 9966667,
-      "firstSaleSharePct": 33.3
+      "totalWorthAed": 25000000,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 0,
+      "meanWorthAed": 12500000,
+      "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 393,
-      "totalWorthAed": 35423150,
-      "transactionCount": 5,
-      "propertyCount": 5,
+      "totalWorthAed": 16081821.07,
+      "transactionCount": 8,
+      "propertyCount": 8,
       "firstSaleCount": 1,
-      "meanWorthAed": 7084630,
-      "firstSaleSharePct": 20
+      "meanWorthAed": 2010228,
+      "firstSaleSharePct": 12.5
     }
   },
   "sourcesUsed": [

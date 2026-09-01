@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "palm-jabal-ali",
     "nameEn": "Palm Jabal Ali",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 411,
-      "totalWorthAed": 686604680,
-      "transactionCount": 74,
-      "propertyCount": 74,
-      "firstSaleCount": 67,
-      "meanWorthAed": 9278442,
-      "firstSaleSharePct": 90.5
+      "totalWorthAed": 774698099.16,
+      "transactionCount": 124,
+      "propertyCount": 124,
+      "firstSaleCount": 116,
+      "meanWorthAed": 6247565,
+      "firstSaleSharePct": 93.5
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 411,
-      "totalWorthAed": 11228280,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 26906280,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 5614140,
+      "meanWorthAed": 8968760,
       "firstSaleSharePct": 0
     }
   },

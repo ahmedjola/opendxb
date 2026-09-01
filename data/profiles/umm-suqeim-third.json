@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "umm-suqeim-third",
     "nameEn": "Umm Suqeim Third",
@@ -60,25 +60,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 370,
-      "totalWorthAed": 82878021.12,
-      "transactionCount": 24,
-      "propertyCount": 24,
-      "firstSaleCount": 2,
-      "meanWorthAed": 3453251,
-      "firstSaleSharePct": 8.3
+      "totalWorthAed": 54310000,
+      "transactionCount": 13,
+      "propertyCount": 13,
+      "firstSaleCount": 0,
+      "meanWorthAed": 4177692,
+      "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 370,
-      "totalWorthAed": 7686000,
-      "transactionCount": 5,
-      "propertyCount": 5,
+      "totalWorthAed": 29923000,
+      "transactionCount": 11,
+      "propertyCount": 11,
       "firstSaleCount": 0,
-      "meanWorthAed": 1537200,
+      "meanWorthAed": 2720273,
       "firstSaleSharePct": 0
     }
   },

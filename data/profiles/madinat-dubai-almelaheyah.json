@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "madinat-dubai-almelaheyah",
     "nameEn": "Madinat Dubai Almelaheyah",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 333,
-      "totalWorthAed": 226748255.48,
-      "transactionCount": 84,
-      "propertyCount": 84,
-      "firstSaleCount": 62,
-      "meanWorthAed": 2699384,
-      "firstSaleSharePct": 73.8
+      "totalWorthAed": 232815670.06,
+      "transactionCount": 78,
+      "propertyCount": 78,
+      "firstSaleCount": 52,
+      "meanWorthAed": 2984816,
+      "firstSaleSharePct": 66.7
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 333,
-      "totalWorthAed": 10598153,
-      "transactionCount": 6,
-      "propertyCount": 6,
+      "totalWorthAed": 4177103.33,
+      "transactionCount": 4,
+      "propertyCount": 4,
       "firstSaleCount": 0,
-      "meanWorthAed": 1766359,
+      "meanWorthAed": 1044276,
       "firstSaleSharePct": 0
     }
   },

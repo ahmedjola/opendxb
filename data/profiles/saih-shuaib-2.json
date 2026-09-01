@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "saih-shuaib-2",
     "nameEn": "Saih Shuaib 2",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 453,
-      "totalWorthAed": 128787507.51,
-      "transactionCount": 63,
-      "propertyCount": 63,
-      "firstSaleCount": 37,
-      "meanWorthAed": 2044246,
-      "firstSaleSharePct": 58.7
+      "totalWorthAed": 117188621.54,
+      "transactionCount": 74,
+      "propertyCount": 74,
+      "firstSaleCount": 66,
+      "meanWorthAed": 1583630,
+      "firstSaleSharePct": 89.2
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 453,
-      "totalWorthAed": 28900000,
-      "transactionCount": 4,
-      "propertyCount": 4,
-      "firstSaleCount": 1,
-      "meanWorthAed": 7225000,
-      "firstSaleSharePct": 25
+      "totalWorthAed": 304000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 304000,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

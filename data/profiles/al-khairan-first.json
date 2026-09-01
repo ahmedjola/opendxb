@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:14:37.623Z",
+  "generatedAt": "2026-09-01T01:44:09.815Z",
   "community": {
     "slug": "al-khairan-first",
     "nameEn": "Al Khairan First",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 447,
-      "totalWorthAed": 478513110.45,
-      "transactionCount": 169,
-      "propertyCount": 169,
-      "firstSaleCount": 57,
-      "meanWorthAed": 2831439,
-      "firstSaleSharePct": 33.7
+      "totalWorthAed": 631865214,
+      "transactionCount": 207,
+      "propertyCount": 207,
+      "firstSaleCount": 119,
+      "meanWorthAed": 3052489,
+      "firstSaleSharePct": 57.5
     },
     "mortgages": {
-      "periodFrom": "2026-07-01",
-      "periodTo": "2026-07-31",
+      "periodFrom": "2026-08-01",
+      "periodTo": "2026-08-31",
       "areaId": 447,
-      "totalWorthAed": 119801170.33,
-      "transactionCount": 62,
-      "propertyCount": 62,
+      "totalWorthAed": 123091710,
+      "transactionCount": 69,
+      "propertyCount": 69,
       "firstSaleCount": 0,
-      "meanWorthAed": 1932277,
+      "meanWorthAed": 1783938,
       "firstSaleSharePct": 0
     }
   },
