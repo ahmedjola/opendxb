@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T00:55:50.197Z",
+  "generatedAt": "2026-09-11T00:53:08.869Z",
   "community": {
     "slug": "dubai-investment-park-first",
     "nameEn": "Dubai Investment Park First",
@@ -64,12 +64,12 @@
       "periodFrom": "2026-08-01",
       "periodTo": "2026-08-31",
       "areaId": 458,
-      "totalWorthAed": 287647907.68,
-      "transactionCount": 161,
-      "propertyCount": 161,
-      "firstSaleCount": 145,
-      "meanWorthAed": 1786633,
-      "firstSaleSharePct": 90.1
+      "totalWorthAed": 285965897.68,
+      "transactionCount": 160,
+      "propertyCount": 160,
+      "firstSaleCount": 144,
+      "meanWorthAed": 1787287,
+      "firstSaleSharePct": 90
     },
     "mortgages": {
       "periodFrom": "2026-08-01",
