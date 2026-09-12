@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T00:53:08.869Z",
+  "generatedAt": "2026-09-12T00:58:21.296Z",
   "community": {
     "slug": "al-aweer-first",
     "nameEn": "Al Aweer First",
@@ -65,9 +65,9 @@
       "totalWorthAed": 25673000,
       "transactionCount": 23,
       "propertyCount": 23,
-      "firstSaleCount": 7,
+      "firstSaleCount": 8,
       "meanWorthAed": 1116217,
-      "firstSaleSharePct": 30.4
+      "firstSaleSharePct": 34.8
     }
   },
   "sourcesUsed": [
