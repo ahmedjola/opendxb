@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T00:56:21.820Z",
+  "generatedAt": "2026-09-22T01:31:02.506Z",
   "community": {
     "slug": "al-hebiah-sixth",
     "nameEn": "Al Hebiah Sixth",
@@ -70,11 +70,11 @@
       "periodFrom": "2026-08-01",
       "periodTo": "2026-08-31",
       "areaId": 531,
-      "totalWorthAed": 220565354.8,
-      "transactionCount": 88,
-      "propertyCount": 88,
+      "totalWorthAed": 217865354.8,
+      "transactionCount": 87,
+      "propertyCount": 87,
       "firstSaleCount": 3,
-      "meanWorthAed": 2506424,
+      "meanWorthAed": 2504199,
       "firstSaleSharePct": 3.4
     }
   },
