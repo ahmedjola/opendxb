@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T01:20:35.909Z",
+  "generatedAt": "2026-09-24T01:15:04.749Z",
   "community": {
     "slug": "al-athbah",
     "nameEn": "AL Athbah",
@@ -73,9 +73,9 @@
       "totalWorthAed": 5250000,
       "transactionCount": 5,
       "propertyCount": 5,
-      "firstSaleCount": 0,
+      "firstSaleCount": 1,
       "meanWorthAed": 1050000,
-      "firstSaleSharePct": 0
+      "firstSaleSharePct": 20
     }
   },
   "sourcesUsed": [
