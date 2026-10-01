@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "al-nahda-second",
-    "nameEn": "Al Nahda Second",
-    "nameAr": "النهده الثانيه",
-    "marketNames": [],
-    "marketNamesAr": [],
-    "communityNumber": 301,
+    "slug": "al-safa-first",
+    "nameEn": "Al Safa First",
+    "nameAr": "الصفا الاولى",
+    "marketNames": [
+      "Al Safa 1"
+    ],
+    "marketNamesAr": [
+      "الصفا الأولى"
+    ],
+    "communityNumber": 313,
     "sectorNumber": null
   },
   "sales": {
@@ -56,27 +60,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 301,
-      "totalWorthAed": 40750000,
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 313,
+      "totalWorthAed": 47520000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 40750000,
+      "meanWorthAed": 47520000,
       "firstSaleSharePct": 0
     },
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 301,
-      "totalWorthAed": 137784000,
-      "transactionCount": 3,
-      "propertyCount": 3,
-      "firstSaleCount": 0,
-      "meanWorthAed": 45928000,
-      "firstSaleSharePct": 0
-    }
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "hor-al-anz",
     "nameEn": "Hor Al Anz",
@@ -56,17 +56,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 233,
-      "totalWorthAed": 22550000,
-      "transactionCount": 5,
-      "propertyCount": 5,
+      "totalWorthAed": 21850000,
+      "transactionCount": 8,
+      "propertyCount": 8,
       "firstSaleCount": 0,
-      "meanWorthAed": 4510000,
+      "meanWorthAed": 2731250,
       "firstSaleSharePct": 0
     },
-    "mortgages": null
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 233,
+      "totalWorthAed": 13500000,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 0,
+      "meanWorthAed": 6750000,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "al-garhoud",
-    "nameEn": "Al Garhoud",
-    "nameAr": "القرهود",
+    "slug": "al-qusais-industrial-fourth",
+    "nameEn": "Al Qusais Industrial Fourth",
+    "nameAr": "القصيص الصناعيه الرابعه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 378,
+    "communityNumber": 322,
     "sectorNumber": null
   },
   "sales": {
@@ -56,27 +56,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 378,
-      "totalWorthAed": 9443731.6,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 9443732,
-      "firstSaleSharePct": 0
-    },
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 378,
-      "totalWorthAed": 31000000,
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 322,
+      "totalWorthAed": 820000,
       "transactionCount": 2,
       "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 15500000,
+      "meanWorthAed": 410000,
       "firstSaleSharePct": 0
-    }
+    },
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

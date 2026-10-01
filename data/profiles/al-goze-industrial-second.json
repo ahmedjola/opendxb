@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "al-warsan-second",
-    "nameEn": "Al Warsan Second",
-    "nameAr": "ورسان الثانيه",
+    "slug": "al-goze-industrial-second",
+    "nameEn": "Al Goze Industrial Second",
+    "nameAr": "القوز الصناعيه الثانيه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 344,
+    "communityNumber": 372,
     "sectorNumber": null
   },
   "sales": {
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 344,
-      "totalWorthAed": 12747475,
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 372,
+      "totalWorthAed": 41050000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 12747475,
+      "meanWorthAed": 41050000,
       "firstSaleSharePct": 0
     }
   },

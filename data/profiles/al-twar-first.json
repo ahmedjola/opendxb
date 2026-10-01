@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "nad-shamma",
-    "nameEn": "Nad Shamma",
-    "nameAr": "ند شما",
+    "slug": "al-twar-first",
+    "nameEn": "Al Twar First",
+    "nameAr": "الطوار الاولى",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 327,
+    "communityNumber": 358,
     "sectorNumber": null
   },
   "sales": {
@@ -55,17 +55,27 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
+    "sales": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 358,
+      "totalWorthAed": 9400000,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 1,
+      "meanWorthAed": 4700000,
+      "firstSaleSharePct": 50
+    },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 327,
-      "totalWorthAed": 2900000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 2900000,
-      "firstSaleSharePct": 0
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 358,
+      "totalWorthAed": 1750000,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 1,
+      "meanWorthAed": 875000,
+      "firstSaleSharePct": 50
     }
   },
   "sourcesUsed": [

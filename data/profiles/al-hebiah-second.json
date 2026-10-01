@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-hebiah-second",
     "nameEn": "Al Hebiah Second",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 452,
-      "totalWorthAed": 61241417.47,
-      "transactionCount": 89,
-      "propertyCount": 89,
-      "firstSaleCount": 65,
-      "meanWorthAed": 688106,
-      "firstSaleSharePct": 73
+      "totalWorthAed": 63629126.01,
+      "transactionCount": 88,
+      "propertyCount": 88,
+      "firstSaleCount": 67,
+      "meanWorthAed": 723058,
+      "firstSaleSharePct": 76.1
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 452,
-      "totalWorthAed": 3727500,
-      "transactionCount": 7,
-      "propertyCount": 7,
+      "totalWorthAed": 28276500,
+      "transactionCount": 14,
+      "propertyCount": 14,
       "firstSaleCount": 0,
-      "meanWorthAed": 532500,
+      "meanWorthAed": 2019750,
       "firstSaleSharePct": 0
     }
   },

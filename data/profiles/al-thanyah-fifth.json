@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-thanyah-fifth",
     "nameEn": "Al Thanyah Fifth",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 350,
-      "totalWorthAed": 648745477.96,
-      "transactionCount": 212,
-      "propertyCount": 212,
-      "firstSaleCount": 77,
-      "meanWorthAed": 3060120,
-      "firstSaleSharePct": 36.3
+      "totalWorthAed": 793420830.5,
+      "transactionCount": 240,
+      "propertyCount": 240,
+      "firstSaleCount": 71,
+      "meanWorthAed": 3305920,
+      "firstSaleSharePct": 29.6
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 350,
-      "totalWorthAed": 652131898.9,
-      "transactionCount": 111,
-      "propertyCount": 121,
+      "totalWorthAed": 941284278.97,
+      "transactionCount": 131,
+      "propertyCount": 131,
       "firstSaleCount": 0,
-      "meanWorthAed": 5875062,
+      "meanWorthAed": 7185376,
       "firstSaleSharePct": 0
     }
   },

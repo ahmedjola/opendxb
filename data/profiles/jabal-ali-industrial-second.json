@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "jabal-ali-industrial-second",
     "nameEn": "Jabal Ali Industrial Second",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 478,
-      "totalWorthAed": 867486008.36,
-      "transactionCount": 771,
-      "propertyCount": 771,
-      "firstSaleCount": 693,
-      "meanWorthAed": 1125144,
-      "firstSaleSharePct": 89.9
+      "totalWorthAed": 710565109.99,
+      "transactionCount": 615,
+      "propertyCount": 615,
+      "firstSaleCount": 524,
+      "meanWorthAed": 1155390,
+      "firstSaleSharePct": 85.2
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 478,
-      "totalWorthAed": 6844000,
-      "transactionCount": 13,
-      "propertyCount": 13,
+      "totalWorthAed": 4528405.01,
+      "transactionCount": 10,
+      "propertyCount": 10,
       "firstSaleCount": 0,
-      "meanWorthAed": 526462,
+      "meanWorthAed": 452841,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-baraha",
     "nameEn": "Al Baraha",
@@ -56,14 +56,14 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 239,
-      "totalWorthAed": 6300000,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 31902707,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 3150000,
+      "meanWorthAed": 31902707,
       "firstSaleSharePct": 0
     },
     "mortgages": null

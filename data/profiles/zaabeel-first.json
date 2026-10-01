@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "zaabeel-first",
     "nameEn": "Zaabeel First",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 331,
-      "totalWorthAed": 65646119,
-      "transactionCount": 7,
-      "propertyCount": 7,
+      "totalWorthAed": 79473682,
+      "transactionCount": 20,
+      "propertyCount": 20,
       "firstSaleCount": 2,
-      "meanWorthAed": 9378017,
-      "firstSaleSharePct": 28.6
+      "meanWorthAed": 3973684,
+      "firstSaleSharePct": 10
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 331,
-      "totalWorthAed": 37900000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 10390000,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 9475000,
+      "meanWorthAed": 5195000,
       "firstSaleSharePct": 0
     }
   },

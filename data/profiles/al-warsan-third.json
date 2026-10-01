@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "al-buteen",
-    "nameEn": "Al Buteen",
-    "nameAr": "البطين",
+    "slug": "al-warsan-third",
+    "nameEn": "Al Warsan Third",
+    "nameAr": "ورسان الثالثه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 254,
+    "communityNumber": 345,
     "sectorNumber": null
   },
   "sales": {
@@ -56,15 +56,15 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 254,
-      "totalWorthAed": 14500000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 1,
-      "meanWorthAed": 7250000,
-      "firstSaleSharePct": 50
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 345,
+      "totalWorthAed": 16819000,
+      "transactionCount": 13,
+      "propertyCount": 13,
+      "firstSaleCount": 11,
+      "meanWorthAed": 1293769,
+      "firstSaleSharePct": 84.6
     },
     "mortgages": null
   },

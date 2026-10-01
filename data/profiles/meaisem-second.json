@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "meaisem-second",
     "nameEn": "Me'Aisem Second",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 486,
-      "totalWorthAed": 248013449,
-      "transactionCount": 15,
-      "propertyCount": 15,
+      "totalWorthAed": 121053552,
+      "transactionCount": 8,
+      "propertyCount": 8,
       "firstSaleCount": 4,
-      "meanWorthAed": 16534230,
-      "firstSaleSharePct": 26.7
+      "meanWorthAed": 15131694,
+      "firstSaleSharePct": 50
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 486,
-      "totalWorthAed": 11953443,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 35111978,
+      "transactionCount": 6,
+      "propertyCount": 6,
       "firstSaleCount": 0,
-      "meanWorthAed": 5976722,
+      "meanWorthAed": 5851996,
       "firstSaleSharePct": 0
     }
   },

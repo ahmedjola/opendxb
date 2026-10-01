@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-kifaf",
     "nameEn": "Al Kifaf",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 366,
-      "totalWorthAed": 64423316,
-      "transactionCount": 21,
-      "propertyCount": 21,
-      "firstSaleCount": 12,
-      "meanWorthAed": 3067777,
-      "firstSaleSharePct": 57.1
+      "totalWorthAed": 95544161,
+      "transactionCount": 30,
+      "propertyCount": 30,
+      "firstSaleCount": 16,
+      "meanWorthAed": 3184805,
+      "firstSaleSharePct": 53.3
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 366,
-      "totalWorthAed": 20537629,
-      "transactionCount": 10,
-      "propertyCount": 10,
+      "totalWorthAed": 43654000,
+      "transactionCount": 13,
+      "propertyCount": 13,
       "firstSaleCount": 0,
-      "meanWorthAed": 2053763,
+      "meanWorthAed": 3358000,
       "firstSaleSharePct": 0
     }
   },

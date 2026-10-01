@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "hor-al-anz-east",
     "nameEn": "Hor Al Anz East",
@@ -55,26 +55,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+    "sales": null,
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 234,
-      "totalWorthAed": 1466635,
+      "totalWorthAed": 132000000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 1466635,
-      "firstSaleSharePct": 0
-    },
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 234,
-      "totalWorthAed": 4587200,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 2293600,
+      "meanWorthAed": 132000000,
       "firstSaleSharePct": 0
     }
   },

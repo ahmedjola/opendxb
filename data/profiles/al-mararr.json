@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-mararr",
     "nameEn": "Al Mararr",
@@ -55,18 +55,18 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+    "sales": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 339,
-      "totalWorthAed": 139511526,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 200000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 34877882,
+      "meanWorthAed": 200000,
       "firstSaleSharePct": 0
-    }
+    },
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

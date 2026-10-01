@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-satwa",
     "nameEn": "Al Satwa",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 266,
-      "totalWorthAed": 201205543.15,
-      "transactionCount": 46,
-      "propertyCount": 46,
-      "firstSaleCount": 36,
-      "meanWorthAed": 4374034,
-      "firstSaleSharePct": 78.3
+      "totalWorthAed": 122383954.15,
+      "transactionCount": 50,
+      "propertyCount": 50,
+      "firstSaleCount": 37,
+      "meanWorthAed": 2447679,
+      "firstSaleSharePct": 74
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 266,
-      "totalWorthAed": 106859597,
-      "transactionCount": 54,
-      "propertyCount": 54,
-      "firstSaleCount": 29,
-      "meanWorthAed": 1978881,
-      "firstSaleSharePct": 53.7
+      "totalWorthAed": 132673000,
+      "transactionCount": 8,
+      "propertyCount": 14,
+      "firstSaleCount": 0,
+      "meanWorthAed": 16584125,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

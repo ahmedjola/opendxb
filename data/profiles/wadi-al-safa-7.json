@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "wadi-al-safa-7",
     "nameEn": "Wadi Al Safa 7",
@@ -60,25 +60,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 463,
-      "totalWorthAed": 165807491,
-      "transactionCount": 37,
-      "propertyCount": 37,
-      "firstSaleCount": 4,
-      "meanWorthAed": 4481284,
-      "firstSaleSharePct": 10.8
+      "totalWorthAed": 122659899,
+      "transactionCount": 55,
+      "propertyCount": 55,
+      "firstSaleCount": 19,
+      "meanWorthAed": 2230180,
+      "firstSaleSharePct": 34.5
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 463,
-      "totalWorthAed": 117837741.86,
-      "transactionCount": 49,
-      "propertyCount": 49,
+      "totalWorthAed": 121169363.86,
+      "transactionCount": 51,
+      "propertyCount": 51,
       "firstSaleCount": 0,
-      "meanWorthAed": 2404852,
+      "meanWorthAed": 2375870,
       "firstSaleSharePct": 0
     }
   },

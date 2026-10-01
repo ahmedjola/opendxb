@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-hebiah-sixth",
     "nameEn": "Al Hebiah Sixth",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 531,
-      "totalWorthAed": 207624416,
-      "transactionCount": 55,
-      "propertyCount": 55,
+      "totalWorthAed": 232183249,
+      "transactionCount": 59,
+      "propertyCount": 59,
       "firstSaleCount": 4,
-      "meanWorthAed": 3774989,
-      "firstSaleSharePct": 7.3
+      "meanWorthAed": 3935309,
+      "firstSaleSharePct": 6.8
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 531,
-      "totalWorthAed": 217865354.8,
-      "transactionCount": 87,
-      "propertyCount": 87,
+      "totalWorthAed": 456118049,
+      "transactionCount": 168,
+      "propertyCount": 168,
       "firstSaleCount": 3,
-      "meanWorthAed": 2504199,
-      "firstSaleSharePct": 3.4
+      "meanWorthAed": 2714988,
+      "firstSaleSharePct": 1.8
     }
   },
   "sourcesUsed": [

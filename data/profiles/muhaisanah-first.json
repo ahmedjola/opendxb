@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "muhaisanah-first",
     "nameEn": "Muhaisanah First",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 312,
-      "totalWorthAed": 7250000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 1,
-      "meanWorthAed": 3625000,
-      "firstSaleSharePct": 50
+      "totalWorthAed": 13483000,
+      "transactionCount": 7,
+      "propertyCount": 7,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1926143,
+      "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 312,
-      "totalWorthAed": 7260000,
-      "transactionCount": 4,
-      "propertyCount": 4,
-      "firstSaleCount": 1,
-      "meanWorthAed": 1815000,
-      "firstSaleSharePct": 25
+      "totalWorthAed": 9076180,
+      "transactionCount": 9,
+      "propertyCount": 9,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1008464,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

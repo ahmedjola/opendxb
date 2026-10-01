@@ -1,12 +1,17 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "eyal-nasser",
-    "nameEn": "Eyal Nasser",
-    "nameAr": "عيال ناصر",
-    "marketNames": [],
-    "marketNamesAr": [],
-    "communityNumber": 235,
+    "slug": "muhaisnah-fourth",
+    "nameEn": "Muhaisnah Fourth",
+    "nameAr": "محيصنه الرابعه",
+    "marketNames": [
+      "Muhaisnah 4",
+      "Sonapur"
+    ],
+    "marketNamesAr": [
+      "محيصنة الرابعة"
+    ],
+    "communityNumber": 361,
     "sectorNumber": null
   },
   "sales": {
@@ -55,26 +60,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 235,
-      "totalWorthAed": 921000,
+    "sales": null,
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 361,
+      "totalWorthAed": 51450000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 921000,
-      "firstSaleSharePct": 0
-    },
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 235,
-      "totalWorthAed": 70000000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 35000000,
+      "meanWorthAed": 51450000,
       "firstSaleSharePct": 0
     }
   },

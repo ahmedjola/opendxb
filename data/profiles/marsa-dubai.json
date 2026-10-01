@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "marsa-dubai",
     "nameEn": "Marsa Dubai",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 330,
-      "totalWorthAed": 927008775.69,
-      "transactionCount": 268,
-      "propertyCount": 268,
+      "totalWorthAed": 837833111.64,
+      "transactionCount": 244,
+      "propertyCount": 244,
       "firstSaleCount": 25,
-      "meanWorthAed": 3458988,
-      "firstSaleSharePct": 9.3
+      "meanWorthAed": 3433742,
+      "firstSaleSharePct": 10.2
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 330,
-      "totalWorthAed": 951285253.79,
-      "transactionCount": 167,
-      "propertyCount": 174,
-      "firstSaleCount": 0,
-      "meanWorthAed": 5696319,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 602473181.25,
+      "transactionCount": 184,
+      "propertyCount": 184,
+      "firstSaleCount": 1,
+      "meanWorthAed": 3274311,
+      "firstSaleSharePct": 0.5
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "island-2",
     "nameEn": "Island 2",
@@ -55,26 +55,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 527,
-      "totalWorthAed": 45925000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 22962500,
-      "firstSaleSharePct": 0
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 527,
-      "totalWorthAed": 31625000,
+      "totalWorthAed": 481200000,
       "transactionCount": 2,
       "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 15812500,
+      "meanWorthAed": 240600000,
       "firstSaleSharePct": 0
     }
   },

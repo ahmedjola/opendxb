@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "saih-shuaib-4",
     "nameEn": "Saih Shuaib 4",
@@ -55,16 +55,26 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+    "sales": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 455,
-      "totalWorthAed": 48800000,
-      "transactionCount": 3,
-      "propertyCount": 3,
+      "totalWorthAed": 42000000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 16266667,
+      "meanWorthAed": 42000000,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 455,
+      "totalWorthAed": 5300000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 5300000,
       "firstSaleSharePct": 0
     }
   },

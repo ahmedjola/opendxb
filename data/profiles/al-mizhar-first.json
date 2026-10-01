@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-mizhar-first",
     "nameEn": "Al Mizhar First",
@@ -55,17 +55,27 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+    "sales": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 316,
-      "totalWorthAed": 9220992,
-      "transactionCount": 5,
-      "propertyCount": 5,
+      "totalWorthAed": 16460000,
+      "transactionCount": 3,
+      "propertyCount": 3,
+      "firstSaleCount": 0,
+      "meanWorthAed": 5486667,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 316,
+      "totalWorthAed": 6212503,
+      "transactionCount": 4,
+      "propertyCount": 4,
       "firstSaleCount": 1,
-      "meanWorthAed": 1844198,
-      "firstSaleSharePct": 20
+      "meanWorthAed": 1553126,
+      "firstSaleSharePct": 25
     }
   },
   "sourcesUsed": [

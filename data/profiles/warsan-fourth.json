@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "warsan-fourth",
     "nameEn": "Warsan Fourth",
@@ -59,26 +59,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 483,
-      "totalWorthAed": 62186827.54,
-      "transactionCount": 75,
-      "propertyCount": 75,
-      "firstSaleCount": 52,
-      "meanWorthAed": 829158,
-      "firstSaleSharePct": 69.3
+      "totalWorthAed": 155154183.92,
+      "transactionCount": 118,
+      "propertyCount": 118,
+      "firstSaleCount": 82,
+      "meanWorthAed": 1314866,
+      "firstSaleSharePct": 69.5
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 299,
-      "totalWorthAed": 70183427,
-      "transactionCount": 27,
-      "propertyCount": 112,
-      "firstSaleCount": 4,
-      "meanWorthAed": 2599386,
-      "firstSaleSharePct": 14.8
+      "totalWorthAed": 13613141.02,
+      "transactionCount": 23,
+      "propertyCount": 23,
+      "firstSaleCount": 0,
+      "meanWorthAed": 591876,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

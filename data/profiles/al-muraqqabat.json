@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-muraqqabat",
     "nameEn": "Al Muraqqabat",
@@ -59,25 +59,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 244,
-      "totalWorthAed": 102344415,
-      "transactionCount": 4,
-      "propertyCount": 4,
-      "firstSaleCount": 2,
-      "meanWorthAed": 25586104,
-      "firstSaleSharePct": 50
+      "totalWorthAed": 4500000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 4500000,
+      "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 244,
-      "totalWorthAed": 146110000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 136788000,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 36527500,
+      "meanWorthAed": 45596000,
       "firstSaleSharePct": 0
     }
   },

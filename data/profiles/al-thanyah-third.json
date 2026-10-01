@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-thanyah-third",
     "nameEn": "Al Thanyah Third",
@@ -65,26 +65,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 351,
-      "totalWorthAed": 116002202.42,
-      "transactionCount": 40,
-      "propertyCount": 40,
+      "totalWorthAed": 72689073,
+      "transactionCount": 32,
+      "propertyCount": 32,
       "firstSaleCount": 0,
-      "meanWorthAed": 2900055,
+      "meanWorthAed": 2271534,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 351,
-      "totalWorthAed": 123336522.81,
-      "transactionCount": 53,
-      "propertyCount": 55,
-      "firstSaleCount": 3,
-      "meanWorthAed": 2327104,
-      "firstSaleSharePct": 5.7
+      "totalWorthAed": 116024142,
+      "transactionCount": 47,
+      "propertyCount": 47,
+      "firstSaleCount": 0,
+      "meanWorthAed": 2468599,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

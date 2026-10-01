@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-athbah",
     "nameEn": "AL Athbah",
@@ -55,27 +55,17 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 473,
-      "totalWorthAed": 4850000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 4850000,
-      "firstSaleSharePct": 0
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 473,
-      "totalWorthAed": 5250000,
-      "transactionCount": 5,
-      "propertyCount": 5,
-      "firstSaleCount": 1,
-      "meanWorthAed": 1050000,
-      "firstSaleSharePct": 20
+      "totalWorthAed": 16015000,
+      "transactionCount": 13,
+      "propertyCount": 13,
+      "firstSaleCount": 2,
+      "meanWorthAed": 1231923,
+      "firstSaleSharePct": 15.4
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-hebiah-fourth",
     "nameEn": "Al Hebiah Fourth",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 435,
-      "totalWorthAed": 514365660.22,
-      "transactionCount": 184,
-      "propertyCount": 184,
-      "firstSaleCount": 65,
-      "meanWorthAed": 2795466,
-      "firstSaleSharePct": 35.3
+      "totalWorthAed": 795676515.22,
+      "transactionCount": 210,
+      "propertyCount": 210,
+      "firstSaleCount": 49,
+      "meanWorthAed": 3788936,
+      "firstSaleSharePct": 23.3
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 435,
-      "totalWorthAed": 199445560.3,
-      "transactionCount": 102,
-      "propertyCount": 102,
+      "totalWorthAed": 378207722.72,
+      "transactionCount": 149,
+      "propertyCount": 149,
       "firstSaleCount": 0,
-      "meanWorthAed": 1955349,
+      "meanWorthAed": 2538307,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-hebiah-fifth",
     "nameEn": "Al Hebiah Fifth",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 451,
-      "totalWorthAed": 580731095,
-      "transactionCount": 282,
-      "propertyCount": 282,
-      "firstSaleCount": 172,
-      "meanWorthAed": 2059330,
-      "firstSaleSharePct": 61
+      "totalWorthAed": 720001569.5,
+      "transactionCount": 408,
+      "propertyCount": 408,
+      "firstSaleCount": 268,
+      "meanWorthAed": 1764710,
+      "firstSaleSharePct": 65.7
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 451,
-      "totalWorthAed": 337495832.63,
-      "transactionCount": 172,
-      "propertyCount": 172,
+      "totalWorthAed": 315759205.98,
+      "transactionCount": 165,
+      "propertyCount": 166,
       "firstSaleCount": 0,
-      "meanWorthAed": 1962185,
+      "meanWorthAed": 1913692,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-aweer-first",
     "nameEn": "Al Aweer First",
@@ -59,15 +59,15 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 398,
-      "totalWorthAed": 25673000,
-      "transactionCount": 23,
-      "propertyCount": 23,
-      "firstSaleCount": 8,
-      "meanWorthAed": 1116217,
-      "firstSaleSharePct": 34.8
+      "totalWorthAed": 58105141,
+      "transactionCount": 43,
+      "propertyCount": 43,
+      "firstSaleCount": 12,
+      "meanWorthAed": 1351282,
+      "firstSaleSharePct": 27.9
     }
   },
   "sourcesUsed": [

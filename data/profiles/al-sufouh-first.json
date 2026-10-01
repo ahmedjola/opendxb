@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-sufouh-first",
     "nameEn": "Al Sufouh First",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 307,
-      "totalWorthAed": 96142630.52,
-      "transactionCount": 38,
-      "propertyCount": 38,
-      "firstSaleCount": 33,
-      "meanWorthAed": 2530069,
-      "firstSaleSharePct": 86.8
+      "totalWorthAed": 103942842.44,
+      "transactionCount": 39,
+      "propertyCount": 39,
+      "firstSaleCount": 26,
+      "meanWorthAed": 2665201,
+      "firstSaleSharePct": 66.7
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 307,
-      "totalWorthAed": 4680000,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 5036028,
+      "transactionCount": 4,
+      "propertyCount": 4,
       "firstSaleCount": 0,
-      "meanWorthAed": 2340000,
+      "meanWorthAed": 1259007,
       "firstSaleSharePct": 0
     }
   },

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
-    "slug": "al-suq-al-kabeer",
-    "nameEn": "Al Suq Al Kabeer",
-    "nameAr": "السوق الكبير",
+    "slug": "al-twar-third",
+    "nameEn": "Al Twar Third",
+    "nameAr": "الطوار الثالثه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 367,
+    "communityNumber": 359,
     "sectorNumber": null
   },
   "sales": {
@@ -55,26 +55,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 367,
-      "totalWorthAed": 4600000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 1,
-      "meanWorthAed": 4600000,
-      "firstSaleSharePct": 100
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 367,
-      "totalWorthAed": 148632765,
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
+      "areaId": 359,
+      "totalWorthAed": 1900000,
       "transactionCount": 4,
       "propertyCount": 4,
       "firstSaleCount": 0,
-      "meanWorthAed": 37158191,
+      "meanWorthAed": 475000,
       "firstSaleSharePct": 0
     }
   },

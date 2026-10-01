@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "burj-khalifa",
     "nameEn": "Burj Khalifa",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 390,
-      "totalWorthAed": 1469710410.35,
-      "transactionCount": 161,
-      "propertyCount": 161,
-      "firstSaleCount": 18,
-      "meanWorthAed": 9128636,
-      "firstSaleSharePct": 11.2
+      "totalWorthAed": 770787386.58,
+      "transactionCount": 172,
+      "propertyCount": 172,
+      "firstSaleCount": 24,
+      "meanWorthAed": 4481322,
+      "firstSaleSharePct": 14
     },
     "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 390,
-      "totalWorthAed": 701906488.98,
-      "transactionCount": 96,
-      "propertyCount": 96,
+      "totalWorthAed": 454262603.37,
+      "transactionCount": 102,
+      "propertyCount": 102,
       "firstSaleCount": 0,
-      "meanWorthAed": 7311526,
+      "meanWorthAed": 4453555,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "jumeirah-second",
     "nameEn": "Jumeirah Second",
@@ -61,27 +61,17 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 375,
-      "totalWorthAed": 253124818,
-      "transactionCount": 8,
-      "propertyCount": 8,
+      "totalWorthAed": 81696321.86,
+      "transactionCount": 4,
+      "propertyCount": 4,
       "firstSaleCount": 0,
-      "meanWorthAed": 31640602,
+      "meanWorthAed": 20424080,
       "firstSaleSharePct": 0
     },
-    "mortgages": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
-      "areaId": 375,
-      "totalWorthAed": 53510000,
-      "transactionCount": 3,
-      "propertyCount": 3,
-      "firstSaleCount": 1,
-      "meanWorthAed": 17836667,
-      "firstSaleSharePct": 33.3
-    }
+    "mortgages": null
   },
   "sourcesUsed": [
     "dld.areawise-sales",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T01:54:15.408Z",
+  "generatedAt": "2026-10-01T01:54:43.913Z",
   "community": {
     "slug": "al-hamriya",
     "nameEn": "Al Hamriya",
@@ -55,18 +55,18 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-08-01",
-      "periodTo": "2026-08-31",
+    "sales": null,
+    "mortgages": {
+      "periodFrom": "2026-09-01",
+      "periodTo": "2026-09-30",
       "areaId": 269,
-      "totalWorthAed": 18010000,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "totalWorthAed": 157874000,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 18010000,
+      "meanWorthAed": 52624667,
       "firstSaleSharePct": 0
-    },
-    "mortgages": null
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",
