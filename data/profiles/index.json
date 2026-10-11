@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-10T02:11:42.901Z",
+  "generatedAt": "2026-10-11T01:42:47.025Z",
   "communityCount": 141,
   "provenance": {
     "dld.areawise-mortgage": {
       "sourceId": "dld.areawise-mortgage",
       "authority": "DLD",
-      "ingestedAt": "2026-10-10T02:11:42.821Z",
+      "ingestedAt": "2026-10-11T01:42:46.948Z",
       "recordCount": 120,
       "endpoint": "https://gateway.dubailand.gov.ae/areawise/transaction/mortgage",
       "license": "Dubai Open Data Licence (Dubai Data Law No. 26 of 2015)"
@@ -13,7 +13,7 @@
     "dld.areawise-sales": {
       "sourceId": "dld.areawise-sales",
       "authority": "DLD",
-      "ingestedAt": "2026-10-10T02:11:40.544Z",
+      "ingestedAt": "2026-10-11T01:42:45.189Z",
       "recordCount": 120,
       "endpoint": "https://gateway.dubailand.gov.ae/areawise/transaction/sales",
       "license": "Dubai Open Data Licence (Dubai Data Law No. 26 of 2015)"
