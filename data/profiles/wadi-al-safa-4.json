@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T03:25:34.244Z",
+  "generatedAt": "2026-10-14T01:42:17.559Z",
   "community": {
     "slug": "wadi-al-safa-4",
     "nameEn": "Wadi Al Safa 4",
@@ -59,11 +59,11 @@
       "periodFrom": "2026-09-01",
       "periodTo": "2026-09-30",
       "areaId": 466,
-      "totalWorthAed": 556532656.07,
-      "transactionCount": 356,
-      "propertyCount": 356,
-      "firstSaleCount": 276,
-      "meanWorthAed": 1563294,
+      "totalWorthAed": 555788331.07,
+      "transactionCount": 355,
+      "propertyCount": 355,
+      "firstSaleCount": 275,
+      "meanWorthAed": 1565601,
       "firstSaleSharePct": 77.5
     },
     "mortgages": {

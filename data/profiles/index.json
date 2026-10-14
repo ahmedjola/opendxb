@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-13T03:25:34.244Z",
+  "generatedAt": "2026-10-14T01:42:17.559Z",
   "communityCount": 141,
   "provenance": {
     "dld.areawise-mortgage": {
       "sourceId": "dld.areawise-mortgage",
       "authority": "DLD",
-      "ingestedAt": "2026-10-13T03:25:34.176Z",
+      "ingestedAt": "2026-10-14T01:42:17.487Z",
       "recordCount": 120,
       "endpoint": "https://gateway.dubailand.gov.ae/areawise/transaction/mortgage",
       "license": "Dubai Open Data Licence (Dubai Data Law No. 26 of 2015)"
@@ -13,7 +13,7 @@
     "dld.areawise-sales": {
       "sourceId": "dld.areawise-sales",
       "authority": "DLD",
-      "ingestedAt": "2026-10-13T03:25:31.585Z",
+      "ingestedAt": "2026-10-14T01:42:15.894Z",
       "recordCount": 120,
       "endpoint": "https://gateway.dubailand.gov.ae/areawise/transaction/sales",
       "license": "Dubai Open Data Licence (Dubai Data Law No. 26 of 2015)"
@@ -2700,9 +2700,9 @@
       "dldAreaId": 466,
       "periodFrom": "2026-09-01",
       "periodTo": "2026-09-30",
-      "transactionCount": 356,
-      "totalWorthAed": 556532656.07,
-      "meanWorthAed": 1563294,
+      "transactionCount": 355,
+      "totalWorthAed": 555788331.07,
+      "meanWorthAed": 1565601,
       "firstSaleSharePct": 77.5,
       "medianSaleAed": null,
       "medianAnnualRentAed": null,
