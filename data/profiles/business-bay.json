@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:24:25.463Z",
+  "generatedAt": "2026-10-22T01:22:30.833Z",
   "community": {
     "slug": "business-bay",
     "nameEn": "Business Bay",
@@ -63,12 +63,12 @@
       "periodFrom": "2026-09-01",
       "periodTo": "2026-09-30",
       "areaId": 526,
-      "totalWorthAed": 1497691262.97,
-      "transactionCount": 438,
-      "propertyCount": 438,
-      "firstSaleCount": 137,
-      "meanWorthAed": 3419386,
-      "firstSaleSharePct": 31.3
+      "totalWorthAed": 1492472759.97,
+      "transactionCount": 437,
+      "propertyCount": 437,
+      "firstSaleCount": 136,
+      "meanWorthAed": 3415269,
+      "firstSaleSharePct": 31.1
     },
     "mortgages": {
       "periodFrom": "2026-09-01",

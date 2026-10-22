@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:24:25.463Z",
+  "generatedAt": "2026-10-22T01:22:30.833Z",
   "community": {
     "slug": "al-yufrah-1",
     "nameEn": "Al Yufrah 1",
@@ -63,12 +63,12 @@
       "periodFrom": "2026-09-01",
       "periodTo": "2026-09-30",
       "areaId": 469,
-      "totalWorthAed": 1089421271,
-      "transactionCount": 226,
-      "propertyCount": 226,
+      "totalWorthAed": 884283483,
+      "transactionCount": 190,
+      "propertyCount": 190,
       "firstSaleCount": 132,
-      "meanWorthAed": 4820448,
-      "firstSaleSharePct": 58.4
+      "meanWorthAed": 4654124,
+      "firstSaleSharePct": 69.5
     },
     "mortgages": {
       "periodFrom": "2026-09-01",
