@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "mushrif",
     "nameEn": "Mushrif",
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 404,
-      "totalWorthAed": 2514000,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 500000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 1257000,
+      "meanWorthAed": 500000,
       "firstSaleSharePct": 0
     }
   },

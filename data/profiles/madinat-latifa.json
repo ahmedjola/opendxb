@@ -1,16 +1,12 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
-    "slug": "al-safa-first",
-    "nameEn": "Al Safa First",
-    "nameAr": "الصفا الاولى",
-    "marketNames": [
-      "Al Safa 1"
-    ],
-    "marketNamesAr": [
-      "الصفا الأولى"
-    ],
-    "communityNumber": 313,
+    "slug": "madinat-latifa",
+    "nameEn": "Madinat Latifa",
+    "nameAr": "مدينة لطيفة",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 513,
     "sectorNumber": null
   },
   "sales": {
@@ -60,17 +56,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 313,
-      "totalWorthAed": 47520000,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 513,
+      "totalWorthAed": 1720463,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 1,
+      "meanWorthAed": 1720463,
+      "firstSaleSharePct": 100
+    },
+    "mortgages": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 513,
+      "totalWorthAed": 750000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 47520000,
+      "meanWorthAed": 750000,
       "firstSaleSharePct": 0
-    },
-    "mortgages": null
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

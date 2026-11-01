@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-rowaiyah-first",
     "nameEn": "Al Rowaiyah First",
@@ -56,15 +56,15 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 492,
-      "totalWorthAed": 280630160.11,
-      "transactionCount": 58,
-      "propertyCount": 58,
-      "firstSaleCount": 50,
-      "meanWorthAed": 4838451,
-      "firstSaleSharePct": 86.2
+      "totalWorthAed": 3186266956.48,
+      "transactionCount": 645,
+      "propertyCount": 645,
+      "firstSaleCount": 560,
+      "meanWorthAed": 4939949,
+      "firstSaleSharePct": 86.8
     },
     "mortgages": null
   },

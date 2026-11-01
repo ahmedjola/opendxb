@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "muhaisnah-fourth",
     "nameEn": "Muhaisnah Fourth",
@@ -62,14 +62,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 361,
-      "totalWorthAed": 51450000,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "totalWorthAed": 63276800,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 51450000,
+      "meanWorthAed": 31638400,
       "firstSaleSharePct": 0
     }
   },

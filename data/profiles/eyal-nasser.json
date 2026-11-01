@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
-    "slug": "al-goze-industrial-second",
-    "nameEn": "Al Goze Industrial Second",
-    "nameAr": "القوز الصناعيه الثانيه",
+    "slug": "eyal-nasser",
+    "nameEn": "Eyal Nasser",
+    "nameAr": "عيال ناصر",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 372,
+    "communityNumber": 235,
     "sectorNumber": null
   },
   "sales": {
@@ -57,14 +57,14 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 372,
-      "totalWorthAed": 41050000,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 235,
+      "totalWorthAed": 3822500,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 41050000,
+      "meanWorthAed": 3822500,
       "firstSaleSharePct": 0
     }
   },

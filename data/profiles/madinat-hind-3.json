@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "madinat-hind-3",
     "nameEn": "Madinat Hind 3",
@@ -57,15 +57,15 @@
   "marketActivity": {
     "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 504,
-      "totalWorthAed": 14494442,
+      "totalWorthAed": 21021373,
       "transactionCount": 12,
       "propertyCount": 12,
-      "firstSaleCount": 3,
-      "meanWorthAed": 1207870,
-      "firstSaleSharePct": 25
+      "firstSaleCount": 0,
+      "meanWorthAed": 1751781,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

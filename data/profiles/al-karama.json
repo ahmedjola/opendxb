@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-karama",
     "nameEn": "Al Karama",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 271,
-      "totalWorthAed": 15900000,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "totalWorthAed": 24500000,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 15900000,
+      "meanWorthAed": 12250000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 271,
-      "totalWorthAed": 219096000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 10730000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 54774000,
+      "meanWorthAed": 10730000,
       "firstSaleSharePct": 0
     }
   },

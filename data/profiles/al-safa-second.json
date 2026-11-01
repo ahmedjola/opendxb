@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-safa-second",
     "nameEn": "Al Safa Second",
@@ -60,19 +60,19 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 314,
-      "totalWorthAed": 6360000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 68000000,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 1590000,
+      "meanWorthAed": 34000000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 314,
       "totalWorthAed": 300000,
       "transactionCount": 1,

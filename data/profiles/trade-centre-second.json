@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "trade-centre-second",
     "nameEn": "Trade Centre Second",
@@ -61,17 +61,27 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 329,
-      "totalWorthAed": 37930000,
+      "totalWorthAed": 20896000,
+      "transactionCount": 4,
+      "propertyCount": 4,
+      "firstSaleCount": 2,
+      "meanWorthAed": 5224000,
+      "firstSaleSharePct": 50
+    },
+    "mortgages": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 329,
+      "totalWorthAed": 7025000,
       "transactionCount": 3,
       "propertyCount": 3,
-      "firstSaleCount": 1,
-      "meanWorthAed": 12643333,
-      "firstSaleSharePct": 33.3
-    },
-    "mortgages": null
+      "firstSaleCount": 0,
+      "meanWorthAed": 2341667,
+      "firstSaleSharePct": 0
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

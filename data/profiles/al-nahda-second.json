@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
-    "slug": "al-rigga",
-    "nameEn": "Al Rigga",
-    "nameAr": "الرقه",
+    "slug": "al-nahda-second",
+    "nameEn": "Al Nahda Second",
+    "nameAr": "النهده الثانيه",
     "marketNames": [],
-    "marketNamesAr": [
-      "الرقة"
-    ],
-    "communityNumber": 356,
+    "marketNamesAr": [],
+    "communityNumber": 301,
     "sectorNumber": null
   },
   "sales": {
@@ -58,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 356,
-      "totalWorthAed": 85000000,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 301,
+      "totalWorthAed": 23912905,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 85000000,
+      "meanWorthAed": 11956453,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 356,
-      "totalWorthAed": 57000000,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 301,
+      "totalWorthAed": 39239200,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 57000000,
+      "meanWorthAed": 39239200,
       "firstSaleSharePct": 0
     }
   },

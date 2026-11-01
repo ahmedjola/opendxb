@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
-    "slug": "al-twar-first",
-    "nameEn": "Al Twar First",
-    "nameAr": "الطوار الاولى",
+    "slug": "al-warsan-second",
+    "nameEn": "Al Warsan Second",
+    "nameAr": "ورسان الثانيه",
     "marketNames": [],
     "marketNamesAr": [],
-    "communityNumber": 358,
+    "communityNumber": 344,
     "sectorNumber": null
   },
   "sales": {
@@ -55,27 +55,17 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 358,
-      "totalWorthAed": 9400000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 1,
-      "meanWorthAed": 4700000,
-      "firstSaleSharePct": 50
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 358,
-      "totalWorthAed": 1750000,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 344,
+      "totalWorthAed": 61000000,
       "transactionCount": 2,
       "propertyCount": 2,
-      "firstSaleCount": 1,
-      "meanWorthAed": 875000,
-      "firstSaleSharePct": 50
+      "firstSaleCount": 0,
+      "meanWorthAed": 30500000,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

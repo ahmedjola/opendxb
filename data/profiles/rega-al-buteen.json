@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "rega-al-buteen",
     "nameEn": "Rega Al Buteen",
@@ -59,26 +59,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 255,
-      "totalWorthAed": 3000000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 1500000,
-      "firstSaleSharePct": 0
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 255,
-      "totalWorthAed": 780000,
+      "totalWorthAed": 170900000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 780000,
+      "meanWorthAed": 170900000,
       "firstSaleSharePct": 0
     }
   },

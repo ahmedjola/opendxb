@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "warsan-first",
     "nameEn": "Warsan First",
@@ -62,26 +62,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 343,
-      "totalWorthAed": 134281570.02,
-      "transactionCount": 184,
-      "propertyCount": 184,
-      "firstSaleCount": 60,
-      "meanWorthAed": 729791,
-      "firstSaleSharePct": 32.6
+      "totalWorthAed": 147308258.71,
+      "transactionCount": 186,
+      "propertyCount": 186,
+      "firstSaleCount": 36,
+      "meanWorthAed": 791980,
+      "firstSaleSharePct": 19.4
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 343,
-      "totalWorthAed": 14699000,
-      "transactionCount": 26,
-      "propertyCount": 26,
-      "firstSaleCount": 1,
-      "meanWorthAed": 565346,
-      "firstSaleSharePct": 3.8
+      "totalWorthAed": 48204000,
+      "transactionCount": 31,
+      "propertyCount": 31,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1554968,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-twar-third",
     "nameEn": "Al Twar Third",
@@ -55,16 +55,26 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+    "sales": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 359,
-      "totalWorthAed": 1900000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 422248,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 475000,
+      "meanWorthAed": 422248,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 359,
+      "totalWorthAed": 3190000,
+      "transactionCount": 1,
+      "propertyCount": 1,
+      "firstSaleCount": 0,
+      "meanWorthAed": 3190000,
       "firstSaleSharePct": 0
     }
   },

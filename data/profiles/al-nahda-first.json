@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-nahda-first",
     "nameEn": "Al Nahda First",
@@ -55,18 +55,18 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+    "sales": null,
+    "mortgages": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 355,
-      "totalWorthAed": 297351350,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 183000000,
+      "transactionCount": 202,
+      "propertyCount": 202,
       "firstSaleCount": 0,
-      "meanWorthAed": 148675675,
+      "meanWorthAed": 905941,
       "firstSaleSharePct": 0
-    },
-    "mortgages": null
+    }
   },
   "sourcesUsed": [
     "dld.areawise-sales",

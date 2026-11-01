@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-barshaa-south-second",
     "nameEn": "Al Barshaa South Second",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 414,
-      "totalWorthAed": 104023211.35,
-      "transactionCount": 84,
-      "propertyCount": 84,
-      "firstSaleCount": 57,
-      "meanWorthAed": 1238372,
-      "firstSaleSharePct": 67.9
+      "totalWorthAed": 102193986.56,
+      "transactionCount": 97,
+      "propertyCount": 97,
+      "firstSaleCount": 66,
+      "meanWorthAed": 1053546,
+      "firstSaleSharePct": 68
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 414,
-      "totalWorthAed": 30591317,
-      "transactionCount": 30,
-      "propertyCount": 30,
-      "firstSaleCount": 1,
-      "meanWorthAed": 1019711,
-      "firstSaleSharePct": 3.3
+      "totalWorthAed": 40036169,
+      "transactionCount": 37,
+      "propertyCount": 37,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1082059,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

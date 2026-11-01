@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "wadi-al-amardi",
     "nameEn": "Wadi Al Amardi",
@@ -55,27 +55,17 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 401,
-      "totalWorthAed": 10000000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 10000000,
-      "firstSaleSharePct": 0
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 401,
-      "totalWorthAed": 6270298,
-      "transactionCount": 5,
-      "propertyCount": 5,
-      "firstSaleCount": 2,
-      "meanWorthAed": 1254060,
-      "firstSaleSharePct": 40
+      "totalWorthAed": 10205500,
+      "transactionCount": 9,
+      "propertyCount": 9,
+      "firstSaleCount": 3,
+      "meanWorthAed": 1133944,
+      "firstSaleSharePct": 33.3
     }
   },
   "sourcesUsed": [

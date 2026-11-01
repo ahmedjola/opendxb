@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "muhaisanah-third",
     "nameEn": "Muhaisanah Third",
@@ -56,26 +56,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 311,
-      "totalWorthAed": 2500000,
+      "totalWorthAed": 4310000,
       "transactionCount": 1,
       "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 2500000,
+      "meanWorthAed": 4310000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 311,
-      "totalWorthAed": 1000000,
-      "transactionCount": 1,
-      "propertyCount": 1,
-      "firstSaleCount": 0,
-      "meanWorthAed": 1000000,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 4198000,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 1,
+      "meanWorthAed": 2099000,
+      "firstSaleSharePct": 50
     }
   },
   "sourcesUsed": [

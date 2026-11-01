@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-kheeran",
     "nameEn": "Al Kheeran",
@@ -56,25 +56,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 437,
-      "totalWorthAed": 12150000,
-      "transactionCount": 4,
-      "propertyCount": 4,
+      "totalWorthAed": 13805000,
+      "transactionCount": 5,
+      "propertyCount": 5,
       "firstSaleCount": 0,
-      "meanWorthAed": 3037500,
+      "meanWorthAed": 2761000,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 437,
-      "totalWorthAed": 14351826,
-      "transactionCount": 7,
-      "propertyCount": 7,
+      "totalWorthAed": 43198000,
+      "transactionCount": 10,
+      "propertyCount": 10,
       "firstSaleCount": 0,
-      "meanWorthAed": 2050261,
+      "meanWorthAed": 4319800,
       "firstSaleSharePct": 0
     }
   },

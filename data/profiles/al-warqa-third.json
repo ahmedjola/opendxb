@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-warqa-third",
     "nameEn": "Al Warqa Third",
@@ -55,17 +55,27 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": null,
-    "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+    "sales": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 298,
-      "totalWorthAed": 4731545.48,
-      "transactionCount": 6,
-      "propertyCount": 6,
+      "totalWorthAed": 65166377,
+      "transactionCount": 2,
+      "propertyCount": 2,
+      "firstSaleCount": 0,
+      "meanWorthAed": 32583189,
+      "firstSaleSharePct": 0
+    },
+    "mortgages": {
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 298,
+      "totalWorthAed": 13455000,
+      "transactionCount": 10,
+      "propertyCount": 10,
       "firstSaleCount": 1,
-      "meanWorthAed": 788591,
-      "firstSaleSharePct": 16.7
+      "meanWorthAed": 1345500,
+      "firstSaleSharePct": 10
     }
   },
   "sourcesUsed": [

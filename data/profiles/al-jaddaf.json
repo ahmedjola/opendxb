@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-jaddaf",
     "nameEn": "Al Jaddaf",
@@ -59,26 +59,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 334,
-      "totalWorthAed": 515038230.11,
+      "totalWorthAed": 299115531.83,
       "transactionCount": 195,
       "propertyCount": 195,
-      "firstSaleCount": 154,
-      "meanWorthAed": 2641222,
-      "firstSaleSharePct": 79
+      "firstSaleCount": 150,
+      "meanWorthAed": 1533926,
+      "firstSaleSharePct": 76.9
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 334,
-      "totalWorthAed": 281376595.41,
-      "transactionCount": 39,
-      "propertyCount": 50,
-      "firstSaleCount": 7,
-      "meanWorthAed": 7214784,
-      "firstSaleSharePct": 17.9
+      "totalWorthAed": 518221591.34,
+      "transactionCount": 48,
+      "propertyCount": 54,
+      "firstSaleCount": 0,
+      "meanWorthAed": 10796283,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "me-aisem-first",
     "nameEn": "Me'aisem First",
@@ -62,25 +62,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 485,
-      "totalWorthAed": 725615831.9,
-      "transactionCount": 235,
-      "propertyCount": 235,
-      "firstSaleCount": 146,
-      "meanWorthAed": 3087727,
-      "firstSaleSharePct": 62.1
+      "totalWorthAed": 669395869.76,
+      "transactionCount": 207,
+      "propertyCount": 207,
+      "firstSaleCount": 111,
+      "meanWorthAed": 3233796,
+      "firstSaleSharePct": 53.6
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 485,
-      "totalWorthAed": 229178017.02,
-      "transactionCount": 90,
-      "propertyCount": 90,
+      "totalWorthAed": 166062698.5,
+      "transactionCount": 65,
+      "propertyCount": 65,
       "firstSaleCount": 0,
-      "meanWorthAed": 2546422,
+      "meanWorthAed": 2554811,
       "firstSaleSharePct": 0
     }
   },

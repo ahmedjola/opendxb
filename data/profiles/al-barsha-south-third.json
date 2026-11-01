@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-barsha-south-third",
     "nameEn": "Al Barsha South Third",
@@ -61,26 +61,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 409,
-      "totalWorthAed": 237006562.26,
-      "transactionCount": 220,
-      "propertyCount": 220,
-      "firstSaleCount": 100,
-      "meanWorthAed": 1077303,
-      "firstSaleSharePct": 45.5
+      "totalWorthAed": 294176340.73,
+      "transactionCount": 263,
+      "propertyCount": 263,
+      "firstSaleCount": 142,
+      "meanWorthAed": 1118541,
+      "firstSaleSharePct": 54
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 409,
-      "totalWorthAed": 61192744.6,
-      "transactionCount": 76,
-      "propertyCount": 76,
-      "firstSaleCount": 0,
-      "meanWorthAed": 805168,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 96838318,
+      "transactionCount": 97,
+      "propertyCount": 105,
+      "firstSaleCount": 1,
+      "meanWorthAed": 998333,
+      "firstSaleSharePct": 1
     }
   },
   "sourcesUsed": [

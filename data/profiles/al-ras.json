@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-ras",
     "nameEn": "Al Ras",
@@ -58,14 +58,14 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 242,
-      "totalWorthAed": 622526.6,
-      "transactionCount": 1,
-      "propertyCount": 1,
+      "totalWorthAed": 556790.79,
+      "transactionCount": 2,
+      "propertyCount": 2,
       "firstSaleCount": 0,
-      "meanWorthAed": 622527,
+      "meanWorthAed": 278395,
       "firstSaleSharePct": 0
     },
     "mortgages": null

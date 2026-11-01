@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-wasl",
     "nameEn": "Al Wasl",
@@ -59,25 +59,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 364,
-      "totalWorthAed": 471860448.74,
-      "transactionCount": 66,
-      "propertyCount": 66,
-      "firstSaleCount": 27,
-      "meanWorthAed": 7149401,
-      "firstSaleSharePct": 40.9
+      "totalWorthAed": 378840047.01,
+      "transactionCount": 67,
+      "propertyCount": 67,
+      "firstSaleCount": 26,
+      "meanWorthAed": 5654329,
+      "firstSaleSharePct": 38.8
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 364,
-      "totalWorthAed": 365394352.86,
-      "transactionCount": 85,
-      "propertyCount": 85,
+      "totalWorthAed": 128130811,
+      "transactionCount": 57,
+      "propertyCount": 57,
       "firstSaleCount": 0,
-      "meanWorthAed": 4298757,
+      "meanWorthAed": 2247909,
       "firstSaleSharePct": 0
     }
   },

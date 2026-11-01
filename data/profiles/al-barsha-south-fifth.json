@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-barsha-south-fifth",
     "nameEn": "Al Barsha South Fifth",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 442,
-      "totalWorthAed": 205770758.26,
-      "transactionCount": 148,
-      "propertyCount": 148,
-      "firstSaleCount": 108,
-      "meanWorthAed": 1390343,
-      "firstSaleSharePct": 73
+      "totalWorthAed": 314983916.93,
+      "transactionCount": 222,
+      "propertyCount": 222,
+      "firstSaleCount": 123,
+      "meanWorthAed": 1418846,
+      "firstSaleSharePct": 55.4
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 442,
-      "totalWorthAed": 83445564,
-      "transactionCount": 36,
-      "propertyCount": 36,
+      "totalWorthAed": 68719268,
+      "transactionCount": 53,
+      "propertyCount": 53,
       "firstSaleCount": 0,
-      "meanWorthAed": 2317932,
+      "meanWorthAed": 1296590,
       "firstSaleSharePct": 0
     }
   },

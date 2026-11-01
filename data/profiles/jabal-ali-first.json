@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "jabal-ali-first",
     "nameEn": "Jabal Ali First",
@@ -62,26 +62,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 445,
-      "totalWorthAed": 1262415703.45,
-      "transactionCount": 542,
-      "propertyCount": 542,
-      "firstSaleCount": 347,
-      "meanWorthAed": 2329180,
-      "firstSaleSharePct": 64
+      "totalWorthAed": 944224902.96,
+      "transactionCount": 465,
+      "propertyCount": 465,
+      "firstSaleCount": 255,
+      "meanWorthAed": 2030591,
+      "firstSaleSharePct": 54.8
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 445,
-      "totalWorthAed": 484983698.01,
-      "transactionCount": 215,
-      "propertyCount": 219,
-      "firstSaleCount": 1,
-      "meanWorthAed": 2255738,
-      "firstSaleSharePct": 0.5
+      "totalWorthAed": 553487621.71,
+      "transactionCount": 218,
+      "propertyCount": 339,
+      "firstSaleCount": 7,
+      "meanWorthAed": 2538934,
+      "firstSaleSharePct": 3.2
     }
   },
   "sourcesUsed": [

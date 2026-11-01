@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-hebiah-third",
     "nameEn": "Al Hebiah Third",
@@ -61,25 +61,25 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 523,
-      "totalWorthAed": 288440792,
-      "transactionCount": 142,
-      "propertyCount": 142,
-      "firstSaleCount": 82,
-      "meanWorthAed": 2031273,
-      "firstSaleSharePct": 57.7
+      "totalWorthAed": 312023481,
+      "transactionCount": 158,
+      "propertyCount": 158,
+      "firstSaleCount": 90,
+      "meanWorthAed": 1974832,
+      "firstSaleSharePct": 57
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 523,
-      "totalWorthAed": 159886191.5,
-      "transactionCount": 71,
-      "propertyCount": 71,
+      "totalWorthAed": 148902120,
+      "transactionCount": 62,
+      "propertyCount": 62,
       "firstSaleCount": 0,
-      "meanWorthAed": 2251918,
+      "meanWorthAed": 2401647,
       "firstSaleSharePct": 0
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "al-quoz-first",
     "nameEn": "Al Quoz First",
@@ -61,26 +61,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 338,
-      "totalWorthAed": 3980600,
-      "transactionCount": 2,
-      "propertyCount": 2,
+      "totalWorthAed": 13360000,
+      "transactionCount": 3,
+      "propertyCount": 3,
       "firstSaleCount": 0,
-      "meanWorthAed": 1990300,
+      "meanWorthAed": 4453333,
       "firstSaleSharePct": 0
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 338,
-      "totalWorthAed": 3700000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 1,
-      "meanWorthAed": 1850000,
-      "firstSaleSharePct": 50
+      "totalWorthAed": 3000000,
+      "transactionCount": 3,
+      "propertyCount": 3,
+      "firstSaleCount": 0,
+      "meanWorthAed": 1000000,
+      "firstSaleSharePct": 0
     }
   },
   "sourcesUsed": [

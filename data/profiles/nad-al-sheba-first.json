@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
     "slug": "nad-al-sheba-first",
     "nameEn": "Nad Al Sheba First",
@@ -60,26 +60,26 @@
   },
   "marketActivity": {
     "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 335,
-      "totalWorthAed": 407060488.57,
-      "transactionCount": 99,
-      "propertyCount": 99,
-      "firstSaleCount": 62,
-      "meanWorthAed": 4111722,
-      "firstSaleSharePct": 62.6
+      "totalWorthAed": 631162775.41,
+      "transactionCount": 197,
+      "propertyCount": 197,
+      "firstSaleCount": 150,
+      "meanWorthAed": 3203872,
+      "firstSaleSharePct": 76.1
     },
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
       "areaId": 335,
-      "totalWorthAed": 104772731.3,
-      "transactionCount": 25,
-      "propertyCount": 25,
-      "firstSaleCount": 0,
-      "meanWorthAed": 4190909,
-      "firstSaleSharePct": 0
+      "totalWorthAed": 565768520.82,
+      "transactionCount": 32,
+      "propertyCount": 322,
+      "firstSaleCount": 22,
+      "meanWorthAed": 17680266,
+      "firstSaleSharePct": 68.8
     }
   },
   "sourcesUsed": [

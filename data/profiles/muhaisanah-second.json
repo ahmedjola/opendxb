@@ -1,17 +1,12 @@
 {
-  "generatedAt": "2026-10-31T02:08:36.352Z",
+  "generatedAt": "2026-11-01T01:59:49.573Z",
   "community": {
-    "slug": "jumeirah-third",
-    "nameEn": "Jumeirah Third",
-    "nameAr": "جميرا الثالثه",
-    "marketNames": [
-      "Jumeirah 3",
-      "Jumeira 3"
-    ],
-    "marketNamesAr": [
-      "جميرا الثالثة"
-    ],
-    "communityNumber": 318,
+    "slug": "muhaisanah-second",
+    "nameEn": "Muhaisanah Second",
+    "nameAr": "محيصنه الثانيه",
+    "marketNames": [],
+    "marketNamesAr": [],
+    "communityNumber": 360,
     "sectorNumber": null
   },
   "sales": {
@@ -60,26 +55,16 @@
     "byMode": {}
   },
   "marketActivity": {
-    "sales": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 318,
-      "totalWorthAed": 39400000,
-      "transactionCount": 2,
-      "propertyCount": 2,
-      "firstSaleCount": 0,
-      "meanWorthAed": 19700000,
-      "firstSaleSharePct": 0
-    },
+    "sales": null,
     "mortgages": {
-      "periodFrom": "2026-09-01",
-      "periodTo": "2026-09-30",
-      "areaId": 318,
-      "totalWorthAed": 50090000,
-      "transactionCount": 3,
-      "propertyCount": 3,
+      "periodFrom": "2026-10-01",
+      "periodTo": "2026-10-31",
+      "areaId": 360,
+      "totalWorthAed": 7500000,
+      "transactionCount": 1,
+      "propertyCount": 1,
       "firstSaleCount": 0,
-      "meanWorthAed": 16696667,
+      "meanWorthAed": 7500000,
       "firstSaleSharePct": 0
     }
   },
