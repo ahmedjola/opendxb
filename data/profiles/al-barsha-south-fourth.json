@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T02:12:41.839Z",
+  "generatedAt": "2026-11-04T02:57:32.047Z",
   "community": {
     "slug": "al-barsha-south-fourth",
     "nameEn": "Al Barsha South Fourth",
@@ -64,11 +64,11 @@
       "periodFrom": "2026-10-01",
       "periodTo": "2026-10-31",
       "areaId": 441,
-      "totalWorthAed": 999385258.88,
-      "transactionCount": 852,
-      "propertyCount": 852,
-      "firstSaleCount": 331,
-      "meanWorthAed": 1172987,
+      "totalWorthAed": 998185258.88,
+      "transactionCount": 851,
+      "propertyCount": 851,
+      "firstSaleCount": 330,
+      "meanWorthAed": 1172956,
       "firstSaleSharePct": 38.8
     },
     "mortgages": {
