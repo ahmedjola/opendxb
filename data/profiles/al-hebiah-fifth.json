@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T02:57:32.047Z",
+  "generatedAt": "2026-11-05T03:20:18.303Z",
   "community": {
     "slug": "al-hebiah-fifth",
     "nameEn": "Al Hebiah Fifth",
@@ -59,12 +59,12 @@
       "periodFrom": "2026-10-01",
       "periodTo": "2026-10-31",
       "areaId": 451,
-      "totalWorthAed": 857862075,
-      "transactionCount": 434,
-      "propertyCount": 434,
+      "totalWorthAed": 858676075,
+      "transactionCount": 435,
+      "propertyCount": 435,
       "firstSaleCount": 309,
-      "meanWorthAed": 1976641,
-      "firstSaleSharePct": 71.2
+      "meanWorthAed": 1973968,
+      "firstSaleSharePct": 71
     },
     "mortgages": {
       "periodFrom": "2026-10-01",
