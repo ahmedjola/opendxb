@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T03:20:18.303Z",
+  "generatedAt": "2026-11-06T03:17:56.063Z",
   "community": {
     "slug": "madinat-al-mataar",
     "nameEn": "Madinat Al Mataar",
@@ -66,12 +66,12 @@
       "periodFrom": "2026-10-01",
       "periodTo": "2026-10-31",
       "areaId": 462,
-      "totalWorthAed": 1114136216.29,
-      "transactionCount": 844,
-      "propertyCount": 844,
+      "totalWorthAed": 1115393936.29,
+      "transactionCount": 845,
+      "propertyCount": 845,
       "firstSaleCount": 613,
-      "meanWorthAed": 1320067,
-      "firstSaleSharePct": 72.6
+      "meanWorthAed": 1319993,
+      "firstSaleSharePct": 72.5
     },
     "mortgages": {
       "periodFrom": "2026-10-01",
