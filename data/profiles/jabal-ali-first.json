@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T03:17:56.063Z",
+  "generatedAt": "2026-11-07T02:37:50.128Z",
   "community": {
     "slug": "jabal-ali-first",
     "nameEn": "Jabal Ali First",
@@ -79,9 +79,9 @@
       "totalWorthAed": 553487621.71,
       "transactionCount": 218,
       "propertyCount": 339,
-      "firstSaleCount": 7,
+      "firstSaleCount": 10,
       "meanWorthAed": 2538934,
-      "firstSaleSharePct": 3.2
+      "firstSaleSharePct": 4.6
     }
   },
   "sourcesUsed": [
