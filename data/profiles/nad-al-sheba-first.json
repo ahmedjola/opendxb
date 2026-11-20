@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T04:01:31.105Z",
+  "generatedAt": "2026-11-20T03:54:16.716Z",
   "community": {
     "slug": "nad-al-sheba-first",
     "nameEn": "Nad Al Sheba First",
@@ -77,9 +77,9 @@
       "totalWorthAed": 565768520.82,
       "transactionCount": 32,
       "propertyCount": 322,
-      "firstSaleCount": 126,
+      "firstSaleCount": 128,
       "meanWorthAed": 17680266,
-      "firstSaleSharePct": 393.8
+      "firstSaleSharePct": 400
     }
   },
   "sourcesUsed": [
