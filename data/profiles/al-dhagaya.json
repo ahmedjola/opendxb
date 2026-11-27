@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T04:47:27.626Z",
+  "generatedAt": "2026-11-27T04:52:18.855Z",
   "community": {
     "slug": "al-dhagaya",
     "nameEn": "Al Dhagaya",
@@ -62,9 +62,9 @@
       "totalWorthAed": 19740000,
       "transactionCount": 3,
       "propertyCount": 3,
-      "firstSaleCount": 0,
+      "firstSaleCount": 1,
       "meanWorthAed": 6580000,
-      "firstSaleSharePct": 0
+      "firstSaleSharePct": 33.3
     },
     "mortgages": null
   },
